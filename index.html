@@ -542,7 +542,7 @@ function renderOverview() {
           const tr = (((p.p1+p.p2)/p.races)*100).toFixed(1);
           return `<div class="podium-item ${cls}">
             <div class="podium-medal">${medal}</div>
-            <div class="podium-name"><a onclick="showPlayer('${p.name.replace(/'/g,"\\'")}')">${p.name}</a></div>
+            <div class="podium-name"><a href="javascript:void(0)" onclick="showPlayer('${p.name.replace(/'/g,"\\'")}')">${p.name}</a></div>
             <div class="podium-stats">결승 진출 ${p.races}회<br>🥇${p.p1} 🥈${p.p2} 🥉${p.p3}<br>승률 ${wr}% · 연대율 ${tr}%</div>
             <div class="podium-bar"></div>
           </div>`;
@@ -567,7 +567,7 @@ function renderOverview() {
           <tbody>${rest.map(p => {
             const wr = ((p.p1/p.races)*100).toFixed(1);
             const tr2 = (((p.p1+p.p2)/p.races)*100).toFixed(1);
-            return `<tr><td><a onclick="showPlayer('${p.name.replace(/'/g,"\\'")}')">${p.name}</a></td><td>${p.races}</td><td class="medal-1">${p.p1}</td><td class="medal-2">${p.p2}</td><td class="medal-3">${p.p3}</td><td>${p.p4}</td><td>${wr}%</td><td>${tr2}%</td></tr>`;
+            return `<tr><td><a href="javascript:void(0)" onclick="showPlayer('${p.name.replace(/'/g,"\\'")}')">${p.name}</a></td><td>${p.races}</td><td class="medal-1">${p.p1}</td><td class="medal-2">${p.p2}</td><td class="medal-3">${p.p3}</td><td>${p.p4}</td><td>${wr}%</td><td>${tr2}%</td></tr>`;
           }).join('')}</tbody>
         </table></div>
       </div>` : ''}
@@ -667,7 +667,7 @@ function renderRounds() {
             const cls = i===0?'medal-1':i===1?'medal-2':i===2?'medal-3':'';
             const medal = i===0?'🥇':i===1?'🥈':i===2?'🥉':(i+1)+'착';
             const umaInfo = d.finalsUma && d.finalsUma[i] && d.finalsUma[i].uma ? ` <span style="color:var(--text2);font-size:0.8rem">(🐴 ${d.finalsUma[i].uma})</span>` : '';
-            return `<div class="rank"><span class="rank-num ${cls}">${medal}</span><a onclick="event.stopPropagation();showPlayer('${name.replace(/'/g,"\\'")}')">${name}</a>${umaInfo}</div>`;
+            return `<div class="rank"><span class="rank-num ${cls}">${medal}</span><a href="javascript:void(0)" onclick="event.stopPropagation();showPlayer('${name.replace(/'/g,"\\'")}')">${name}</a>${umaInfo}</div>`;
           }).join('')}
         </div>
         ${d.comment?`<div class="winner-comment">${d.comment}</div>`:''}
@@ -684,6 +684,7 @@ function showPlayer(name) {
   document.getElementById('tab-player').classList.add('active');
   document.querySelectorAll('#main-nav button').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('#main-nav button')[2].classList.add('active');
+  window.scrollTo(0,0);
   const p = playerStats[name];
   if(!p) { document.getElementById('tab-player').innerHTML = `<p>"${name}" 데이터 없음</p>`; return; }
   const wr = ((p.p1/p.races)*100).toFixed(1);
@@ -694,7 +695,7 @@ function showPlayer(name) {
   const el = document.getElementById('tab-player');
   el.innerHTML = `
     <div class="player-detail">
-      <div class="back"><a onclick="renderPlayerList()">← 참가자 목록으로</a></div>
+      <div class="back"><a href="javascript:void(0)" onclick="renderPlayerList()">← 참가자 목록으로</a></div>
       <h2>👤 ${name}</h2>
       <div class="player-stats-row">
         <div class="player-stat"><div class="num" style="color:var(--text)">${p.races}</div><div class="label">결승 진출</div></div>
@@ -740,7 +741,7 @@ function renderPlayerList() {
         </tr></thead>
         <tbody>${allPlayers.map(p => {
           const wr = ((p.p1/p.races)*100).toFixed(1);
-          return `<tr><td><a onclick="showPlayer('${p.name.replace(/'/g,"\\'")}')">${p.name}</a></td><td>${p.races}</td><td class="medal-1">${p.p1}</td><td class="medal-2">${p.p2}</td><td class="medal-3">${p.p3}</td><td>${wr}%</td></tr>`;
+          return `<tr><td><a href="javascript:void(0)" onclick="showPlayer('${p.name.replace(/'/g,"\\'")}')">${p.name}</a></td><td>${p.races}</td><td class="medal-1">${p.p1}</td><td class="medal-2">${p.p2}</td><td class="medal-3">${p.p3}</td><td>${wr}%</td></tr>`;
         }).join('')}</tbody>
       </table></div>
     </div>`;

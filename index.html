@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏇 로그라이크 명예의 전당</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --bg: #fafaf7;
+  --bg2: #ffffff;
+  --bg3: #f5f5f0;
+  --green: #8BC34A;
+  --green-soft: #a8d86e;
+  --green-light: #e8f5d4;
+  --green-pale: #f1f8e8;
+  --orange: #FF9800;
+  --orange-soft: #ffb74d;
+  --orange-light: #fff3e0;
+  --orange-pale: #fff8ef;
+  --text: #3a3a3a;
+  --text2: #7a7a7a;
+  --accent: #e67e22;
+  --win: #FF9800;
+  --p2: #aaa;
+  --p3: #c68c53;
+  --p4: #999;
+  --border: #e5e5dd;
+  --hover: #f9f9f3;
+  --heading: #5d8a2d;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:'Segoe UI',Tahoma,sans-serif; min-height:100vh; }
+a { color:var(--accent); text-decoration:none; cursor:pointer; }
+a:hover { color:var(--orange); }
+
+.header {
+  background: linear-gradient(135deg, #f7fbe8, #fff5e6);
+  border-bottom: 2px solid var(--green-soft);
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+.header h1 { font-size:1.8rem; color:var(--heading); }
+.header p { color:var(--text2); margin-top:0.3rem; font-size:0.9rem; }
+
+nav {
+  display:flex; justify-content:center; gap:0.5rem;
+  background:var(--bg2); padding:0.8rem; border-bottom:1px solid var(--border);
+  flex-wrap:wrap;
+}
+nav button {
+  background:var(--bg3); color:var(--text2); border:1px solid var(--border);
+  padding:0.6rem 1.5rem; border-radius:2rem; cursor:pointer;
+  font-size:0.9rem; transition:all 0.2s;
+}
+nav button:hover, nav button.active {
+  background: linear-gradient(135deg, var(--green-soft), var(--green));
+  color:#fff; border-color:var(--green);
+}
+
+.container { max-width:1200px; margin:0 auto; padding:1.5rem; }
+
+.tab { display:none; }
+.tab.active { display:block; }
+
+.stats-grid {
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(140px,1fr));
+  gap:1rem; margin-bottom:2rem;
+}
+.stat-card {
+  background:var(--bg2); border:1px solid var(--border); border-radius:12px;
+  padding:1.2rem; text-align:center; box-shadow:0 1px 4px rgba(0,0,0,0.04);
+}
+.stat-card .num { font-size:2rem; font-weight:bold; color:var(--orange); }
+.stat-card .label { font-size:0.8rem; color:var(--text2); margin-top:0.3rem; }
+
+.section { margin-bottom:2rem; }
+.section h2 {
+  font-size:1.2rem; color:var(--heading); margin-bottom:1rem;
+  padding-bottom:0.5rem; border-bottom:1px solid var(--border);
+}
+
+table {
+  width:100%; border-collapse:collapse; background:var(--bg2);
+  border-radius:8px; overflow:hidden; font-size:0.85rem;
+  box-shadow:0 1px 4px rgba(0,0,0,0.04);
+}
+th, td { padding:0.6rem 0.8rem; text-align:center; border-bottom:1px solid var(--border); }
+th {
+  background:var(--green-pale); color:var(--heading); cursor:pointer;
+  user-select:none; position:sticky; top:0; white-space:nowrap;
+}
+th:hover { background:var(--green-light); }
+th .arrow { font-size:0.7rem; margin-left:0.2rem; }
+tr:hover { background:var(--hover); }
+td:first-child { text-align:left; }
+
+.medal-1 { color:var(--orange); font-weight:bold; }
+.medal-2 { color:#aaa; }
+.medal-3 { color:var(--p3); }
+
+.charts-row {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:1.5rem; margin-bottom:2rem;
+}
+.chart-box {
+  background:var(--bg2); border:1px solid var(--border);
+  border-radius:12px; padding:1.2rem; box-shadow:0 1px 4px rgba(0,0,0,0.04);
+}
+.chart-box h3 { color:var(--heading); font-size:0.95rem; margin-bottom:0.8rem; }
+.chart-box canvas { max-height:280px; }
+
+.podium-wrap { display:flex; justify-content:center; align-items:flex-end; gap:1.2rem; margin-bottom:2rem; flex-wrap:wrap; }
+.podium-item {
+  background:var(--bg2); border:1px solid var(--border); border-radius:16px;
+  text-align:center; padding:1.5rem 1.2rem 1.2rem; position:relative;
+  box-shadow:0 2px 8px rgba(0,0,0,0.06); transition:transform 0.2s;
+  min-width:150px; max-width:220px; flex:1;
+}
+.podium-item:hover { transform:translateY(-4px); }
+.podium-1 { order:2; min-height:240px; border-color:var(--orange-soft); background:var(--orange-pale); }
+.podium-2 { order:1; min-height:200px; }
+.podium-3 { order:3; min-height:180px; }
+.podium-medal { font-size:2.5rem; }
+.podium-name { font-size:1.3rem; font-weight:bold; margin:0.5rem 0 0.3rem; color:var(--text); }
+.podium-1 .podium-name { color:var(--accent); }
+.podium-stats { font-size:0.8rem; color:var(--text2); line-height:1.6; }
+.podium-bar { height:6px; border-radius:3px; margin-top:0.8rem; }
+.podium-1 .podium-bar { background:linear-gradient(90deg, var(--orange-soft), var(--orange)); }
+.podium-2 .podium-bar { background:linear-gradient(90deg, #ccc, #aaa); }
+.podium-3 .podium-bar { background:linear-gradient(90deg, #ddb98a, var(--p3)); }
+
+.accordion-toggle {
+  background:var(--bg2); border:1px solid var(--border); border-radius:10px;
+  padding:0.8rem 1.2rem; cursor:pointer; margin-bottom:0.5rem;
+  display:flex; justify-content:space-between; align-items:center;
+  font-size:0.95rem; color:var(--text); transition:background 0.2s;
+}
+.accordion-toggle:hover { background:var(--green-pale); }
+.accordion-toggle .arrow-icon { transition:transform 0.3s; font-size:0.8rem; }
+.accordion-toggle.open .arrow-icon { transform:rotate(180deg); }
+.accordion-body { display:none; margin-bottom:1rem; }
+.accordion-body.open { display:block; }
+
+.round-list { display:flex; flex-direction:column; gap:0.6rem; }
+.round-card {
+  background:var(--bg2); border:1px solid var(--border); border-radius:10px;
+  padding:1rem 1.2rem; cursor:pointer; transition:all 0.2s;
+  box-shadow:0 1px 3px rgba(0,0,0,0.03);
+}
+.round-card:hover { border-color:var(--green-soft); background:var(--hover); }
+.round-card .top { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; }
+.round-card .round-num { font-weight:bold; color:var(--orange); font-size:1.1rem; }
+.round-card .meta { color:var(--text2); font-size:0.8rem; }
+.round-card .winner { color:var(--accent); font-size:0.9rem; margin-top:0.4rem; }
+.round-card .detail { display:none; margin-top:1rem; padding-top:0.8rem; border-top:1px solid var(--border); }
+.round-card.open .detail { display:block; }
+
+.detail-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:0.5rem; margin-bottom:0.8rem; font-size:0.85rem;
+}
+.detail-grid .item { background:var(--bg3); padding:0.5rem; border-radius:6px; }
+.detail-grid .item .k { color:var(--text2); font-size:0.75rem; }
+.detail-grid .item .v { color:var(--text); font-weight:500; }
+
+.ranking-list { font-size:0.85rem; }
+.ranking-list .rank { display:flex; gap:0.5rem; padding:0.3rem 0; }
+.ranking-list .rank-num { min-width:2rem; font-weight:bold; }
+
+.winner-comment {
+  margin-top:0.8rem; padding:0.8rem 1rem; font-size:0.9rem;
+  background: linear-gradient(135deg, var(--orange-pale), var(--green-pale));
+  border-left:4px solid var(--orange-soft); border-radius:0 8px 8px 0;
+  font-weight:bold; color:var(--text); font-style:italic;
+}
+.winner-comment::before { content:'🏆 우승자 소감: '; font-style:normal; }
+
+.player-detail { }
+.player-detail .back { margin-bottom:1rem; }
+.player-detail h2 { color:var(--orange); font-size:1.5rem; margin-bottom:1rem; }
+
+.player-stats-row {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(100px,1fr));
+  gap:0.8rem; margin-bottom:1.5rem;
+}
+.player-stat {
+  background:var(--bg2); border:1px solid var(--border); border-radius:10px;
+  padding:1rem; text-align:center; box-shadow:0 1px 4px rgba(0,0,0,0.04);
+}
+.player-stat .num { font-size:1.5rem; font-weight:bold; }
+.player-stat .label { font-size:0.75rem; color:var(--text2); margin-top:0.2rem; }
+
+.history-table-wrap { overflow-x:auto; }
+.table-wrap { overflow-x:auto; }
+
+/* ===== 룰렛 시스템 스타일 ===== */
+.roulette-sub-tabs {
+  display:flex; gap:0.4rem; margin-bottom:1.5rem; flex-wrap:wrap;
+  justify-content:center;
+}
+.roulette-sub-tabs button {
+  background:var(--bg3); color:var(--text2); border:1px solid var(--border);
+  padding:0.5rem 1.2rem; border-radius:8px; cursor:pointer;
+  font-size:0.85rem; transition:all 0.2s;
+}
+.roulette-sub-tabs button:hover, .roulette-sub-tabs button.r-active {
+  background: linear-gradient(135deg, var(--orange-soft), var(--orange));
+  color:#fff; border-color:var(--orange);
+}
+
+.r-sub { display:none; }
+.r-sub.r-active { display:block; }
+
+.r-controls {
+  display:flex; gap:0.8rem; margin-bottom:1.5rem;
+  justify-content:center; flex-wrap:wrap;
+}
+.r-btn {
+  padding:0.7rem 1.5rem; border:none; border-radius:10px;
+  cursor:pointer; font-size:0.9rem; font-weight:bold;
+  transition:all 0.2s; box-shadow:0 2px 6px rgba(0,0,0,0.08);
+}
+.r-btn:hover { transform:translateY(-2px); box-shadow:0 4px 10px rgba(0,0,0,0.15); }
+.r-btn-primary { background:linear-gradient(135deg, var(--green-soft), var(--green)); color:#fff; }
+.r-btn-danger { background:linear-gradient(135deg, #e88d72, #d35400); color:#fff; }
+.r-btn-success { background:linear-gradient(135deg, var(--orange-soft), var(--orange)); color:#fff; }
+.r-btn-secondary { background:linear-gradient(135deg, #bbb, #999); color:#fff; }
+
+.slots-container {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:1rem; margin-bottom:1.5rem;
+}
+.slot {
+  background:var(--bg2); border:2px solid var(--border); border-radius:12px;
+  padding:0.8rem; text-align:center; transition:all 0.3s;
+  cursor:pointer; position:relative; overflow:hidden;
+}
+.slot:hover { border-color:var(--green-soft); transform:translateY(-2px); box-shadow:0 4px 12px rgba(0,0,0,0.08); }
+.slot-image {
+  width:100%; height:280px; background:var(--bg3); border:2px dashed var(--border);
+  border-radius:8px; display:flex; align-items:center; justify-content:center;
+  margin-bottom:0.5rem; font-size:0.85rem; color:var(--text2);
+  position:relative; overflow:hidden;
+}
+.slot-image img { width:100%; height:100%; object-fit:cover; border-radius:6px; }
+.slot-name {
+  font-weight:bold; font-size:0.85rem; margin-top:0.5rem;
+  min-height:36px; display:flex; align-items:center; justify-content:center;
+  word-break:break-word; color:var(--text);
+}
+.slot.final { border-color:var(--green); background:var(--green-pale); }
+.slot.final .slot-name { color:var(--heading); }
+.slot.op-card { border-color:#d35400 !important; background:var(--orange-pale) !important; }
+.slot.op-card .slot-name { color:#d35400 !important; }
+.slot.animating {
+  animation:roulette-glow 0.1s ease-in-out infinite;
+  border-color:var(--orange); background:var(--orange-light);
+}
+.slot.disabled { opacity:0.3; pointer-events:none; background:var(--bg3) !important; border-color:var(--border) !important; }
+.slot.disabled .slot-name { color:var(--text2) !important; }
+
+@keyframes roulette-glow {
+  0%,100% { border-color:var(--orange); box-shadow:0 0 12px rgba(255,152,0,0.4); }
+  50% { border-color:var(--orange-soft); box-shadow:0 0 20px rgba(255,152,0,0.7); }
+}
+
+.track-info-container { max-width:600px; margin:0 auto; }
+.track-info-single {
+  background:var(--bg2); border:2px solid var(--border); border-radius:12px;
+  padding:1.5rem; text-align:center; font-size:1rem; line-height:1.8;
+  transition:all 0.3s;
+}
+.track-info-single.animating {
+  animation:track-glow 0.15s ease-in-out infinite;
+  border-color:var(--orange); background:var(--orange-light);
+}
+.track-info-single.final { border-color:var(--green); background:var(--green-pale); }
+@keyframes track-glow {
+  0%,100% { border-color:var(--orange); box-shadow:0 0 12px rgba(255,152,0,0.4); }
+  50% { border-color:var(--orange-soft); box-shadow:0 0 20px rgba(255,152,0,0.7); }
+}
+
+.track-pool-container {
+  max-width:600px; margin:0 auto 1.5rem auto;
+  background:var(--bg2); border:2px solid var(--border); border-radius:12px; padding:1.2rem;
+}
+.pool-section { margin-bottom:1rem; }
+.pool-section h3 { color:var(--heading); font-size:1rem; margin-bottom:0.6rem; text-align:center; }
+.checkbox-group { display:flex; flex-wrap:wrap; gap:0.8rem; justify-content:center; }
+.checkbox-group label {
+  display:flex; align-items:center; gap:0.5rem; font-size:0.9rem;
+  cursor:pointer; padding:0.5rem 0.8rem; border:1px solid var(--border);
+  border-radius:8px; transition:all 0.2s;
+}
+.checkbox-group label:hover { border-color:var(--green-soft); background:var(--green-pale); }
+.checkbox-group input[type="checkbox"] { width:16px; height:16px; cursor:pointer; }
+.pool-controls { display:flex; gap:0.6rem; justify-content:center; margin-top:0.8rem; }
+
+.r-notification {
+  position:fixed; top:20px; right:20px;
+  background:linear-gradient(135deg, var(--green-soft), var(--green));
+  color:#fff; padding:0.8rem 1.2rem; border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2);
+  transform:translateX(calc(100% + 30px)); transition:transform 0.3s;
+  z-index:1000; font-size:0.9rem;
+}
+.r-notification.show { transform:translateX(0); }
+
+/* Support card slot height */
+#r-support-tab .slot-image { height:350px; }
+
+@media(max-width:600px) {
+  .header h1 { font-size:1.3rem; }
+  .container { padding:1rem; }
+  nav button { padding:0.5rem 1rem; font-size:0.8rem; }
+  .stats-grid { grid-template-columns:repeat(2,1fr); }
+  table { font-size:0.75rem; }
+  th, td { padding:0.4rem; }
+  .podium-wrap { gap:0.6rem; }
+  .podium-item { min-width:100px; padding:1rem 0.6rem; }
+  .podium-name { font-size:1rem; }
+  .slots-container { grid-template-columns:1fr; }
+  .slot-image { height:200px !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🥕 로그라이크 명예의 전당</h1>
+  <p>Uma Musume Roguelike Dashboard</p>
+</div>
+
+<nav id="main-nav">
+  <button class="active" onclick="showTab('overview',this)">📊 종합 통계</button>
+  <button onclick="showTab('rounds',this)">📋 회차별 기록</button>
+  <button onclick="showTab('player',this)">👤 참가자 상세</button>
+  <button onclick="showTab('roulette',this)">🎲 대회 진행</button>
+</nav>
+
+<div class="container">
+  <div id="tab-overview" class="tab active"></div>
+  <div id="tab-rounds" class="tab"></div>
+  <div id="tab-player" class="tab"></div>
+  <div id="tab-roulette" class="tab">
+    <div class="roulette-sub-tabs" id="roulette-sub-nav">
+      <button class="r-active" onclick="switchRouletteTab('support',this)">🎴 서포트카드 밴</button>
+      <button onclick="switchRouletteTab('character',this)">🏇 캐릭터 밴</button>
+      <button onclick="switchRouletteTab('charroulette',this)">🎰 캐릭터 룰렛</button>
+      <button onclick="switchRouletteTab('track',this)">🏁 마장 룰렛</button>
+    </div>
+
+    <!-- 서포트카드 밴 -->
+    <div id="r-support-tab" class="r-sub r-active">
+      <div class="r-controls">
+        <button class="r-btn r-btn-primary" onclick="generateNormalSupportBan()">🎲 기본카드밴</button>
+        <button class="r-btn r-btn-danger" onclick="generateOpSupportBan()">🔥 사기카드밴</button>
+        <button class="r-btn r-btn-success" onclick="copySupportContent()">📋 내용 복사</button>
+        <button class="r-btn r-btn-secondary" onclick="resetSupportSlots()">🔄 초기화</button>
+      </div>
+      <div class="slots-container" id="support-slots"></div>
+    </div>
+
+    <!-- 캐릭터 밴 -->
+    <div id="r-character-tab" class="r-sub">
+      <div class="r-controls">
+        <button class="r-btn r-btn-primary" onclick="generateCharacterBan()">🎲 캐릭터 밴 생성</button>
+        <button class="r-btn r-btn-success" onclick="copyCharacterContent()">📋 내용 복사</button>
+        <button class="r-btn r-btn-secondary" onclick="resetCharacterSlots()">🔄 초기화</button>
+      </div>
+      <div class="slots-container" id="character-slots"></div>
+    </div>
+
+    <!-- 캐릭터 룰렛 -->
+    <div id="r-charroulette-tab" class="r-sub">
+      <div class="r-controls">
+        <button class="r-btn r-btn-primary" onclick="generateCharacterRoulette(4)">🎲 4명 룰렛</button>
+        <button class="r-btn r-btn-primary" onclick="generateCharacterRoulette(6)">🎰 6명 룰렛</button>
+        <button class="r-btn r-btn-success" onclick="copyRouletteContent()">📋 내용 복사</button>
+        <button class="r-btn r-btn-secondary" onclick="resetRouletteSlots()">🔄 초기화</button>
+      </div>
+      <div class="slots-container" id="roulette-slots"></div>
+    </div>
+
+    <!-- 마장 룰렛 -->
+    <div id="r-track-tab" class="r-sub">
+      <div class="r-controls">
+        <button class="r-btn r-btn-primary" onclick="generateTrackInfo()">🏁 마장정보 생성</button>
+        <button class="r-btn r-btn-success" onclick="toggleTrackPool()">⚙️ 풀 설정</button>
+        <button class="r-btn r-btn-secondary" onclick="resetTrackInfo()">🔄 초기화</button>
+      </div>
+      <div class="track-pool-container" id="track-pool" style="display:none;">
+        <div class="pool-section">
+          <h3>트랙 타입</h3>
+          <div class="checkbox-group">
+            <label><input type="checkbox" id="track-turf" checked> 잔디</label>
+            <label><input type="checkbox" id="track-dirt" checked> 더트</label>
+          </div>
+        </div>
+        <div class="pool-section">
+          <h3>거리</h3>
+          <div class="checkbox-group">
+            <label><input type="checkbox" id="distance-sprint" checked> 단거리 (1400m이하)</label>
+            <label><input type="checkbox" id="distance-mile" checked> 마일 (1401m~1800m)</label>
+            <label><input type="checkbox" id="distance-middle" checked> 중거리 (1801m~2400m)</label>
+            <label><input type="checkbox" id="distance-long" checked> 장거리 (2401m~)</label>
+          </div>
+        </div>
+        <div class="pool-controls">
+          <button class="r-btn r-btn-primary" onclick="applyTrackPool()">적용</button>
+          <button class="r-btn r-btn-secondary" onclick="resetTrackPool()">전체 선택</button>
+        </div>
+      </div>
+      <div class="track-info-container" id="track-info">
+        <div class="track-info-single">
+          <div class="track-detail" id="track-info-text">마장정보 생성 버튼을 눌러주세요</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="r-notification" class="r-notification">복사 완료!</div>
+
+<script>
+// ===== 대시보드 데이터 =====
+const DATA = [
+  {"round":194,"timestamp":"2025-04-17T14:03:44.298000+00:00","course":"도쿄 잔디 2000m","direction":"","season":"여름","weather":"맑음","ground":"","condition":"저조","distCategory":"중거리","distance":2000,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["잭도르","살구맛냥이","쌈무","라이스샤워","케이에스","애피타이저","52ra","쏠라리","롱롱"]},"roulette":"","comment":"왕수 ㅈ망마장 챔미 내지마","author":"매소니"},
+  {"round":237,"timestamp":"2024-11-19T13:45:21.391000+00:00","course":"교토 잔디 1800m","direction":"우회전","season":"봄","weather":"맑음","ground":"양호","condition":"저조","distCategory":"마일","distance":1800,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["애피타이저","스골","매소니"]},"roulette":"","comment":"","author":"매소니"},
+  {"round":266,"timestamp":"2025-02-11T13:57:29.987000+00:00","course":"하코타테 잔디 2600m","direction":"우회전","season":"겨울","weather":"맑음","ground":"양호","condition":"최상","distCategory":"장거리","distance":2600,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["케이아스","설상빙화","소리"]},"roulette":"","comment":"만반은 허상이다","author":"매소니"},
+  {"round":267,"timestamp":"2025-02-12T13:58:03.709000+00:00","course":"교토 잔디 3200m","direction":"","season":"가을","weather":"맑음","ground":"양호","condition":"최상","distCategory":"장거리","distance":3200,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["매소니","소리","설상빙화"]},"roulette":"","comment":"이 우승을 맥퀸에게 감사드립니다","author":"매소니"},
+  {"round":268,"timestamp":"2025-02-17T13:53:15.429000+00:00","course":"오이 잔디 2000m","direction":"","season":"겨울","weather":"맑음","ground":"양호","condition":"최상","distCategory":"중거리","distance":2000,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["초보팬","선2렙강박증","부끄킹"]},"roulette":"","comment":"왜 우승했는진 모르겠지만 더트 도주들 한잔해~","author":"매소니"},
+  {"round":269,"timestamp":"2025-02-18T14:09:02.901000+00:00","course":"도쿄 잔디 2500m","direction":"","season":"겨울","weather":"맑음","ground":"양호","condition":"양호","distCategory":"장거리","distance":2500,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["쏠라리","스테이골드","소리"]},"roulette":"","comment":"EZ","author":"매소니"},
+  {"round":270,"timestamp":"2025-02-19T14:01:43.725000+00:00","course":"나카야마 잔디 1600m","direction":"","season":"봄","weather":"비","ground":"포화","condition":"최상","distCategory":"마일","distance":1600,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["초보팬","라댕이짱커여움","라이스샤워"]},"roulette":"","comment":"","author":"매소니"},
+  {"round":272,"timestamp":"2025-02-24T13:49:59.601000+00:00","course":"코쿠라 잔디 1800m","direction":"","season":"여름","weather":"맑음","ground":"양호","condition":"","distCategory":"마일","distance":1800,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["아그네스","케이에스","수영복"]},"roulette":"","comment":"메이야 미안하다!!!","author":"매소니"},
+  {"round":273,"timestamp":"2025-02-25T13:52:40.828000+00:00","course":"코쿠라 잔디 1800m","direction":"","season":"겨울","weather":"맑음","ground":"양호","condition":"최상","distCategory":"마일","distance":1800,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["케이에스","스테이골드","쿠다"]},"roulette":"","comment":"노터다 폰터다 3승, 터다에 미래는 있는가","author":"매소니"},
+  {"round":275,"timestamp":"2025-03-05T13:55:42.251000+00:00","course":"츄쿄 잔디 2000m","direction":"좌회전","season":"가을","weather":"비","ground":"포화","condition":"최상","distCategory":"중거리","distance":2000,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["설상빙화","성백련","소리"]},"roulette":"","comment":"","author":"매소니"},
+  {"round":278,"timestamp":"2025-03-06T13:48:48.593000+00:00","course":"한신 잔디 3000m","direction":"","season":"가을","weather":"","ground":"양호","condition":"저조","distCategory":"장거리","distance":3000,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["택트","소리","쿠다"]},"roulette":"","comment":"","author":"매소니"},
+  {"round":279,"timestamp":"2025-03-10T13:59:16.839000+00:00","course":"하코타테 잔디 2600m","direction":"","season":"여름","weather":"맑음","ground":"양호","condition":"보통","distCategory":"장거리","distance":2600,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["스테이골드","두라만테","택트"]},"roulette":"","comment":"왜 나를 밴하지 않았지?2","author":"매소니"},
+  {"round":280,"timestamp":"2025-03-11T13:53:25.839000+00:00","course":"한신 잔디 2200m","direction":"우회전","season":"여름","weather":"맑음","ground":"양호","condition":"","distCategory":"중거리","distance":2200,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["쏠라리","스테이골드","케이에스"]},"roulette":"","comment":"EZ","author":"매소니"},
+  {"round":283,"timestamp":"2025-03-19T13:52:54.149000+00:00","course":"나카야마 잔디 2000m","direction":"","season":"여름","weather":"맑음","ground":"양호","condition":"최상","distCategory":"중거리","distance":2000,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["초전도체","케이에스","초보팬","오페라오","매소니","구스타골","소리","살구맛냥이","애피타이저"]},"roulette":"","comment":"도파민 룰렛단은 승리한다","author":"매소니"},
+  {"round":284,"timestamp":"2025-03-20T13:52:27.907000+00:00","course":"한신 잔디 1600m","direction":"","season":"가을","weather":"맑음","ground":"양호","condition":"보통","distCategory":"마일","distance":1600,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["매소니","택트","52ra","오페라오","라이스샤워","롱롱","쿠다","초보팬","XO","스컹키"]},"roulette":"","comment":"아무일도 없었다.","author":"매소니"},
+  {"round":285,"timestamp":"2025-03-24T14:08:38.703000+00:00","course":"교토 잔디 3200m","direction":"","season":"가을","weather":"흐림","ground":"양호","condition":"보통","distCategory":"장거리","distance":3200,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["초보팬","설상빙화","52ra","오페라오","두라멘테","소리","롱롱","살구맛냥이","라이스샤워","애피타이저"]},"roulette":"","comment":"간만에 1등하는데 음음... 그렇습니다","author":"매소니"},
+  {"round":286,"timestamp":"2025-03-25T13:53:02.746000+00:00","course":"도쿄 잔디 1600m","direction":"","season":"여름","weather":"흐림","ground":"다습","condition":"최상","distCategory":"마일","distance":1600,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["소리","쏠라리","쌀다방","쿠다","택트","초전도체스즈카","케이에스","애피타이저","매소니","살구맛냥이"]},"roulette":"","comment":"체급 차이(진짜 크다)","author":"매소니"},
+  {"round":288,"timestamp":"2025-03-31T13:53:51.016000+00:00","course":"한신 잔디 2200m","direction":"우회전","season":"겨울","weather":"흐림","ground":"양호","condition":"저조","distCategory":"중거리","distance":2200,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["티엠","라이스샤워","쿠다","살구맛냥이","설상빙화","케이에스","초전도체스즈카","매소니","롱롱"]},"roulette":"","comment":"모두 배를 가르세요","author":"매소니"},
+  {"round":289,"timestamp":"2025-04-01T13:51:31.468000+00:00","course":"니이가타 잔디 1000m","direction":"","season":"겨울","weather":"흐림","ground":"다습","condition":"최상","distCategory":"단거리","distance":1000,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["매소니","택트","설상빙화","소리","52ra","쏠라리","케이에스","빨간조교","오페라오"]},"roulette":"","comment":"도주 농가 살려야쥬","author":"매소니"},
+  {"round":291,"timestamp":"2025-04-08T13:54:39.405000+00:00","course":"나카야마 잔디 1200m","direction":"","season":"겨울","weather":"흐림","ground":"양호","condition":"보통","distCategory":"단거리","distance":1200,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["초보팬","라이스샤워","케이에스","52ra","구스타골","잭도르","쿠다","쏠라리","초전도체스즈카","매소니"]},"roulette":"","comment":"단거리도 도주하세요 도주","author":"매소니"},
+  {"round":292,"timestamp":"2025-04-14T14:10:06.754000+00:00","course":"롱샹 잔디 2400m","direction":"","season":"여름","weather":"맑음","ground":"양호","condition":"보통","distCategory":"중거리","distance":2400,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["쏠라리","랑구","설상빙화","구스타골","매소니","치라치","오페라오","라이스샤워","소리","케이에스"]},"roulette":"","comment":"쉽노","author":"매소니"},
+  {"round":293,"timestamp":"2025-04-15T13:52:06.894000+00:00","course":"교토 잔디 3000m","direction":"","season":"가을","weather":"맑음","ground":"양호","condition":"","distCategory":"장거리","distance":3000,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["초보팬","택트","설상빙화","소리","구스타골","토미","오페라오","52ra","케이에스","쿠다"]},"roulette":"","comment":"운이 좋았네요 ㅎㅎ 이거 좋은 건가요","author":"매소니"},
+  {"round":295,"timestamp":"2025-04-21T14:05:08.343000+00:00","course":"도쿄 잔디 1600m","direction":"","season":"겨울","weather":"맑음","ground":"양호","condition":"보통","distCategory":"마일","distance":1600,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["케이에스","초보팬","라이스샤워","소리","구스타골","쌈무","잭도르","택트","슈맘도","쿠다"]},"roulette":"","comment":"세이운 밴이 우승을 만들었다","author":"매소니"},
+  {"round":296,"timestamp":"2025-04-22T14:15:25.171000+00:00","course":"교토 잔디 2200m","direction":"","season":"겨울","weather":"흐림","ground":"양호","condition":"양호","distCategory":"중거리","distance":2200,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["두라멘테","잭도르","소리","설상빙화","쏠라리","매소니","애피타이저","초보팬","살구맛냥이","야마닌"]},"roulette":"","comment":"논걸은 신이야~","author":"매소니"},
+  {"round":299,"timestamp":"2025-04-30T14:03:27.852000+00:00","course":"도쿄 잔디 2400m","direction":"","season":"가을","weather":"맑음","ground":"양호","condition":"최상","distCategory":"중거리","distance":2400,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["구스타골","소리","쌈무","초보팬","쿠다","토미","케이에스","오페라오","슈맘도"]},"roulette":"","comment":"","author":"매소니"},
+  {"round":347,"timestamp":"2025-09-16T13:55:43.915000+00:00","course":"도쿄 잔디 2300m","direction":"","season":"여름","weather":"맑음","ground":"양호","condition":"","distCategory":"중거리","distance":2300,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["애피타이저","살구맛냥이","쏠라리"]},"roulette":"","comment":"잌키온...뽑아야겠지?","author":"매소니"},
+  {"round":354,"timestamp":"2025-10-24T14:02:57.310000+00:00","course":"나카야마 더트 1800m","direction":"우","season":"가을","weather":"흐림","ground":"다습","condition":"최상","distCategory":"마일","distance":1800,"races":{"1경기":["쌀숭 루비","오페라 프린세스","오이라 무테키"],"2경기":["스골 저니","쿠다 킹","케이아스 보드카"],"3경기":["설빙 팔콘","쌀다방 시티","유체역학 타루마에"],"결승":["쿠다 킹헤일로","오페라오 프린세스","오이라 무테키","설빙 팔콘"]},"roulette":"","comment":"열심히키울땐 UD나오고 급하게키우면 UC나옴","author":"Keiaas"},
+  {"round":356,"timestamp":"2025-11-02T14:02:03.661000+00:00","course":"교토 잔디 2000m","direction":"우회전","season":"가을","weather":"흐림","ground":"양호","condition":"양호","distCategory":"중거리","distance":2000,"races":{"1경기":["쌈무 마치탄"],"2경기":["초보팬 아마존"],"3경기":["짝귀 그라스"],"결승":["쿠다 네이처","쿠다 테이오","케이아스 후진","라이스 샤워"]},"roulette":"","comment":"체급은 가끔 뺴고 허상이다","author":"Keiaas"},
+  {"round":358,"timestamp":"2025-11-16T14:01:07.661000+00:00","course":"교토 잔디 1400m","direction":"우","season":"봄","weather":"맑음","ground":"양호","condition":"양호","distCategory":"단거리","distance":1400,"races":{"1경기":["초보팬 칼스톤","짝귀 이쿠노","케이아스 비진"],"2경기":["패귀 페스타","쿠다 치요","살구맛 박신"],"3경기":["애피 치요","제퍼 미라클","설빙 박신"],"결승":["짝귀 이쿠노","애피 치요","제퍼 미라클"]},"roulette":"","comment":"이기고 싶으면 22전 뛰고오던가~","author":"Keiaas"},
+  {"round":360,"timestamp":"2025-11-24T14:00:56.028000+00:00","course":"츄쿄 잔디 1600m","direction":"좌","season":"봄","weather":"맑음","ground":"다습","condition":"최상","distCategory":"마일","distance":1600,"races":{"1경기":["케이아스 치요","포기드 골드쉽","오이라 골드쉽"],"2경기":["짝귀 플라이트","설빙 타이키","토미 오페라"],"3경기":["초보팬 스즈카","택트 루비","애피 라인"],"결승":["케이아스 치요","애피 라인","설빙 타이키"]},"roulette":"없음","comment":"결국 허상은 하볼이 허상이었다","author":"Keiaas"},
+  {"round":361,"timestamp":"2025-11-29T13:51:46.834000+00:00","course":"도쿄 잔디 2000m","direction":"","season":"여름","weather":"맑음","ground":"다습","condition":"저조","distCategory":"중거리","distance":2000,"races":{"1경기":["설빙 에이신","초보팬 에이신","쿠다 오페라"],"2경기":["애피 두라","스즈카 키세키","라이스 네이처"],"3경기":["택트 비블","토미 김렛","오이라 후진"],"결승":["토미 김렛","라이스 네이처","스즈카 키세키"]},"roulette":"- 패귀 : 아마존 / KS / 클드카 / 할도토 / 치어네이처; - 짝귀 : 김렛 / 후지 / 박신 / 나츠뱀부 / 탑로드; - 테귀 : 초코비진 / 뉴페라 / 라인 / 히시미라클; - 오귀 : 도토 / 호와와 / 웨딩파인 / 초코후진 / 비코;;;","comment":"내부대회 나머지공부 성공~","author":"Keiaas"},
+  {"round":362,"timestamp":"2025-11-30T13:55:10.394000+00:00","course":"츄쿄 잔디 1200m","direction":"좌","season":"봄","weather":"흐림","ground":"포화","condition":"최상","distCategory":"단거리","distance":1200,"races":{"1경기":["오이라 카렌짱","짝귀 루비","살구맛 아케보노"],"2경기":["설빙 마짱","쿠다 아케보노","애피타이저 킹"],"3경기":["케이아스 피박신","쌈무 쌈무","라이스 아마존"],"결승":["케이아스 피박신","살구맛 아케보노","설빙 마짱","라이스 아마존"]},"roulette":"- 패귀 : 뱀부 / 후지 / 저니 / 아마존 / 웨딩토쇼; - 짝귀 : 복순이 / 보드카 / 호와와 / 시비 / 루비(!); - 테귀 : 호와와 / 웨딩토쇼 / 떡타산 / 토쇼? / 클와아; - 오귀 : 수즈카 / 타마모 / 에이스 / 저니 / 카렌짱","comment":"마짱아 고맙다;","author":"Keiaas"},
+  {"round":363,"timestamp":"2025-12-06T13:58:55.604000+00:00","course":"후쿠시마 더트 1150m","direction":"우","season":"여름","weather":"흐림","ground":"양호","condition":"양호","distCategory":"단거리","distance":1150,"races":{"1경기":["쿠다 어큐트","케이아스 펄","애피타이저 홋코"],"2경기":["스골 뱀부","오페라오 마루젠","제퍼 제퍼"],"3경기":["라이스 윈디","유체역학 제퍼","설빙 팔콘"],"결승":["유체역학 제퍼","스골 뱀부","제퍼 제퍼","설빙 팔콘"]},"roulette":"- 패귀 : 엘콘 / 신코 / 캠도 / 블루마치탄 / 클비와 / 니시노; - 짝귀 : 강시디 / 초후진 / 스즈카 / 클드카 / 흑카렌 / 불나리; - 테귀 : 마루젠 / 로렐 / 봉ㅋㅋ / 옷갈시티 / 후지 / 웨딩탑건; - 오귀 : 클드카 / 비진 / 파머 / 어큐트 / 후진 / 캠핑키; - 냥귀 : 할크릭 / 시비 / 타이신 / 비진 / 펄 / 캠핑키","comment":"히히 재밌었습니닷","author":"Keiaas"},
+  {"round":364,"timestamp":"2025-12-13T13:51:41.328000+00:00","course":"후쿠시마 잔디 1200m","direction":"우회전","season":"봄","weather":"흐림","ground":"양호","condition":"양호","distCategory":"단거리","distance":1200,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["설빙 피박신","쿠다 프린세스","초보팬 피박신","제퍼 제퍼"]},"roulette":"- 패귀 : 뭉콘 / 힐라스 / 마짱 / 수키온; - 짝귀 : 댄싱키세키 / 루비 / 타키온 / 유니버스; - 테귀 : 위닝 / 풀아머 / 마치탄 / 브라이트 / 도토; - 오귀 : 에이스 / 윈디 / 뉴페라 / 브라이트 / 캠조던","comment":"단 판 좋 아","author":"Keiaas"},
+  {"round":366,"timestamp":"2025-12-20T14:03:43.830000+00:00","course":"나카야마 잔디 1800m","direction":"우","season":"여름","weather":"흐림","ground":"양호","condition":"양호","distCategory":"마일","distance":1800,"races":{"1경기":["케이아스 봉","쿠다 토쇼","쏠 헬리오스"],"2경기":["택트 비블","초보팬 플라이트","쌀숭 후진"],"3경기":["애피 타키온","스골 저니","살구맛 젠틸"],"결승":["쿠다 토쇼","케이아스 봉","애피 타키온"]},"roulette":"- 짝귀 : 옷갈시티 / 아르당 / 스페 / 포케; - 패귀 : 수맥퀸 / 초후진 / 보리크리 / 마블러스; - 오귀 : 캠조던 / 빙타산 / 토쇼 / 웨딩킹; - 테귀 : 비와 / 나리브 / 풀아머 / 보드카; - 냥귀 : 클보드카 / 수맥퀸 / 댄싱키세키 / 젠틸","comment":"선택권 본전 뽑음","author":"Keiaas"},
+  {"round":368,"timestamp":"2025-12-28T14:03:03.748000+00:00","course":"교토 잔디 1200m","direction":"우","season":"가을","weather":"흐림","ground":"양호","condition":"양호","distCategory":"단거리","distance":1200,"races":{"1경기":["살구맛 타이키","케이아스 마짱","슬비 카렌짱"],"2경기":["짝귀 카렌짱","쿠다 미라클","설빙 박신"],"3경기":["택트 박신","루준 마짱","토미 토쇼"],"결승":["짝귀 카렌짱","슬비 카렌짱","케이아스 마짱"]},"roulette":"- 테귀 : 복순이 / 후진 / 타키온 / 할도토 / 음이오;; - 오귀 : 후짱 / 우라라 / 에이스 / 춤치요 / 다이아;; - 패귀 : 비블 / 박신 / 뉴페라 / 에이스; - 짝귀 : 뱀부 / 흑카렌 / 겜리브 / 황팔코; - 냥귀 : 티켓 / 미라코 / 타이키 / 오페라오 / 겐지무테키","comment":"이제 나 없어도 말딸 안망하지?","author":"Keiaas"},
+  {"round":369,"timestamp":"2025-12-30T14:09:12.148000+00:00","course":"나카야마 잔디 2000m","direction":"우회전","season":"봄","weather":"흐림","ground":"포화","condition":"최상","distCategory":"중거리","distance":2000,"races":{"1경기":["설빙 타키온","제퍼 라모누","스골 젠틸"],"2경기":["케이아스 세이운","토미 오페라오","도베르 젠틸"],"3경기":["짝귀 골드쉽","오이라 아르당","택트 다이아"],"결승":["스골 젠틸","제퍼 라모누","설빙 타키온"]},"roulette":"- 짝귀 : 세자리오 / 말차카페 / 비코 / 킹 / 개선문고루시; - 패귀 : 닌자크릭 / 비코 / 파머 / 에어샤커 / 케이에스; - 테귀 : 라이스 / 루돌프 / 케이에스 / 타마모 / 말차비진; - 오귀 : 이나리원 / 팔코 / 아르당 / 니시노 / 옷갈시티","comment":"젖 = 성능","author":"Keiaas"},
+  {"round":370,"timestamp":"2026-01-01T14:14:30.315000+00:00","course":"하코다테 잔디 2000m","direction":"우","season":"겨울","weather":"흐림","ground":"다습","condition":"최상","distCategory":"중거리","distance":2000,"races":{"1경기":["케이아스 네이처","초보팬 세이운","설빙 키타산"],"2경기":["쿠다 카페","소리 롭로이","애피 봉ㅋㅋ"],"3경기":["살구맛 타키온","제퍼 롭로이","짝귀 이나리"],"결승":["케이아스 네이처","애피 봉ㅋㅋ","짝귀 이나리","살구맛 타키온","초보팬 세이운","설빙 키타산"]},"roulette":"없음","comment":"역배 좋았다","author":"Keiaas"},
+  {"round":371,"timestamp":"2026-01-02T14:12:12.512000+00:00","course":"한신 잔디 1400m","direction":"우회전","season":"봄","weather":"맑음","ground":"양호","condition":"양호","distCategory":"단거리","distance":1400,"races":{"1경기":["쿠다 아케보노","초보팬 라이언","케이아스 킹"],"2경기":["애피 킹","설빙 킹","스골 케이에스"],"3경기":["짝귀 탑건","패귀 니시노","레인보우 카렌짱"],"결승":["스골 케이에스","쌀숭이 플라워","애피타이저 킹","짝귀 마야노"]},"roulette":"- 냥귀 : 불닥 / 캠베르 / 아케보노 / 어깨빵 / 웨시노; - 테귀 : 클드카 / 클파머 / 홋코 / 세이운 / 티켓 ;; - 오귀 : 카와카미 / 뉴라라 / 세이운 / 봉ㅋㅋ / 아케보노; - 패귀 : 두라 / 스페 / 수맥퀸 / 미라코 / 웨시노 ;; - 짝귀 : 비진 / 그랑 / 탑건 / 말차비진 / 아케보노","comment":"교환권 잘썼습니다","author":"Keiaas"},
+  {"round":372,"timestamp":"2026-01-04T13:55:23.021000+00:00","course":"니가타 잔디 1800m","direction":"좌","season":"겨울","weather":"맑음","ground":"양호","condition":"양호","distCategory":"마일","distance":1800,"races":{"1경기":["애피 킹","토미 토쇼","초보팬 아마존"],"2경기":["쏠 플라이트","스골 루비","쌀 플라이트"],"3경기":["쿠다 세자리오","제퍼 제퍼","오페라오 모션"],"결승":["토미 토쇼","초보팬 아마존","쿠다 세자리오"]},"roulette":"없음","comment":"요리못하는 토쇼 개봉완료~","author":"Keiaas"},
+  {"round":373,"timestamp":"2026-01-11T14:03:46.613000+00:00","course":"도쿄 더트 1400m","direction":"좌","season":"가을","weather":"맑음","ground":"양호","condition":"양호","distCategory":"단거리","distance":1400,"races":{"1경기":["토미 니시노","제퍼 제퍼","살구맛 홋코"],"2경기":["애피 우라라","유체역학 뒤랑달","케이아스 우라라"],"3경기":["짝귀 우라라","쿠다 어큐트","패귀 디지털"],"결승":["토미 니시노","쿠다 어큐트","유체역학 뒤랑달"]},"roulette":"- 패귀 : 사오어 / 스페; / 디지털 / 토쇼 / 라이언 / 웨딩탑건; - 짝귀 : 우황 / 시킹 / 듀랑달 / UAF티켓 / 비진 / 가을롭;; - 오귀 : 무녀테 / 타마모 / 카페 / 가을유니 / 시리우스 / 대풍라이스; - 테귀 : 제퍼 / 후짱 / 사오어 / 네짱 / 다이아 / 히시미라클","comment":"1+1가능","author":"Keiaas"},
+  {"round":374,"timestamp":"2026-01-12T14:30:48.419000+00:00","course":"삿포로 잔디 1800m","direction":"우","season":"봄","weather":"흐림","ground":"양호","condition":"최상","distCategory":"마일","distance":1800,"races":{"1경기":[],"2경기":[],"3경기":[],"결승":["토미 오페라오","케이아스 봉","유체역학 뒤랑달","라이스 라이스"]},"roulette":"- 패귀 : 나츠뱀부 / 라이스? / 어큐트 / 크라운; - 짝귀 : 할도토 / 로렐 / 디지털 / 흑카렌; - 테귀 : 비블 / 시킹 / 이나리 / 할샤커; - 오귀 : 아야베 / 할보리크리 / 카페 / 젠틸","comment":"천황상도 이기자 오페라오 화이팅~","author":"Keiaas"},
+  {"round":375,"timestamp":"2026-01-17T14:11:58.779000+00:00","course":"교토 잔디 2400m","direction":"우","season":"봄","weather":"맑음","ground":"양호","condition":"최상","distCategory":"중거리","distance":2400,"races":{"1경기":["케이아스","오페라오","라이스샤워(추입)"],"2경기":["플레어","쿠다(선입 조던)","토미"],"3경기":["매소니","초보팬","애피타이저"],"결승":["케이아스","오페라오","라이스샤워(추입)"]},"roulette":"","comment":"그를 기억하며","author":"Keiaas"},
+  {"round":376,"timestamp":"2026-01-18T14:23:28.655000+00:00","course":"나카야마 잔디 1200m","direction":"우회전","season":"여름","weather":"흐림","ground":"양호","condition":"양호","distCategory":"단거리","distance":1200,"races":{"1경기":["라이스 스카이","제퍼 제퍼","소리 라인"],"2경기":["설빙 니시노","초보팬 뒤랑달","쿠다 아케보노"],"3경기":["케이아스 카렌짱","슬비 카렌짱","네이처 라이언"],"결승":["소리 라인","슬비 카렌짱","설빙 니시노"]},"roulette":"- 케귀 : 뱀부 / 웨딩니시노 / 다스카 / 빙닭 / 케이에스; - 패귀 : 헬리오스 / 복순이 / 뒤랑달 / 세이운 / 아야베; - 테귀 : 수즈카 / 캠도베르 / 활토노 / 웨딩탑건 / 황건적","comment":"오 오랜만에 우승이네","author":"Keiaas"},
+  {"round":377,"timestamp":"2026-01-25T14:08:06.304000+00:00","course":"나카야마 잔디 1800m","direction":"우","season":"여름","weather":"맑음","ground":"다습","condition":"보통","distCategory":"마일","distance":1800,"races":{"1경기":["유체역학 키타산","살구맛 봉","라이스 라이스"],"2경기":["토미 오페라","애피 라모누","초보팬 봉"],"3경기":["쿠다 뒤랑달","소리 테이오","네이처 다이아"],"결승":["소리 테이오","초보팬 봉","라이스 라이스"]},"roulette":"- 짝귀 : 불나리원 / 테이오 / 트윈터보 / 다이와스칼렛; - 패귀 : 라이스샤워 / 시킹더펄 / 뒤랑달 / 니시노; - 케귀 : 윈디 / 타이키 / 옷갈시티 / 네오유니; - 테귀 : 아야베 / 어큐트 / 크라운 / 토쇼","comment":"약물은... 치료를 목적으로 어쩌구 저쩌구","author":"Keiaas"},
+  {"round":378,"timestamp":"2026-01-28T14:11:34.122000+00:00","course":"교토 더트 1800m","direction":"우","season":"여름","weather":"흐림","ground":"양호","condition":"양호","distCategory":"마일","distance":1800,"races":{"1경기":["소리 트랜","케이아스 비코","초보팬 아마존"],"2경기":["유체역학 디지털","슬비 봉ㅋㅋ","살구맛 타이키"],"3경기":["네이처 로렐","설빙 디지털","택트 제퍼"],"결승":["소리 트랜","설빙 디지털","네이처 로렐"]},"roulette":"- 패귀 : 아오루비; - 케귀 : 로렐 / 카페 / 치어네이처 / 비코 / 클스카 / 두라; - 테귀 : 루돌프 / 할보리 / 헬리오스 / 니시노 / 세자리오 / 터보","comment":"도주단에 합류하라~~","author":"Keiaas"},
+  {"round":379,"timestamp":"2026-02-04T14:00:08.976000+00:00","course":"도쿄 잔디 1600m","direction":"","season":"겨울","weather":"흐림","ground":"다습","condition":"저조","distCategory":"마일","distance":1600,"races":{"1경기":["슬비 플라이트","애피 펄","제퍼 펠로"],"2경기":["유체역학 봉ㅋㅋ","택트 펠로","토미 비진"],"3경기":["초보팬 펄","쿠다 뒤랑달","살구맛 봉ㅋㅋ"],"결승":["슬비 플라이트","유체역학 봉ㅋㅋ","초보팬 펄"]},"roulette":"- 토미 : 말차비진","comment":"후짱 이쁘자나","author":"Keiaas"},
+  {"round":380,"timestamp":"2026-02-08T14:13:37.399000+00:00","course":"나카야마 잔디 3600m","direction":"우","season":"여름","weather":"맑음","ground":"양호","condition":"최상","distCategory":"장거리","distance":3600,"races":{"1경기":["슬비 탑건","설빙 탑건","플레어 브라이트"],"2경기":["스골 브라이트","애피 샤커","뉴짝귀 보리크리"],"3경기":["쿠다 미라클","케이아스 사토노","소리 롭로이"],"결승":["애피 샤커","쿠다 미라클","스골 브라이트","소리 롭로이"]},"roulette":"없음","comment":"츄러스 제조기 애호해야겠지?","author":"Keiaas"}
+];
+
+// ===== 룰렛 시스템 데이터 (인라인 임베드) =====
+const IMG_BASE = 'https://raw.githubusercontent.com/keiaaskim/uma-race-system/main/images/';
+const ROOT_IMG_BASE = 'https://raw.githubusercontent.com/keiaaskim/uma-race-system/main/';
+
+const supportCards = {"speed":[{"name":"골드쉽(내적체험)","file":"스피드_골드쉽(내적체험)"},{"name":"골드쉽(우마무스메마니아)","file":"스피드_골드쉽(우마무스메마니아)","isOp":true},{"name":"골드시티","file":"스피드_골드시티"},{"name":"나리타브라이언(괴물)","file":"스피드_나리타브라이언(괴물)","isOp":true},{"name":"나리타브라이언(불굴의정신)","file":"스피드_나리타브라이언(불굴의정신)"},{"name":"나리타탑로드","file":"스피드_나리타탑로드"},{"name":"니시노플라워","file":"스피드_니시노플라워"},{"name":"다이타쿠헬리오스","file":"스피드_다이타쿠헬리오스"},{"name":"두라멘테","file":"스피드_두라멘테","isOp":true},{"name":"마루젠스키","file":"스피드_마루젠스키","isOp":true},{"name":"마블러스선데이","file":"스피드_마블러스선데이","isOp":true},{"name":"마야노탑건","file":"스피드_마야노탑건"},{"name":"마치카네후쿠키타루","file":"스피드_마치카네후쿠키타루"},{"name":"메지로도베르","file":"스피드_메지로도베르","isOp":true},{"name":"메지로아르당","file":"스피드_메지로아르당"},{"name":"메지로파머","file":"스피드_메지로파머"},{"name":"미호노부르봉","file":"스피드_미호노부르봉","isOp":true},{"name":"베르시나","file":"스피드_베르시나"},{"name":"비블로스(꼬리솟구쳐오르기)","file":"스피드_비블로스(꼬리솟구쳐오르기)","isOp":true},{"name":"비블로스(릴랙스)","file":"스피드_비블로스(릴랙스)"},{"name":"비코페가수스","file":"스피드_비코페가수스"},{"name":"사운드오브어스","file":"스피드_사운드오브어스"},{"name":"사일런스스즈카(개척자)","file":"스피드_사일런스스즈카(개척자)"},{"name":"사일런스스즈카(도망자)","file":"스피드_사일런스스즈카(도망자)"},{"name":"사쿠라바쿠신오(로켓스타트)","file":"스피드_사쿠라바쿠신오(로켓스타트)","isOp":true},{"name":"사쿠라바쿠신오(스프린트터보)","file":"스피드_사쿠라바쿠신오(스프린트터보)"},{"name":"스마트팔콘","file":"스피드_스마트팔콘","isOp":true},{"name":"스윕토쇼","file":"스피드_스윕토쇼"},{"name":"스틸인러브","file":"스피드_스틸인러브","isOp":true},{"name":"스페셜위크","file":"스피드_스페셜위크"},{"name":"시킹더펄","file":"스피드_시킹더펄"},{"name":"아그네스타키온","file":"스피드_아그네스타키온","isOp":true},{"name":"야마닌제퍼","file":"스피드_야마닌제퍼","isOp":true},{"name":"에어그루브","file":"스피드_에어그루브"},{"name":"에어샤커","file":"스피드_에어샤커"},{"name":"에이신플래시","file":"스피드_에이신플래시","isOp":true},{"name":"엘콘도르파사","file":"스피드_엘콘도르파사","isOp":true},{"name":"정글포켓","file":"스피드_정글포켓","isOp":true},{"name":"젠노롭로이","file":"스피드_젠노롭로이"},{"name":"젠틸돈나","file":"스피드_젠틸돈나"},{"name":"카와카미프린세스","file":"스피드_카와카미프린세스"},{"name":"카츠라기에이스","file":"스피드_카츠라기에이스"},{"name":"키타산블랙","file":"스피드_키타산블랙","isOp":true},{"name":"타이키셔틀","file":"스피드_타이키셔틀","isOp":true},{"name":"토센조던","file":"스피드_토센조던"},{"name":"토카이테이오(라이트닝스텝)","file":"스피드_토카이테이오(라이트닝스텝)"},{"name":"토카이테이오(신들린스텝)","file":"스피드_토카이테이오(신들린스텝)"},{"name":"토카이테이오(일진광풍)","file":"스피드_토카이테이오(일진광풍)"},{"name":"트윈터보","file":"스피드_트윈터보"},{"name":"파인모션","file":"스피드_파인모션"}],"stamina":[{"name":"골드쉽","file":"스태미너_골드쉽"},{"name":"나리타브라이언","file":"스태미너_나리타브라이언"},{"name":"나카야마페스타","file":"스태미너_나카야마페스타"},{"name":"단츠플레임","file":"스태미너_단츠플레임","isOp":true},{"name":"두라멘테","file":"스태미너_두라멘테"},{"name":"라이스샤워","file":"스태미너_라이스샤워"},{"name":"맨하탄카페(스태미너그리드)","file":"스태미너_맨하탄카페(스태미너그리드)"},{"name":"맨하탄카페(태연자약)","file":"스태미너_맨하탄카페(태연자약)"},{"name":"메이쇼도토","file":"스태미너_메이쇼도토"},{"name":"메지로맥퀸(민첩함의너머로)","file":"스태미너_메지로맥퀸(민첩함의너머로)","isOp":true},{"name":"메지로맥퀸(쿨다운)","file":"스태미너_메지로맥퀸(쿨다운)"},{"name":"메지로브라이트","file":"스태미너_메지로브라이트"},{"name":"메지로파머","file":"스태미너_메지로파머","isOp":true},{"name":"미호노부르봉","file":"스태미너_미호노부르봉"},{"name":"보드카","file":"스태미너_보드카"},{"name":"비와하야히데","file":"스태미너_비와하야히데"},{"name":"사일런스스즈카","file":"스태미너_사일런스스즈카"},{"name":"사쿠라로렐(능숙한환승)","file":"스태미너_사쿠라로렐(능숙한환승)"},{"name":"사쿠라로렐(대담무쌍)","file":"스태미너_사쿠라로렐(대담무쌍)"},{"name":"사쿠라치요노오","file":"스태미너_사쿠라치요노오"},{"name":"사토노다이아몬드(KFC)","file":"스태미너_사토노다이아몬드(KFC)"},{"name":"사토노다이아몬드","file":"스태미너_사토노다이아몬드"},{"name":"세이운스카이","file":"스태미너_세이운스카이"},{"name":"슈발그랑","file":"스태미너_슈발그랑","isOp":true},{"name":"슈퍼크릭","file":"스태미너_슈퍼크릭","isOp":true},{"name":"스페셜위크","file":"스태미너_스페셜위크","isOp":true},{"name":"심볼리루돌프","file":"스태미너_심볼리루돌프"},{"name":"심볼리크리스에스","file":"스태미너_심볼리크리스에스","isOp":true},{"name":"어드마이어베가","file":"스태미너_어드마이어베가"},{"name":"에어샤커","file":"스태미너_에어샤커"},{"name":"원더어큐트(전속전진)","file":"스태미너_원더어큐트(전속전진)"},{"name":"위닝티켓","file":"스태미너_위닝티켓"},{"name":"이쿠노딕터스","file":"스태미너_이쿠노딕터스"},{"name":"젠노롭로이","file":"스태미너_젠노롭로이"},{"name":"타니노김렛","file":"스태미너_타니노김렛","isOp":true},{"name":"타마모크로스","file":"스태미너_타마모크로스"},{"name":"트윈터보","file":"스태미너_트윈터보"},{"name":"홋코타루마에","file":"스태미너_홋코타루마에","isOp":true},{"name":"히시미라클","file":"스태미너_히시미라클","isOp":true}],"power":[{"name":"그래스원더","file":"파워_그래스원더"},{"name":"나리타브라이언","file":"파워_나리타브라이언","isOp":true},{"name":"나이스네이처","file":"파워_나이스네이처","isOp":true},{"name":"니시노플라워","file":"파워_니시노플라워","isOp":true},{"name":"다이와스칼렛(레이스플래너)","file":"파워_다이와스칼렛(레이스플래너)"},{"name":"다이와스칼렛(치열한승부)","file":"파워_다이와스칼렛(치열한승부)"},{"name":"다이이치루비","file":"파워_다이이치루비","isOp":true},{"name":"다이타쿠헬리오스","file":"파워_다이타쿠헬리오스"},{"name":"라이스샤워","file":"파워_라이스샤워","isOp":true},{"name":"마블러스선데이","file":"파워_마블러스선데이"},{"name":"마야노탑건","file":"파워_마야노탑건","isOp":true},{"name":"메지로라모누","file":"파워_메지로라모누","isOp":true},{"name":"뱀부메모리(승천하는용)","file":"파워_뱀부메모리(승천하는용)"},{"name":"뱀부메모리(월영일섬)","file":"파워_뱀부메모리(월영일섬)"},{"name":"보드카","file":"파워_보드카"},{"name":"비코페가수스","file":"파워_비코페가수스","isOp":true},{"name":"사운드오브어스","file":"파워_사운드오브어스"},{"name":"세이운스카이","file":"파워_세이운스카이","isOp":true},{"name":"스마트팔콘","file":"파워_스마트팔콘"},{"name":"심볼리크리스에스","file":"파워_심볼리크리스에스"},{"name":"아그네스디지털","file":"파워_아그네스디지털"},{"name":"야에노무테키","file":"파워_야에노무테키"},{"name":"어드마이어베가","file":"파워_어드마이어베가"},{"name":"에스푸아르시티","file":"파워_에스푸아르시티","isOp":true},{"name":"에어그루브","file":"파워_에어그루브"},{"name":"엘콘도르파사","file":"파워_엘콘도르파사"},{"name":"오구리캡","file":"파워_오구리캡"},{"name":"원더어큐트","file":"파워_원더어큐트","isOp":true},{"name":"위닝티켓(전심전력)","file":"파워_위닝티켓(전심전력)"},{"name":"위닝티켓(톱기어)","file":"파워_위닝티켓(톱기어)","isOp":true},{"name":"이쿠노딕터스","file":"파워_이쿠노딕터스"},{"name":"정글포켓","file":"파워_정글포켓"},{"name":"츠루마루츠요시","file":"파워_츠루마루츠요시","isOp":true},{"name":"카와카미프린세스","file":"파워_카와카미프린세스"},{"name":"케이에스미라클","file":"파워_케이에스미라클","isOp":true},{"name":"킹헤일로","file":"파워_킹헤일로"},{"name":"타니노김렛","file":"파워_타니노김렛"},{"name":"타마모크로스","file":"파워_타마모크로스"},{"name":"토카이테이오","file":"파워_토카이테이오"},{"name":"티엠오페라오","file":"파워_티엠오페라오"},{"name":"하루우라라(강철같은의지)","file":"파워_하루우라라(강철같은의지)"},{"name":"하루우라라(노력가)","file":"파워_하루우라라(노력가)"},{"name":"히시아마존","file":"파워_히시아마존","isOp":true}],"guts":[{"name":"그래스원더","file":"근성_그래스원더"},{"name":"노리즌","file":"근성_노리즌"},{"name":"다이와스칼렛","file":"근성_다이와스칼렛","isOp":true},{"name":"라인크라프트","file":"근성_라인크라프트"},{"name":"마블러스선데이","file":"근성_마블러스선데이"},{"name":"마치카네탄호이저","file":"근성_마치카네탄호이저"},{"name":"마치카네후쿠키타루","file":"근성_마치카네후쿠키타루"},{"name":"메지로라이언(노력가)","file":"근성_메지로라이언(노력가)"},{"name":"메지로라이언(승리를향한집념)","file":"근성_메지로라이언(승리를향한집념)"},{"name":"메지로파머","file":"근성_메지로파머"},{"name":"뱀부메모리","file":"근성_뱀부메모리"},{"name":"보드카","file":"근성_보드카","isOp":true},{"name":"부에나비스타","file":"근성_부에나비스타"},{"name":"비블로스","file":"근성_비블로스","isOp":true},{"name":"사쿠라바쿠신오","file":"근성_사쿠라바쿠신오"},{"name":"사쿠라치요노오","file":"근성_사쿠라치요노오"},{"name":"스페셜위크(노도의추격)","file":"근성_스페셜위크(노도의추격)"},{"name":"스페셜위크(전심전력)","file":"근성_스페셜위크(전심전력)"},{"name":"신코윈디","file":"근성_신코윈디"},{"name":"심볼리루돌프","file":"근성_심볼리루돌프","isOp":true},{"name":"심볼리크리스에스","file":"근성_심볼리크리스에스"},{"name":"아이네스후진","file":"근성_아이네스후진"},{"name":"야마닌제퍼","file":"근성_야마닌제퍼"},{"name":"야에노무테키","file":"근성_야에노무테키"},{"name":"엘콘도르파사","file":"근성_엘콘도르파사"},{"name":"오르페브르","file":"근성_오르페브르","isOp":true},{"name":"위닝티켓","file":"근성_위닝티켓"},{"name":"유키노비진","file":"근성_유키노비진"},{"name":"이쿠노딕터스","file":"근성_이쿠노딕터스"},{"name":"정글포켓","file":"근성_정글포켓"},{"name":"케이에스미라클","file":"근성_케이에스미라클","isOp":true},{"name":"키타산블랙","file":"근성_키타산블랙"},{"name":"킹헤일로","file":"근성_킹헤일로","isOp":true},{"name":"탭댄스시티","file":"근성_탭댄스시티","isOp":true},{"name":"트윈터보(출력1000%)","file":"근성_트윈터보(출력1000%)","isOp":true},{"name":"트윈터보(킬러튠)","file":"근성_트윈터보(킬러튠)"},{"name":"파인모션","file":"근성_파인모션"},{"name":"하루우라라","file":"근성_하루우라라","isOp":true},{"name":"후지키세키","file":"근성_후지키세키","isOp":true},{"name":"히시아마존","file":"근성_히시아마존","isOp":true},{"name":"히시아케보노","file":"근성_히시아케보노"}],"intelligence":[{"name":"나리타타이신(육박하는그림자)","file":"지능_나리타타이신(육박하는그림자)","isOp":true},{"name":"나리타타이신(잠자는사자)","file":"지능_나리타타이신(잠자는사자)"},{"name":"나이스네이처","file":"지능_나이스네이처"},{"name":"나카야마페스타(도박사)","file":"지능_나카야마페스타(도박사)"},{"name":"나카야마페스타(우회전의귀신)","file":"지능_나카야마페스타(우회전의귀신)","isOp":true},{"name":"네오유니버스","file":"지능_네오유니버스","isOp":true},{"name":"노스플라이트","file":"지능_노스플라이트"},{"name":"니시노플라워","file":"지능_니시노플라워"},{"name":"다이와스칼렛","file":"지능_다이와스칼렛","isOp":true},{"name":"다이타쿠헬리오스","file":"지능_다이타쿠헬리오스"},{"name":"라이스샤워","file":"지능_라이스샤워"},{"name":"마치카네탄호이저","file":"지능_마치카네탄호이저"},{"name":"맨하탄카페","file":"지능_맨하탄카페","isOp":true},{"name":"메지로도베르","file":"지능_메지로도베르"},{"name":"메지로라모누","file":"지능_메지로라모누","isOp":true},{"name":"메지로맥퀸","file":"지능_메지로맥퀸","isOp":true},{"name":"미스터시비","file":"지능_미스터시비"},{"name":"미호노부르봉(선수필승)","file":"지능_미호노부르봉(선수필승)"},{"name":"미호노부르봉(만반의준비)","file":"지능_미호노부르봉(만반의준비)","isOp":true},{"name":"비와하야히데","file":"지능_비와하야히데"},{"name":"사토노다이아몬드(잠복태세)","file":"지능_사토노다이아몬드(잠복태세)"},{"name":"사토노다이아몬드","file":"지능_사토노다이아몬드","isOp":true},{"name":"세이운스카이","file":"지능_세이운스카이"},{"name":"세자리오","file":"지능_세자리오"},{"name":"스윕토쇼","file":"지능_스윕토쇼"},{"name":"시리우스심볼리","file":"지능_시리우스심볼리"},{"name":"심볼리크리스에스","file":"지능_심볼리크리스에스"},{"name":"애스턴마짱","file":"지능_애스턴마짱","isOp":true},{"name":"에어그루브","file":"지능_에어그루브"},{"name":"에어샤커","file":"지능_에어샤커"},{"name":"오구리캡","file":"지능_오구리캡"},{"name":"유키노비진","file":"지능_유키노비진"},{"name":"카렌짱","file":"지능_카렌짱"},{"name":"코파노리키","file":"지능_코파노리키","isOp":true},{"name":"타이키셔틀","file":"지능_타이키셔틀","isOp":true},{"name":"토카이테이오","file":"지능_토카이테이오"},{"name":"티엠오페라오","file":"지능_티엠오페라오","isOp":true},{"name":"파인모션","file":"지능_파인모션"},{"name":"히시아케보노","file":"지능_히시아케보노"}],"group":[{"name":"계속새겨나가는자들","file":"그룹_계속새겨나가는자들"},{"name":"시조이자인도하는자","file":"그룹_시조이자인도하는자"},{"name":"옥좌에모인자들","file":"그룹_옥좌에모인자들"},{"name":"팀시리우스","file":"그룹_팀시리우스"}],"friend":[{"name":"라이트헬로","file":"친구_라이트헬로"},{"name":"사타케메이","file":"친구_사타케메이"},{"name":"아시카와이사장","file":"친구_아시카와이사장"},{"name":"안심자와사사미","file":"친구_안심자와사사미"},{"name":"츠루기료카","file":"친구_츠루기료카"},{"name":"하야카와타즈나","file":"친구_하야카와타즈나"}]};
+
+const characters = [{"name":"골드쉽(Larc)","file":"골드쉽(Larc)"},{"name":"골드쉽(수영복)","file":"골드쉽(수영복)"},{"name":"골드쉽","file":"골드쉽"},{"name":"골드시티(축제)","file":"골드시티(축제)"},{"name":"골드시티","file":"골드시티"},{"name":"그래스원더(새해)","file":"그래스원더(새해)"},{"name":"그래스원더(판타지)","file":"그래스원더(판타지)"},{"name":"그래스원더","file":"그래스원더"},{"name":"나리타브라이언(Blaze)","file":"나리타브라이언(Blaze)"},{"name":"나리타브라이언","file":"나리타브라이언"},{"name":"나리타타이신(메카)","file":"나리타타이신(메카)"},{"name":"나리타타이신(스팀펑크)","file":"나리타타이신(스팀펑크)"},{"name":"나리타타이신","file":"나리타타이신"},{"name":"나리타탑로드(크리스마스)","file":"나리타탑로드(크리스마스)"},{"name":"나리타탑로드","file":"나리타탑로드"},{"name":"나이스네이처(새해)","file":"나이스네이처(새해)"},{"name":"나이스네이처(치어리더)","file":"나이스네이처(치어리더)"},{"name":"나이스네이처","file":"나이스네이처"},{"name":"나카야마페스타","file":"나카야마페스타"},{"name":"네오유니버스(가을)","file":"네오유니버스(가을)"},{"name":"네오유니버스","file":"네오유니버스"},{"name":"노스플라이트","file":"노스플라이트"},{"name":"니시노플라워(웨딩)","file":"니시노플라워(웨딩)"},{"name":"니시노플라워","file":"니시노플라워"},{"name":"다이와스칼렛(크리스마스)","file":"다이와스칼렛(크리스마스)"},{"name":"다이와스칼렛","file":"다이와스칼렛"},{"name":"다이이치루비(무도회)","file":"다이이치루비(무도회)"},{"name":"다이이치루비","file":"다이이치루비"},{"name":"다이타쿠헬리오스(무도회)","file":"다이타쿠헬리오스(무도회)"},{"name":"다이타쿠헬리오스","file":"다이타쿠헬리오스"},{"name":"두라멘테","file":"두라멘테"},{"name":"듀란달","file":"듀란달"},{"name":"드림저니","file":"드림저니"},{"name":"라이스샤워(대풍식제)","file":"라이스샤워(대풍식제)"},{"name":"라이스샤워(할로윈)","file":"라이스샤워(할로윈)"},{"name":"라이스샤워","file":"라이스샤워"},{"name":"라인크라프트","file":"라인크라프트"},{"name":"마루젠스키(수영복)","file":"마루젠스키(수영복)"},{"name":"마루젠스키","file":"마루젠스키"},{"name":"마블러스선데이","file":"마블러스선데이"},{"name":"마야노탑건(웨딩)","file":"마야노탑건(웨딩)"},{"name":"마야노탑건(할로윈)","file":"마야노탑건(할로윈)"},{"name":"마야노탑건","file":"마야노탑건"},{"name":"마치카네탄호이저(운동회)","file":"마치카네탄호이저(운동회)"},{"name":"마치카네탄호이저","file":"마치카네탄호이저"},{"name":"마치카네후쿠키타루(풀아머)","file":"마치카네후쿠키타루(풀아머)"},{"name":"마치카네후쿠키타루","file":"마치카네후쿠키타루"},{"name":"맨하탄카페(발렌타인)","file":"맨하탄카페(발렌타인)"},{"name":"맨하탄카페","file":"맨하탄카페"},{"name":"메이쇼도토(할로윈)","file":"메이쇼도토(할로윈)"},{"name":"메이쇼도토","file":"메이쇼도토"},{"name":"메지로도베르(바캉스)","file":"메지로도베르(바캉스)"},{"name":"메지로도베르","file":"메지로도베르"},{"name":"메지로라모누","file":"메지로라모누"},{"name":"메지로라이언(발렌타인)","file":"메지로라이언(발렌타인)"},{"name":"메지로라이언","file":"메지로라이언"},{"name":"메지로맥퀸(수영복)","file":"메지로맥퀸(수영복)"},{"name":"메지로맥퀸(애니콜라보)","file":"메지로맥퀸(애니콜라보)"},{"name":"메지로맥퀸","file":"메지로맥퀸"},{"name":"메지로브라이트(크리스마스)","file":"메지로브라이트(크리스마스)"},{"name":"메지로브라이트","file":"메지로브라이트"},{"name":"메지로아르당(무도회)","file":"메지로아르당(무도회)"},{"name":"메지로아르당","file":"메지로아르당"},{"name":"메지로파머(크리스마스)","file":"메지로파머(크리스마스)"},{"name":"메지로파머","file":"메지로파머"},{"name":"미스터시비","file":"미스터시비"},{"name":"미호노부르봉(발렌타인)","file":"미호노부르봉(발렌타인)"},{"name":"미호노부르봉","file":"미호노부르봉"},{"name":"뱀부메모리(여름)","file":"뱀부메모리(여름)"},{"name":"뱀부메모리","file":"뱀부메모리"},{"name":"버블검펠로","file":"버블검펠로"},{"name":"보드카(크리스마스)","file":"보드카(크리스마스)"},{"name":"보드카","file":"보드카"},{"name":"비블로스","file":"비블로스"},{"name":"비와하야히데(메카)","file":"비와하야히데(메카)"},{"name":"비와하야히데(크리스마스)","file":"비와하야히데(크리스마스)"},{"name":"비와하야히데","file":"비와하야히데"},{"name":"비코페가수스","file":"비코페가수스"},{"name":"사운드오브어스","file":"사운드오브어스"},{"name":"사일런스스즈카(수영복)","file":"사일런스스즈카(수영복)"},{"name":"사일런스스즈카","file":"사일런스스즈카"},{"name":"사쿠라로렐","file":"사쿠라로렐"},{"name":"사쿠라바쿠신오(운동회)","file":"사쿠라바쿠신오(운동회)"},{"name":"사쿠라바쿠신오","file":"사쿠라바쿠신오"},{"name":"사쿠라치요노오(무도회)","file":"사쿠라치요노오(무도회)"},{"name":"사쿠라치요노오","file":"사쿠라치요노오"},{"name":"사토노다이아몬드(Larc)","file":"사토노다이아몬드(Larc)"},{"name":"사토노다이아몬드(새해)","file":"사토노다이아몬드(새해)"},{"name":"사토노다이아몬드","file":"사토노다이아몬드"},{"name":"사토노크라운","file":"사토노크라운"},{"name":"세이운스카이(무도회)","file":"세이운스카이(무도회)"},{"name":"세이운스카이","file":"세이운스카이"},{"name":"세자리오","file":"세자리오"},{"name":"슈발그랑","file":"슈발그랑"},{"name":"슈퍼크릭(전투복장)","file":"슈퍼크릭(전투복장)"},{"name":"슈퍼크릭(할로윈)","file":"슈퍼크릭(할로윈)"},{"name":"슈퍼크릭","file":"슈퍼크릭"},{"name":"스마트팔콘(그랜드라이브)","file":"스마트팔콘(그랜드라이브)"},{"name":"스마트팔콘","file":"스마트팔콘"},{"name":"스윕토쇼(웨딩)","file":"스윕토쇼(웨딩)"},{"name":"스윕토쇼","file":"스윕토쇼"},{"name":"스페셜위크(수영복)","file":"스페셜위크(수영복)"},{"name":"스페셜위크(총대장)","file":"스페셜위크(총대장)"},{"name":"스페셜위크","file":"스페셜위크"},{"name":"시리우스심볼리","file":"시리우스심볼리"},{"name":"시킹더펄(할로윈)","file":"시킹더펄(할로윈)"},{"name":"시킹더펄","file":"시킹더펄"},{"name":"신코윈디","file":"신코윈디"},{"name":"심볼리루돌프(축제)","file":"심볼리루돌프(축제)"},{"name":"심볼리루돌프","file":"심볼리루돌프"},{"name":"심볼리크리스에스(할로윈)","file":"심볼리크리스에스(할로윈)"},{"name":"심볼리크리스에스","file":"심볼리크리스에스"},{"name":"아그네스디지털(할로윈)","file":"아그네스디지털(할로윈)"},{"name":"아그네스디지털","file":"아그네스디지털"},{"name":"아그네스타키온(시그마)","file":"아그네스타키온(시그마)"},{"name":"아그네스타키온(수영복)","file":"아그네스타키온(수영복)"},{"name":"아그네스타키온","file":"아그네스타키온"},{"name":"아이네스후진(발렌타인)","file":"아이네스후진(발렌타인)"},{"name":"아이네스후진","file":"아이네스후진"},{"name":"애스턴마짱","file":"애스턴마짱"},{"name":"야마닌제퍼","file":"야마닌제퍼"},{"name":"야에노무테키(전투복장)","file":"야에노무테키(전투복장)"},{"name":"야에노무테키","file":"야에노무테키"},{"name":"어드마이어베가(크리스마스)","file":"어드마이어베가(크리스마스)"},{"name":"어드마이어베가","file":"어드마이어베가"},{"name":"에어그루브(웨딩)","file":"에어그루브(웨딩)"},{"name":"에어그루브","file":"에어그루브"},{"name":"에어메사이어","file":"에어메사이어"},{"name":"에어샤커(할로윈)","file":"에어샤커(할로윈)"},{"name":"에어샤커","file":"에어샤커"},{"name":"에이신플래시(발렌타인)","file":"에이신플래시(발렌타인)"},{"name":"에이신플래시(여름)","file":"에이신플래시(여름)"},{"name":"에이신플래시","file":"에이신플래시"},{"name":"엘콘도르파사(판타지)","file":"엘콘도르파사(판타지)"},{"name":"엘콘도르파사","file":"엘콘도르파사"},{"name":"오구리캡(크리스마스)","file":"오구리캡(크리스마스)"},{"name":"오구리캡","file":"오구리캡"},{"name":"원더어큐트","file":"원더어큐트"},{"name":"위닝티켓(UAF)","file":"위닝티켓(UAF)"},{"name":"위닝티켓(스팀펑크)","file":"위닝티켓(스팀펑크)"},{"name":"위닝티켓","file":"위닝티켓"},{"name":"윈바리아시옹","file":"윈바리아시옹"},{"name":"유키노비진(발렌타인)","file":"유키노비진(발렌타인)"},{"name":"유키노비진","file":"유키노비진"},{"name":"이나리원(축제)","file":"이나리원(축제)"},{"name":"이나리원","file":"이나리원"},{"name":"이쿠노딕터스","file":"이쿠노딕터스"},{"name":"정글포켓","file":"정글포켓"},{"name":"젠노롭로이(가을)","file":"젠노롭로이(가을)"},{"name":"젠노롭로이","file":"젠노롭로이"},{"name":"젠틸돈나","file":"젠틸돈나"},{"name":"츠루마루츠요시","file":"츠루마루츠요시"},{"name":"카렌짱(웨딩)","file":"카렌짱(웨딩)"},{"name":"카렌짱","file":"카렌짱"},{"name":"카와카미프린세스(축제)","file":"카와카미프린세스(축제)"},{"name":"카와카미프린세스","file":"카와카미프린세스"},{"name":"카츠라기에이스","file":"카츠라기에이스"},{"name":"칼스톤라이트오","file":"칼스톤라이트오"},{"name":"케이에스미라클","file":"케이에스미라클"},{"name":"코파노리키","file":"코파노리키"},{"name":"키타산블랙(새해)","file":"키타산블랙(새해)"},{"name":"키타산블랙(애니콜라보)","file":"키타산블랙(애니콜라보)"},{"name":"키타산블랙","file":"키타산블랙"},{"name":"킹헤일로(웨딩)","file":"킹헤일로(웨딩)"},{"name":"킹헤일로(치어리더)","file":"킹헤일로(치어리더)"},{"name":"킹헤일로","file":"킹헤일로"},{"name":"타니노김렛","file":"타니노김렛"},{"name":"타마모크로스(축제)","file":"타마모크로스(축제)"},{"name":"타마모크로스","file":"타마모크로스"},{"name":"타이키셔틀(캠핑)","file":"타이키셔틀(캠핑)"},{"name":"타이키셔틀","file":"타이키셔틀"},{"name":"탭댄스시티","file":"탭댄스시티"},{"name":"토센조던(여름)","file":"토센조던(여름)"},{"name":"토센조던","file":"토센조던"},{"name":"토카이테이오(애니콜라보)","file":"토카이테이오(애니콜라보)"},{"name":"토카이테이오(축제)","file":"토카이테이오(축제)"},{"name":"토카이테이오","file":"토카이테이오"},{"name":"트랜센드","file":"트랜센드"},{"name":"트윈터보","file":"트윈터보"},{"name":"티엠오페라오(새해)","file":"티엠오페라오(새해)"},{"name":"티엠오페라오","file":"티엠오페라오"},{"name":"파인모션(웨딩)","file":"파인모션(웨딩)"},{"name":"파인모션","file":"파인모션"},{"name":"하루우라라(새해)","file":"하루우라라(새해)"},{"name":"하루우라라","file":"하루우라라"},{"name":"홋코타루마에(여름)","file":"홋코타루마에(여름)"},{"name":"홋코타루마에","file":"홋코타루마에"},{"name":"후지키세키(무도회)","file":"후지키세키(무도회)"},{"name":"후지키세키","file":"후지키세키"},{"name":"히시미라클","file":"히시미라클"},{"name":"히시아마존(웨딩)","file":"히시아마존(웨딩)"},{"name":"히시아마존","file":"히시아마존"},{"name":"히시아케보노","file":"히시아케보노"}];
+
+const trackData = {
+  tracks: [
+    {name:'삿포로 경마장',type:'잔디',distances:['1200m','1500m','1800m','2000m','2600m'],hasPosition:false},
+    {name:'삿포로 경마장',type:'더트',distances:['1000m','1700m','2400m'],hasPosition:false},
+    {name:'하코다테 경마장',type:'잔디',distances:['1000m','1200m','1800m','2000m','2600m'],hasPosition:false},
+    {name:'하코다테 경마장',type:'더트',distances:['1000m','1700m','2400m'],hasPosition:false},
+    {name:'니가타 경마장',type:'잔디',distances:['1000m','1200m'],hasPosition:false},
+    {name:'니가타 경마장',type:'잔디',distances:['1400m','2000m','2200m','2400m'],hasPosition:true,position:'안쪽'},
+    {name:'니가타 경마장',type:'잔디',distances:['1600m','1800m','2000m'],hasPosition:true,position:'바깥쪽'},
+    {name:'니가타 경마장',type:'더트',distances:['1200m','1800m','2500m'],hasPosition:false},
+    {name:'후쿠시마 경마장',type:'잔디',distances:['1200m','1800m','2000m','2600m'],hasPosition:false},
+    {name:'후쿠시마 경마장',type:'더트',distances:['1150m','1700m','2400m'],hasPosition:false},
+    {name:'나카야마 경마장',type:'잔디',distances:['1800m','2000m','2500m','3600m'],hasPosition:true,position:'안쪽'},
+    {name:'나카야마 경마장',type:'잔디',distances:['1200m','1600m','2200m'],hasPosition:true,position:'바깥쪽'},
+    {name:'나카야마 경마장',type:'더트',distances:['1200m','1800m','2400m','2500m'],hasPosition:false},
+    {name:'도쿄 경마장',type:'잔디',distances:['1400m','1600m','1800m','2000m','2300m','2400m','2500m','3400m'],hasPosition:false},
+    {name:'도쿄 경마장',type:'더트',distances:['1300m','1400m','1600m','2100m','2400m'],hasPosition:false},
+    {name:'츄쿄 경마장',type:'잔디',distances:['1200m','1400m','1600m','2000m','2200m'],hasPosition:false},
+    {name:'츄쿄 경마장',type:'더트',distances:['1200m','1400m','1800m','1900m'],hasPosition:false},
+    {name:'교토 경마장',type:'잔디',distances:['1200m','1400m','1600m','2000m'],hasPosition:true,position:'안쪽'},
+    {name:'교토 경마장',type:'잔디',distances:['1400m','1600m','1800m','2200m','2400m','3000m','3200m'],hasPosition:true,position:'바깥쪽'},
+    {name:'교토 경마장',type:'더트',distances:['1200m','1400m','1800m','1900m'],hasPosition:false},
+    {name:'한신 경마장',type:'잔디',distances:['1200m','1400m','2000m','2200m','3000m'],hasPosition:true,position:'안쪽'},
+    {name:'한신 경마장',type:'잔디',distances:['1600m','1800m','2400m','2600m'],hasPosition:true,position:'바깥쪽'},
+    {name:'한신 경마장',type:'더트',distances:['1200m','1400m','1800m','2000m'],hasPosition:false},
+    {name:'한신 경마장',type:'잔디',distances:['3200m'],hasPosition:false},
+    {name:'코쿠라 경마장',type:'잔디',distances:['1200m','1800m','2000m','2600m'],hasPosition:false},
+    {name:'코쿠라 경마장',type:'더트',distances:['1000m','1700m','2400m'],hasPosition:false},
+    {name:'오이 경마장',type:'더트',distances:['1200m','1800m','2000m'],hasPosition:false},
+    {name:'가와사키 경마장',type:'더트',distances:['1400m','1600m','2100m'],hasPosition:false},
+    {name:'후나바시 경마장',type:'더트',distances:['1000m','1600m','1800m','2400m'],hasPosition:false},
+    {name:'모리오카 경마장',type:'더트',distances:['1200m','1600m','1800m','2000m'],hasPosition:false},
+    {name:'롱샹 경마장',type:'잔디',distances:['2400m'],hasPosition:false}
+  ],
+  positions:['안쪽','바깥쪽'],
+  seasons:['봄','여름','가을','겨울'],
+  weather:{all:['맑음','흐림'],winter:['맑음','흐림','눈'],rainy:['맑음','흐림','비']},
+  trackConditions:{sunny_cloudy:['양호','다습'],all_except_rain:['양호','다습','포화'],rainy:['양호','포화','불량']},
+  horseConditions:['최상','양호','보통','저조']
+};
+
+// ===== 대시보드 로직 =====
+const sorted = [...DATA].sort((a,b) => b.round - a.round);
+
+function computeStats() {
+  const players = {};
+  DATA.forEach(d => {
+    const finals = d.races['결승'] || [];
+    finals.forEach((name, i) => {
+      if (!players[name]) players[name] = { name, races:0, p1:0, p2:0, p3:0, p4:0, rounds:[] };
+      players[name].races++;
+      if (i===0) players[name].p1++;
+      else if (i===1) players[name].p2++;
+      else if (i===2) players[name].p3++;
+      else if (i===3) players[name].p4++;
+      players[name].rounds.push({ round:d.round, rank:i+1, total:finals.length, course:d.course, timestamp:d.timestamp });
+    });
+  });
+  return players;
+}
+
+const playerStats = computeStats();
+
+function countField(field) {
+  const c = {};
+  DATA.forEach(d => { const v = d[field] || '미기록'; c[v] = (c[v]||0)+1; });
+  return c;
+}
+
+function courseVenue(course) { return course.split(' ')[0]; }
+
+function showTab(id, btn) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  document.querySelectorAll('#main-nav button').forEach(b => b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+}
+
+const chartColors = ['#8BC34A','#FF9800','#E88D72','#81C7E8','#B39DDB','#D4A76A','#80CBC4','#E8A0BF','#AED581','#FFCC80','#A5D6A7','#FFB74D','#C5E1A5','#FFAB91','#DCEDC8'];
+const chartTextColor = '#7a7a7a';
+
+function renderOverview() {
+  const el = document.getElementById('tab-overview');
+  const dates = DATA.map(d=>d.timestamp).filter(Boolean).sort();
+  const minDate = dates[0]?.slice(0,10) || '?';
+  const maxDate = dates[dates.length-1]?.slice(0,10) || '?';
+  const uniquePlayers = Object.keys(playerStats).length;
+  const topPlayers = Object.values(playerStats).filter(p=>p.races>=2).sort((a,b)=>b.p1-a.p1 || b.races-a.races);
+  const top3 = topPlayers.slice(0,3);
+  const rest = topPlayers.slice(3);
+
+  let html = `
+    <div class="stats-grid">
+      <div class="stat-card"><div class="num">${DATA.length}</div><div class="label">총 회차</div></div>
+      <div class="stat-card"><div class="num">${uniquePlayers}</div><div class="label">참가자 수</div></div>
+      <div class="stat-card"><div class="num">${minDate}</div><div class="label">첫 기록</div></div>
+      <div class="stat-card"><div class="num">${maxDate}</div><div class="label">최근 기록</div></div>
+    </div>
+    <div class="section">
+      <h2>🏆 결승 성적표</h2>
+      <div class="podium-wrap">
+        ${top3.map((p,i) => {
+          const medal = ['🥇','🥈','🥉'][i];
+          const cls = ['podium-1','podium-2','podium-3'][i];
+          const wr = ((p.p1/p.races)*100).toFixed(1);
+          const tr = (((p.p1+p.p2)/p.races)*100).toFixed(1);
+          return `<div class="podium-item ${cls}">
+            <div class="podium-medal">${medal}</div>
+            <div class="podium-name"><a onclick="showPlayer('${p.name.replace(/'/g,"\\'")}')">${p.name}</a></div>
+            <div class="podium-stats">출전 ${p.races}회<br>🥇${p.p1} 🥈${p.p2} 🥉${p.p3}<br>승률 ${wr}% · 연대율 ${tr}%</div>
+            <div class="podium-bar"></div>
+          </div>`;
+        }).join('')}
+      </div>
+      ${rest.length > 0 ? `
+      <div class="accordion-toggle" onclick="this.classList.toggle('open');document.getElementById('rest-players').classList.toggle('open')">
+        <span>📋 나머지 참가자 보기 (${rest.length}명)</span><span class="arrow-icon">▼</span>
+      </div>
+      <div id="rest-players" class="accordion-body">
+        <div class="table-wrap"><table id="player-table">
+          <thead><tr>
+            <th onclick="sortTable('player-table',0,'str')">참가자 <span class="arrow">⇅</span></th>
+            <th onclick="sortTable('player-table',1,'num')">출전 <span class="arrow">⇅</span></th>
+            <th onclick="sortTable('player-table',2,'num')">🥇 <span class="arrow">⇅</span></th>
+            <th onclick="sortTable('player-table',3,'num')">🥈 <span class="arrow">⇅</span></th>
+            <th onclick="sortTable('player-table',4,'num')">🥉 <span class="arrow">⇅</span></th>
+            <th onclick="sortTable('player-table',5,'num')">4착 <span class="arrow">⇅</span></th>
+            <th onclick="sortTable('player-table',6,'num')">승률 <span class="arrow">⇅</span></th>
+            <th onclick="sortTable('player-table',7,'num')">연대율 <span class="arrow">⇅</span></th>
+          </tr></thead>
+          <tbody>${rest.map(p => {
+            const wr = ((p.p1/p.races)*100).toFixed(1);
+            const tr2 = (((p.p1+p.p2)/p.races)*100).toFixed(1);
+            return `<tr><td><a onclick="showPlayer('${p.name.replace(/'/g,"\\'")}')">${p.name}</a></td><td>${p.races}</td><td class="medal-1">${p.p1}</td><td class="medal-2">${p.p2}</td><td class="medal-3">${p.p3}</td><td>${p.p4}</td><td>${wr}%</td><td>${tr2}%</td></tr>`;
+          }).join('')}</tbody>
+        </table></div>
+      </div>` : ''}
+    </div>
+    <div class="charts-row">
+      <div class="chart-box"><h3>📍 코스(경마장)별 분포</h3><canvas id="chart-course"></canvas></div>
+      <div class="chart-box"><h3>📏 거리 카테고리별 분포</h3><canvas id="chart-dist"></canvas></div>
+    </div>
+    <div class="charts-row">
+      <div class="chart-box"><h3>🌸 계절 분포</h3><canvas id="chart-season"></canvas></div>
+      <div class="chart-box"><h3>🌤️ 날씨 분포</h3><canvas id="chart-weather"></canvas></div>
+    </div>
+    <div class="charts-row">
+      <div class="chart-box"><h3>📊 컨디션 분포</h3><canvas id="chart-condition"></canvas></div>
+      <div class="chart-box"><h3>🏟️ 마장 분포</h3><canvas id="chart-ground"></canvas></div>
+    </div>`;
+  el.innerHTML = html;
+
+  const doughnutOpts = {responsive:true, plugins:{legend:{labels:{color:chartTextColor,font:{size:12}}}}};
+  function makeBar(canvasId, data, label) {
+    const labels = Object.keys(data), values = Object.values(data);
+    new Chart(document.getElementById(canvasId), {
+      type:'bar', data:{labels, datasets:[{label, data:values, backgroundColor:chartColors.slice(0,labels.length).concat(chartColors), borderColor:'transparent', borderRadius:6}]},
+      options:{responsive:true, plugins:{legend:{display:false}}, scales:{x:{ticks:{color:chartTextColor}},y:{ticks:{color:chartTextColor},beginAtZero:true}}}
+    });
+  }
+  function makeDoughnut(canvasId, data) {
+    const labels = Object.keys(data), values = Object.values(data);
+    new Chart(document.getElementById(canvasId), {
+      type:'doughnut', data:{labels, datasets:[{data:values, backgroundColor:chartColors.slice(0,labels.length).concat(chartColors)}]},
+      options: doughnutOpts
+    });
+  }
+  const venues = {};
+  DATA.forEach(d => { const v = courseVenue(d.course); venues[v]=(venues[v]||0)+1; });
+  makeBar('chart-course', Object.fromEntries(Object.entries(venues).sort((a,b)=>b[1]-a[1])), '회차');
+  const distOrder = ['단거리','마일','중거리','장거리'];
+  const distCats = countField('distCategory');
+  const orderedDist = {}; distOrder.forEach(k => { if(distCats[k]) orderedDist[k]=distCats[k]; });
+  makeDoughnut('chart-dist', orderedDist);
+  makeDoughnut('chart-season', countField('season'));
+  makeDoughnut('chart-weather', countField('weather'));
+  makeDoughnut('chart-condition', countField('condition'));
+  makeDoughnut('chart-ground', countField('ground'));
+}
+
+let sortState = {};
+function sortTable(tableId, col, type) {
+  const table = document.getElementById(tableId);
+  const tbody = table.querySelector('tbody');
+  const rows = Array.from(tbody.querySelectorAll('tr'));
+  const key = tableId+col;
+  sortState[key] = !sortState[key];
+  const asc = sortState[key];
+  rows.sort((a,b) => {
+    let va = a.cells[col].textContent.replace('%','');
+    let vb = b.cells[col].textContent.replace('%','');
+    if(type==='num') { va=parseFloat(va)||0; vb=parseFloat(vb)||0; }
+    if(va<vb) return asc?-1:1; if(va>vb) return asc?1:-1; return 0;
+  });
+  rows.forEach(r => tbody.appendChild(r));
+}
+
+function renderRounds() {
+  const el = document.getElementById('tab-rounds');
+  let html = '<div class="round-list">';
+  sorted.forEach(d => {
+    const finals = d.races['결승'] || [];
+    const winner = finals[0] || '-';
+    const date = d.timestamp ? d.timestamp.slice(0,10) : '';
+    const raceKeys = ['1경기','2경기','3경기'];
+    const hasPreRaces = raceKeys.some(k => (d.races[k]||[]).length > 0);
+    html += `<div class="round-card" onclick="this.classList.toggle('open')">
+      <div class="top"><span class="round-num">#${d.round}</span><span class="meta">${date} · ${d.course}</span></div>
+      <div class="winner">👑 ${winner}</div>
+      <div class="detail">
+        <div class="detail-grid">
+          <div class="item"><div class="k">코스</div><div class="v">${d.course}</div></div>
+          ${d.direction?`<div class="item"><div class="k">방향</div><div class="v">${d.direction}</div></div>`:''}
+          <div class="item"><div class="k">계절</div><div class="v">${d.season||'-'}</div></div>
+          <div class="item"><div class="k">날씨</div><div class="v">${d.weather||'-'}</div></div>
+          <div class="item"><div class="k">마장</div><div class="v">${d.ground||'-'}</div></div>
+          <div class="item"><div class="k">컨디션</div><div class="v">${d.condition||'-'}</div></div>
+          <div class="item"><div class="k">거리</div><div class="v">${d.distCategory} ${d.distance}m</div></div>
+          <div class="item"><div class="k">기록자</div><div class="v">${d.author}</div></div>
+        </div>
+        ${hasPreRaces ? `<div style="margin-bottom:0.8rem">${raceKeys.map(k => {
+          const r = d.races[k]||[]; if(!r.length) return '';
+          return `<div style="font-size:0.85rem;margin-bottom:0.3rem"><strong style="color:var(--heading)">${k}:</strong> ${r.join(' → ')}</div>`;
+        }).join('')}</div>` : ''}
+        <div class="ranking-list">
+          <div style="font-size:0.9rem;color:var(--heading);margin-bottom:0.4rem;font-weight:bold">🏁 결승 순위</div>
+          ${finals.map((name,i) => {
+            const cls = i===0?'medal-1':i===1?'medal-2':i===2?'medal-3':'';
+            const medal = i===0?'🥇':i===1?'🥈':i===2?'🥉':(i+1)+'착';
+            return `<div class="rank"><span class="rank-num ${cls}">${medal}</span><a onclick="event.stopPropagation();showPlayer('${name.replace(/'/g,"\\'")}')">${name}</a></div>`;
+          }).join('')}
+        </div>
+        ${d.comment?`<div class="winner-comment">${d.comment}</div>`:''}
+        ${d.roulette && d.roulette!=='없음'?`<div style="margin-top:0.5rem;font-size:0.8rem;color:var(--text2)">🎰 ${d.roulette}</div>`:''}
+      </div>
+    </div>`;
+  });
+  html += '</div>';
+  el.innerHTML = html;
+}
+
+function showPlayer(name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-player').classList.add('active');
+  document.querySelectorAll('#main-nav button').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('#main-nav button')[2].classList.add('active');
+  const p = playerStats[name];
+  if(!p) { document.getElementById('tab-player').innerHTML = `<p>"${name}" 데이터 없음</p>`; return; }
+  const wr = ((p.p1/p.races)*100).toFixed(1);
+  const avgRank = (p.rounds.reduce((s,r)=>s+r.rank,0)/p.rounds.length).toFixed(1);
+  const sortedRounds = [...p.rounds].sort((a,b)=>b.round-a.round);
+  const rankDist = {};
+  p.rounds.forEach(r => { rankDist[r.rank+'착'] = (rankDist[r.rank+'착']||0)+1; });
+  const el = document.getElementById('tab-player');
+  el.innerHTML = `
+    <div class="player-detail">
+      <div class="back"><a onclick="renderPlayerList()">← 참가자 목록으로</a></div>
+      <h2>👤 ${name}</h2>
+      <div class="player-stats-row">
+        <div class="player-stat"><div class="num" style="color:var(--text)">${p.races}</div><div class="label">출전</div></div>
+        <div class="player-stat"><div class="num" style="color:var(--orange)">${p.p1}</div><div class="label">🥇 1착</div></div>
+        <div class="player-stat"><div class="num" style="color:var(--p2)">${p.p2}</div><div class="label">🥈 2착</div></div>
+        <div class="player-stat"><div class="num" style="color:var(--p3)">${p.p3}</div><div class="label">🥉 3착</div></div>
+        <div class="player-stat"><div class="num">${wr}%</div><div class="label">승률</div></div>
+        <div class="player-stat"><div class="num">${avgRank}</div><div class="label">평균 순위</div></div>
+      </div>
+      <div class="charts-row"><div class="chart-box"><h3>순위 분포</h3><canvas id="chart-player-rank"></canvas></div></div>
+      <div class="section"><h2>📋 출전 기록</h2><div class="table-wrap"><table>
+        <thead><tr><th>회차</th><th>날짜</th><th>코스</th><th>순위</th><th>참가자수</th></tr></thead>
+        <tbody>${sortedRounds.map(r => {
+          const cls = r.rank===1?'medal-1':r.rank===2?'medal-2':r.rank===3?'medal-3':'';
+          const medal = r.rank===1?'🥇':r.rank===2?'🥈':r.rank===3?'🥉':r.rank+'착';
+          return `<tr><td>#${r.round}</td><td>${r.timestamp?.slice(0,10)||''}</td><td style="text-align:left">${r.course}</td><td class="${cls}">${medal}</td><td>${r.total}명</td></tr>`;
+        }).join('')}</tbody>
+      </table></div></div>
+    </div>`;
+  const labels = Object.keys(rankDist), values = Object.values(rankDist);
+  new Chart(document.getElementById('chart-player-rank'), {
+    type:'bar', data:{labels, datasets:[{data:values, backgroundColor:chartColors.slice(0,labels.length), borderRadius:6}]},
+    options:{responsive:true, plugins:{legend:{display:false}}, scales:{x:{ticks:{color:chartTextColor}},y:{ticks:{color:chartTextColor},beginAtZero:true}}}
+  });
+}
+
+function renderPlayerList() {
+  const el = document.getElementById('tab-player');
+  const allPlayers = Object.values(playerStats).sort((a,b)=>b.races-a.races || b.p1-a.p1);
+  el.innerHTML = `
+    <div class="section"><h2>👥 전체 참가자 목록</h2>
+      <p style="color:var(--text2);margin-bottom:1rem;font-size:0.85rem">이름을 클릭하면 상세 전적을 볼 수 있습니다</p>
+      <div class="table-wrap"><table id="all-player-table">
+        <thead><tr>
+          <th onclick="sortTable('all-player-table',0,'str')">참가자 <span class="arrow">⇅</span></th>
+          <th onclick="sortTable('all-player-table',1,'num')">출전 <span class="arrow">⇅</span></th>
+          <th onclick="sortTable('all-player-table',2,'num')">🥇 <span class="arrow">⇅</span></th>
+          <th onclick="sortTable('all-player-table',3,'num')">🥈 <span class="arrow">⇅</span></th>
+          <th onclick="sortTable('all-player-table',4,'num')">🥉 <span class="arrow">⇅</span></th>
+          <th onclick="sortTable('all-player-table',5,'num')">승률 <span class="arrow">⇅</span></th>
+        </tr></thead>
+        <tbody>${allPlayers.map(p => {
+          const wr = ((p.p1/p.races)*100).toFixed(1);
+          return `<tr><td><a onclick="showPlayer('${p.name.replace(/'/g,"\\'")}')">${p.name}</a></td><td>${p.races}</td><td class="medal-1">${p.p1}</td><td class="medal-2">${p.p2}</td><td class="medal-3">${p.p3}</td><td>${wr}%</td></tr>`;
+        }).join('')}</tbody>
+      </table></div>
+    </div>`;
+}
+
+// ===== 룰렛 시스템 로직 =====
+let currentSupportCards = new Array(6).fill(null);
+let currentCharacters = new Array(6).fill(null);
+let currentRouletteCharacters = new Array(6).fill(null);
+let currentRouletteMode = 4;
+let currentTrackInfo = null;
+let trackPoolSettings = { types:{turf:true,dirt:true}, distances:{sprint:true,mile:true,middle:true,long:true} };
+
+function getRandomFromArray(arr) { return arr && arr.length ? arr[Math.floor(Math.random()*arr.length)] : null; }
+
+function getAllOpCards() {
+  let all = [];
+  Object.keys(supportCards).forEach(stat => {
+    if(stat==='group'||stat==='friend') return;
+    all = all.concat(supportCards[stat].filter(c => c.isOp));
+  });
+  return all;
+}
+
+function getStat(filename) {
+  if(filename.includes('스피드_')) return '스피드';
+  if(filename.includes('스태미너_')) return '스태미너';
+  if(filename.includes('파워_')) return '파워';
+  if(filename.includes('근성_')) return '근성';
+  if(filename.includes('지능_')) return '지능';
+  return '';
+}
+
+function loadCardImage(container, card) {
+  const img = document.createElement('img');
+  img.onload = function() { container.innerHTML = ''; container.appendChild(img); };
+  img.onerror = function() { container.innerHTML = '<span>' + (card.file.includes('_') ? '카드 이미지' : '캐릭터 이미지') + '</span>'; };
+  if(card.file.includes('_')) {
+    img.src = IMG_BASE + 'support-cards/' + encodeURIComponent(card.file) + '.png';
+  } else {
+    img.src = IMG_BASE + 'characters/' + encodeURIComponent(card.file) + '.png';
+  }
+}
+
+function switchRouletteTab(tabName, btn) {
+  document.querySelectorAll('.r-sub').forEach(s => s.classList.remove('r-active'));
+  document.querySelectorAll('#roulette-sub-nav button').forEach(b => b.classList.remove('r-active'));
+  document.getElementById('r-'+tabName+'-tab').classList.add('r-active');
+  if(btn) btn.classList.add('r-active');
+}
+
+function initializeSlots() {
+  ['support-slots','character-slots','roulette-slots'].forEach(id => {
+    const container = document.getElementById(id);
+    container.innerHTML = '';
+    for(let i=0;i<6;i++) {
+      const slot = document.createElement('div');
+      slot.className = 'slot';
+      slot.innerHTML = `<div class="slot-image"><span>${id==='support-slots'?'카드 이미지':'캐릭터 이미지'}</span></div><div class="slot-name">슬롯 ${i+1}</div>`;
+      if(id==='support-slots') slot.onclick = function(){ rerollSupportCard(i); };
+      else if(id==='character-slots') slot.onclick = function(){ rerollCharacter(i); };
+      else slot.onclick = function(){ rerollRouletteCharacter(i); };
+      container.appendChild(slot);
+    }
+  });
+}
+
+function runSupportRouletteAnimation(slot, cards, slotIndex, callback) {
+  if(!cards||!cards.length) return;
+  const finalCard = getRandomFromArray(cards);
+  let count=0; const total=14;
+  function animate() {
+    if(count < total-1) {
+      updateSupportSlotDisplay(slot, getRandomFromArray(cards), true, slotIndex);
+    } else {
+      updateSupportSlotDisplay(slot, finalCard, false, slotIndex);
+      if(callback) callback(finalCard, slotIndex);
+      return;
+    }
+    count++;
+    setTimeout(animate, count<=8?100:count<=12?200:400);
+  }
+  animate();
+}
+
+function updateSupportSlotDisplay(slot, card, isAnimation, slotIndex) {
+  if(!card) return;
+  slot.classList.toggle('animating', isAnimation);
+  if(!isAnimation) {
+    slot.classList.add('final');
+    if(card.isOp && slotIndex===5) {
+      slot.classList.add('op-card');
+      slot.querySelector('.slot-name').textContent = getStat(card.file)+' '+card.name;
+    } else {
+      slot.classList.remove('op-card');
+      slot.querySelector('.slot-name').textContent = card.name;
+    }
+  } else {
+    slot.classList.remove('final','op-card');
+    slot.querySelector('.slot-name').textContent = card.name;
+  }
+  loadCardImage(slot.querySelector('.slot-image'), card);
+}
+
+function generateNormalSupportBan() {
+  const slots = document.querySelectorAll('#support-slots .slot');
+  const statOrder = ['speed','stamina','power','guts','intelligence'];
+  for(let i=0;i<5;i++) {
+    slots[i].classList.remove('disabled');
+    runSupportRouletteAnimation(slots[i], supportCards[statOrder[i]], i, function(fc,si){ currentSupportCards[si]=fc; });
+  }
+}
+
+function generateOpSupportBan() {
+  const slots = document.querySelectorAll('#support-slots .slot');
+  const allOp = getAllOpCards();
+  slots[5].classList.remove('disabled');
+  runSupportRouletteAnimation(slots[5], allOp, 5, function(fc,si){ currentSupportCards[si]=fc; });
+}
+
+function rerollSupportCard(index) {
+  const slot = document.querySelectorAll('#support-slots .slot')[index];
+  if(slot.classList.contains('disabled')) return;
+  if(index<5) {
+    const statOrder = ['speed','stamina','power','guts','intelligence'];
+    runSupportRouletteAnimation(slot, supportCards[statOrder[index]], index, function(fc,si){ currentSupportCards[si]=fc; });
+  } else {
+    runSupportRouletteAnimation(slot, getAllOpCards(), index, function(fc,si){ currentSupportCards[si]=fc; });
+  }
+}
+
+function runCharacterRouletteAnimation(slot, finalCharacter, callback) {
+  let count=0; const total=14;
+  function animate() {
+    if(count < total-1) {
+      updateCharacterSlotDisplay(slot, getRandomFromArray(characters), true);
+    } else {
+      updateCharacterSlotDisplay(slot, finalCharacter, false);
+      if(callback) callback(finalCharacter);
+      return;
+    }
+    count++;
+    setTimeout(animate, count<=8?100:count<=12?200:400);
+  }
+  animate();
+}
+
+function updateCharacterSlotDisplay(slot, character, isAnimation) {
+  if(!character) return;
+  slot.classList.toggle('animating', isAnimation);
+  slot.classList.toggle('final', !isAnimation);
+  slot.querySelector('.slot-name').textContent = character.name;
+  loadCardImage(slot.querySelector('.slot-image'), character);
+}
+
+function generateCharacterBan() {
+  const slots = document.querySelectorAll('#character-slots .slot');
+  const selected = [];
+  currentCharacters = new Array(6).fill(null);
+  function selectUnique() {
+    let ch, attempts=0;
+    do { ch=getRandomFromArray(characters); attempts++; } while(selected.includes(ch?.name)&&attempts<50);
+    if(ch&&!selected.includes(ch.name)) selected.push(ch.name);
+    return ch||getRandomFromArray(characters);
+  }
+  slots.forEach((slot,i) => {
+    slot.classList.remove('disabled');
+    const fc = selectUnique();
+    runCharacterRouletteAnimation(slot, fc, function(c){ currentCharacters[i]=c; });
+  });
+}
+
+function rerollCharacter(index) {
+  const slot = document.querySelectorAll('#character-slots .slot')[index];
+  const others = currentCharacters.filter((c,i)=>i!==index&&c).map(c=>c.name);
+  let ch, attempts=0;
+  do { ch=getRandomFromArray(characters); attempts++; } while(others.includes(ch?.name)&&attempts<50);
+  runCharacterRouletteAnimation(slot, ch||getRandomFromArray(characters), function(c){ currentCharacters[index]=c; });
+}
+
+function generateCharacterRoulette(mode) {
+  currentRouletteMode = mode;
+  const slots = document.querySelectorAll('#roulette-slots .slot');
+  currentRouletteCharacters = new Array(6).fill(null);
+  const active = mode===4?[0,1,3,4]:[0,1,2,3,4,5];
+  slots.forEach((slot,i) => {
+    if(active.includes(i)) {
+      slot.classList.remove('disabled');
+      runCharacterRouletteAnimation(slot, getRandomFromArray(characters), function(c){ currentRouletteCharacters[i]=c; });
+    } else {
+      slot.classList.add('disabled');
+      slot.querySelector('.slot-image').innerHTML = '<span>사용 안함</span>';
+      slot.querySelector('.slot-name').textContent = '비활성';
+      currentRouletteCharacters[i] = null;
+    }
+  });
+}
+
+function rerollRouletteCharacter(index) {
+  const active = currentRouletteMode===4?[0,1,3,4]:[0,1,2,3,4,5];
+  if(!active.includes(index)) return;
+  const slot = document.querySelectorAll('#roulette-slots .slot')[index];
+  runCharacterRouletteAnimation(slot, getRandomFromArray(characters), function(c){ currentRouletteCharacters[index]=c; });
+}
+
+function getDistanceCategory(distance) {
+  const n = parseInt(distance.replace('m',''));
+  if(n<=1400) return 'sprint'; if(n<=1800) return 'mile'; if(n<=2400) return 'middle'; return 'long';
+}
+
+function generateTrackInfo() {
+  const combos = [];
+  trackData.tracks.forEach(t => {
+    const tt = t.type==='잔디'?'turf':'dirt';
+    if(!trackPoolSettings.types[tt]) return;
+    t.distances.forEach(d => { if(!trackPoolSettings.distances[getDistanceCategory(d)]) return; combos.push({track:t,distance:d}); });
+  });
+  if(!combos.length) { showRNotification('선택된 조건에 맞는 경마장이 없습니다!'); return; }
+  runTrackRouletteAnimation(combos);
+}
+
+function runTrackRouletteAnimation(combos) {
+  const container = document.querySelector('.track-info-single');
+  const textEl = document.getElementById('track-info-text');
+  let count=0; const total=12;
+  function animate() {
+    const rc = getRandomFromArray(combos), rt=rc.track, rd=rc.distance;
+    const rp = rt.hasPosition?getRandomFromArray(trackData.positions):null;
+    const rs=getRandomFromArray(trackData.seasons), rw=getRandomFromArray(trackData.weather.all);
+    const rtc=getRandomFromArray(trackData.trackConditions.sunny_cloudy), rhc=getRandomFromArray(trackData.horseConditions);
+    let txt = `마장 : ${rt.type} ${rt.name} ${rd}`;
+    if(rp) txt += ` ${rp}`;
+    txt += `\n계절 : ${rs}\n날씨 : ${rw}\n마장상태 : ${rtc}\n컨디션 : ${rhc}`;
+    textEl.innerHTML = txt.replace(/\n/g,'<br>');
+    container.classList.add('animating'); container.classList.remove('final');
+    count++;
+    if(count < total) setTimeout(animate, count<=6?120:count<=9?250:450);
+    else generateFinalTrackInfo(combos);
+  }
+  animate();
+}
+
+function generateFinalTrackInfo(combos) {
+  const container = document.querySelector('.track-info-single');
+  const sc = getRandomFromArray(combos), st=sc.track, sd=sc.distance;
+  const sp = st.hasPosition?getRandomFromArray(trackData.positions):null;
+  const ss = getRandomFromArray(trackData.seasons);
+  let wo; if(ss==='겨울') wo=trackData.weather.winter; else wo=Math.random()<0.7?trackData.weather.all:trackData.weather.rainy;
+  const sw = getRandomFromArray(wo);
+  let co; if(sw==='비') co=trackData.trackConditions.rainy; else if(sw==='맑음') co=trackData.trackConditions.sunny_cloudy; else co=trackData.trackConditions.all_except_rain;
+  const stc = getRandomFromArray(co), shc = getRandomFromArray(trackData.horseConditions);
+  currentTrackInfo = {trackType:st.type,trackName:st.name,distance:sd,position:sp,season:ss,weather:sw,trackCondition:stc,horseCondition:shc};
+  container.classList.remove('animating'); container.classList.add('final');
+  updateTrackInfoDisplay();
+}
+
+function updateTrackInfoDisplay() {
+  if(!currentTrackInfo) return;
+  let txt = `마장 : ${currentTrackInfo.trackType} ${currentTrackInfo.trackName} ${currentTrackInfo.distance}`;
+  if(currentTrackInfo.position) txt += ` ${currentTrackInfo.position}`;
+  txt += `\n계절 : ${currentTrackInfo.season}\n날씨 : ${currentTrackInfo.weather}\n마장상태 : ${currentTrackInfo.trackCondition}\n컨디션 : ${currentTrackInfo.horseCondition}`;
+  document.getElementById('track-info-text').innerHTML = txt.replace(/\n/g,'<br>');
+}
+
+function toggleTrackPool() {
+  const p = document.getElementById('track-pool');
+  p.style.display = p.style.display==='none'?'block':'none';
+}
+
+function applyTrackPool() {
+  trackPoolSettings.types.turf = document.getElementById('track-turf').checked;
+  trackPoolSettings.types.dirt = document.getElementById('track-dirt').checked;
+  trackPoolSettings.distances.sprint = document.getElementById('distance-sprint').checked;
+  trackPoolSettings.distances.mile = document.getElementById('distance-mile').checked;
+  trackPoolSettings.distances.middle = document.getElementById('distance-middle').checked;
+  trackPoolSettings.distances.long = document.getElementById('distance-long').checked;
+  if(!(trackPoolSettings.types.turf||trackPoolSettings.types.dirt)||!(trackPoolSettings.distances.sprint||trackPoolSettings.distances.mile||trackPoolSettings.distances.middle||trackPoolSettings.distances.long)) {
+    showRNotification('최소 하나의 트랙 타입과 거리를 선택해주세요!'); return;
+  }
+  showRNotification('풀 설정이 적용되었습니다!'); toggleTrackPool();
+}
+
+function resetTrackPool() {
+  ['track-turf','track-dirt','distance-sprint','distance-mile','distance-middle','distance-long'].forEach(id => document.getElementById(id).checked=true);
+  trackPoolSettings = {types:{turf:true,dirt:true},distances:{sprint:true,mile:true,middle:true,long:true}};
+  showRNotification('풀 설정이 초기화되었습니다!');
+}
+
+function resetTrackInfo() {
+  currentTrackInfo = null;
+  const c = document.querySelector('.track-info-single');
+  c.classList.remove('animating','final');
+  document.getElementById('track-info-text').textContent = '마장정보 생성 버튼을 눌러주세요';
+}
+
+function copySupportContent() {
+  if(!currentSupportCards.filter(c=>c).length) { showRNotification('먼저 서포트카드 밴을 생성해주세요!'); return; }
+  let result = '서포트카드밴\n';
+  ['스피드','스태미너','파워','근성','지능'].forEach(stat => {
+    const normal = currentSupportCards.filter(c=>c&&getStat(c.file)===stat&&!c.isOp);
+    const op = currentSupportCards.filter(c=>c&&getStat(c.file)===stat&&c.isOp);
+    result += ` - ${stat} : `;
+    if(normal.length) result += normal.map(c=>c.name).join(', ');
+    if(op.length) result += (normal.length?' + ':'')+op.map(c=>c.name).join(', ');
+    result += '\n';
+  });
+  navigator.clipboard.writeText(result).then(()=>showRNotification('서포트카드 내용이 복사되었습니다!')).catch(()=>showRNotification('복사에 실패했습니다.'));
+}
+
+function copyCharacterContent() {
+  if(!currentCharacters.filter(c=>c).length) { showRNotification('먼저 캐릭터 밴을 생성해주세요!'); return; }
+  let result = '캐릭터밴\n';
+  const r1 = currentCharacters.slice(0,3).map(c=>c?c.name:'').filter(n=>n);
+  const r2 = currentCharacters.slice(3,6).map(c=>c?c.name:'').filter(n=>n);
+  if(r1.length) result += ' - '+r1.join(' / ')+'\n';
+  if(r2.length) result += ' - '+r2.join(' / ');
+  navigator.clipboard.writeText(result).then(()=>showRNotification('캐릭터 내용이 복사되었습니다!')).catch(()=>showRNotification('복사에 실패했습니다.'));
+}
+
+function copyRouletteContent() {
+  const active = currentRouletteMode===4?[0,1,3,4]:[0,1,2,3,4,5];
+  const chars = active.map(i=>currentRouletteCharacters[i]).filter(c=>c);
+  if(!chars.length) { showRNotification('먼저 캐릭터 룰렛을 생성해주세요!'); return; }
+  navigator.clipboard.writeText(chars.map(c=>c.name).join(' / ')).then(()=>showRNotification('캐릭터 룰렛 내용이 복사되었습니다!')).catch(()=>showRNotification('복사에 실패했습니다.'));
+}
+
+function resetSupportSlots() {
+  currentSupportCards = new Array(6).fill(null);
+  document.querySelectorAll('#support-slots .slot').forEach((s,i) => {
+    s.className='slot'; s.querySelector('.slot-image').innerHTML='<span>카드 이미지</span>'; s.querySelector('.slot-name').textContent=`슬롯 ${i+1}`;
+  });
+}
+
+function resetCharacterSlots() {
+  currentCharacters = new Array(6).fill(null);
+  document.querySelectorAll('#character-slots .slot').forEach((s,i) => {
+    s.className='slot'; s.querySelector('.slot-image').innerHTML='<span>캐릭터 이미지</span>'; s.querySelector('.slot-name').textContent=`슬롯 ${i+1}`;
+  });
+}
+
+function resetRouletteSlots() {
+  currentRouletteCharacters = new Array(6).fill(null); currentRouletteMode=4;
+  document.querySelectorAll('#roulette-slots .slot').forEach((s,i) => {
+    s.className='slot'; s.querySelector('.slot-image').innerHTML='<span>캐릭터 이미지</span>'; s.querySelector('.slot-name').textContent=`슬롯 ${i+1}`;
+  });
+}
+
+function showRNotification(msg) {
+  const n = document.getElementById('r-notification');
+  n.textContent = msg; n.classList.add('show');
+  setTimeout(()=>n.classList.remove('show'), 3000);
+}
+
+// ===== 초기화 =====
+renderOverview();
+renderRounds();
+renderPlayerList();
+initializeSlots();
+</script>
+</body>
+</html>

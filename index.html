@@ -543,7 +543,7 @@ function renderOverview() {
           return `<div class="podium-item ${cls}">
             <div class="podium-medal">${medal}</div>
             <div class="podium-name"><a href="javascript:void(0)" onclick="showPlayer('${p.name.replace(/'/g,"\\'")}')">${p.name}</a></div>
-            <div class="podium-stats">결승 진출 ${p.races}회<br>🥇${p.p1} 🥈${p.p2} 🥉${p.p3}<br>승률 ${wr}% · 연대율 ${tr}%</div>
+            <div class="podium-stats">결승 진출 ${p.races}회<br>🥇${p.p1} 🥈${p.p2} 🥉${p.p3}</div>
             <div class="podium-bar"></div>
           </div>`;
         }).join('')}
@@ -561,13 +561,9 @@ function renderOverview() {
             <th onclick="sortTable('player-table',3,'num')">🥈 <span class="arrow">⇅</span></th>
             <th onclick="sortTable('player-table',4,'num')">🥉 <span class="arrow">⇅</span></th>
             <th onclick="sortTable('player-table',5,'num')">4착 <span class="arrow">⇅</span></th>
-            <th onclick="sortTable('player-table',6,'num')">승률 <span class="arrow">⇅</span></th>
-            <th onclick="sortTable('player-table',7,'num')">연대율 <span class="arrow">⇅</span></th>
           </tr></thead>
           <tbody>${rest.map(p => {
-            const wr = ((p.p1/p.races)*100).toFixed(1);
-            const tr2 = (((p.p1+p.p2)/p.races)*100).toFixed(1);
-            return `<tr><td><a href="javascript:void(0)" onclick="showPlayer('${p.name.replace(/'/g,"\\'")}')">${p.name}</a></td><td>${p.races}</td><td class="medal-1">${p.p1}</td><td class="medal-2">${p.p2}</td><td class="medal-3">${p.p3}</td><td>${p.p4}</td><td>${wr}%</td><td>${tr2}%</td></tr>`;
+            return `<tr><td><a href="javascript:void(0)" onclick="showPlayer('${p.name.replace(/'/g,"\\'")}')">${p.name}</a></td><td>${p.races}</td><td class="medal-1">${p.p1}</td><td class="medal-2">${p.p2}</td><td class="medal-3">${p.p3}</td><td>${p.p4}</td></tr>`;
           }).join('')}</tbody>
         </table></div>
       </div>` : ''}
@@ -709,7 +705,6 @@ function showPlayer(name) {
         <div class="player-stat"><div class="num" style="color:var(--orange)">${p.p1}</div><div class="label">🥇 1착</div></div>
         <div class="player-stat"><div class="num" style="color:var(--p2)">${p.p2}</div><div class="label">🥈 2착</div></div>
         <div class="player-stat"><div class="num" style="color:var(--p3)">${p.p3}</div><div class="label">🥉 3착</div></div>
-        <div class="player-stat"><div class="num">${wr}%</div><div class="label">승률</div></div>
         <div class="player-stat"><div class="num">${avgRank}</div><div class="label">평균 순위</div></div>
       </div>
       <div class="charts-row"><div class="chart-box"><h3>순위 분포</h3><canvas id="chart-player-rank"></canvas></div></div>
@@ -744,11 +739,9 @@ function renderPlayerList() {
           <th onclick="sortTable('all-player-table',2,'num')">🥇 <span class="arrow">⇅</span></th>
           <th onclick="sortTable('all-player-table',3,'num')">🥈 <span class="arrow">⇅</span></th>
           <th onclick="sortTable('all-player-table',4,'num')">🥉 <span class="arrow">⇅</span></th>
-          <th onclick="sortTable('all-player-table',5,'num')">승률 <span class="arrow">⇅</span></th>
         </tr></thead>
         <tbody>${allPlayers.map(p => {
-          const wr = ((p.p1/p.races)*100).toFixed(1);
-          return `<tr><td><a href="javascript:void(0)" onclick="showPlayer('${p.name.replace(/'/g,"\\'")}')">${p.name}</a></td><td>${p.races}</td><td class="medal-1">${p.p1}</td><td class="medal-2">${p.p2}</td><td class="medal-3">${p.p3}</td><td>${wr}%</td></tr>`;
+          return `<tr><td><a href="javascript:void(0)" onclick="showPlayer('${p.name.replace(/'/g,"\\'")}')">${p.name}</a></td><td>${p.races}</td><td class="medal-1">${p.p1}</td><td class="medal-2">${p.p2}</td><td class="medal-3">${p.p3}</td></tr>`;
         }).join('')}</tbody>
       </table></div>
     </div>`;

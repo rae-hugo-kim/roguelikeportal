@@ -528,7 +528,7 @@ function renderOverview() {
   let html = `
     <div class="stats-grid">
       <div class="stat-card"><div class="num">${DATA.length}</div><div class="label">총 회차</div></div>
-      <div class="stat-card"><div class="num">${uniquePlayers}</div><div class="label">참가자 수</div></div>
+      <div class="stat-card"><div class="num">${uniquePlayers}</div><div class="label">결승 진출자 수</div></div>
       <div class="stat-card"><div class="num">${minDate}</div><div class="label">첫 기록</div></div>
       <div class="stat-card"><div class="num">${maxDate}</div><div class="label">최근 기록</div></div>
     </div>
@@ -543,7 +543,7 @@ function renderOverview() {
           return `<div class="podium-item ${cls}">
             <div class="podium-medal">${medal}</div>
             <div class="podium-name"><a onclick="showPlayer('${p.name.replace(/'/g,"\\'")}')">${p.name}</a></div>
-            <div class="podium-stats">출전 ${p.races}회<br>🥇${p.p1} 🥈${p.p2} 🥉${p.p3}<br>승률 ${wr}% · 연대율 ${tr}%</div>
+            <div class="podium-stats">결승 진출 ${p.races}회<br>🥇${p.p1} 🥈${p.p2} 🥉${p.p3}<br>승률 ${wr}% · 연대율 ${tr}%</div>
             <div class="podium-bar"></div>
           </div>`;
         }).join('')}
@@ -556,7 +556,7 @@ function renderOverview() {
         <div class="table-wrap"><table id="player-table">
           <thead><tr>
             <th onclick="sortTable('player-table',0,'str')">참가자 <span class="arrow">⇅</span></th>
-            <th onclick="sortTable('player-table',1,'num')">출전 <span class="arrow">⇅</span></th>
+            <th onclick="sortTable('player-table',1,'num')">결승 진출 <span class="arrow">⇅</span></th>
             <th onclick="sortTable('player-table',2,'num')">🥇 <span class="arrow">⇅</span></th>
             <th onclick="sortTable('player-table',3,'num')">🥈 <span class="arrow">⇅</span></th>
             <th onclick="sortTable('player-table',4,'num')">🥉 <span class="arrow">⇅</span></th>
@@ -656,7 +656,7 @@ function renderRounds() {
         </div>
         ${hasPreRaces ? `<div style="margin-bottom:0.8rem">${raceKeys.map(k => {
           const r = d.races[k]||[]; if(!r.length) return '';
-          return `<div style="font-size:0.85rem;margin-bottom:0.3rem"><strong style="color:var(--heading)">${k}:</strong> ${r.join(' → ')}</div>`;
+          return `<div style="font-size:0.85rem;margin-bottom:0.3rem"><strong style="color:var(--heading)">${k}:</strong> ${r.join(' · ')}</div>`;
         }).join('')}</div>` : ''}
         <div class="ranking-list">
           <div style="font-size:0.9rem;color:var(--heading);margin-bottom:0.4rem;font-weight:bold">🏁 결승 순위</div>
@@ -693,7 +693,7 @@ function showPlayer(name) {
       <div class="back"><a onclick="renderPlayerList()">← 참가자 목록으로</a></div>
       <h2>👤 ${name}</h2>
       <div class="player-stats-row">
-        <div class="player-stat"><div class="num" style="color:var(--text)">${p.races}</div><div class="label">출전</div></div>
+        <div class="player-stat"><div class="num" style="color:var(--text)">${p.races}</div><div class="label">결승 진출</div></div>
         <div class="player-stat"><div class="num" style="color:var(--orange)">${p.p1}</div><div class="label">🥇 1착</div></div>
         <div class="player-stat"><div class="num" style="color:var(--p2)">${p.p2}</div><div class="label">🥈 2착</div></div>
         <div class="player-stat"><div class="num" style="color:var(--p3)">${p.p3}</div><div class="label">🥉 3착</div></div>
@@ -701,8 +701,8 @@ function showPlayer(name) {
         <div class="player-stat"><div class="num">${avgRank}</div><div class="label">평균 순위</div></div>
       </div>
       <div class="charts-row"><div class="chart-box"><h3>순위 분포</h3><canvas id="chart-player-rank"></canvas></div></div>
-      <div class="section"><h2>📋 출전 기록</h2><div class="table-wrap"><table>
-        <thead><tr><th>회차</th><th>날짜</th><th>코스</th><th>순위</th><th>참가자수</th></tr></thead>
+      <div class="section"><h2>📋 결승 진출 기록</h2><div class="table-wrap"><table>
+        <thead><tr><th>회차</th><th>날짜</th><th>코스</th><th>순위</th><th>결승 진출자수</th></tr></thead>
         <tbody>${sortedRounds.map(r => {
           const cls = r.rank===1?'medal-1':r.rank===2?'medal-2':r.rank===3?'medal-3':'';
           const medal = r.rank===1?'🥇':r.rank===2?'🥈':r.rank===3?'🥉':r.rank+'착';
@@ -726,7 +726,7 @@ function renderPlayerList() {
       <div class="table-wrap"><table id="all-player-table">
         <thead><tr>
           <th onclick="sortTable('all-player-table',0,'str')">참가자 <span class="arrow">⇅</span></th>
-          <th onclick="sortTable('all-player-table',1,'num')">출전 <span class="arrow">⇅</span></th>
+          <th onclick="sortTable('all-player-table',1,'num')">결승 진출 <span class="arrow">⇅</span></th>
           <th onclick="sortTable('all-player-table',2,'num')">🥇 <span class="arrow">⇅</span></th>
           <th onclick="sortTable('all-player-table',3,'num')">🥈 <span class="arrow">⇅</span></th>
           <th onclick="sortTable('all-player-table',4,'num')">🥉 <span class="arrow">⇅</span></th>

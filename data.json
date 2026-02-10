@@ -1,5 +1,100 @@
 [
   {
+    "round": 301,
+    "date": "2025-05-05",
+    "author": "keiaas",
+    "course": "니가타 잔디 1800m",
+    "racecourse": "니가타",
+    "surface": "잔디",
+    "distance": "1800",
+    "direction": "좌회전",
+    "season": "봄",
+    "weather": "맑음",
+    "ground": "양호",
+    "condition": "보통",
+    "distanceCategory": "마일",
+    "skills": [
+      "꽃봉오리 트레센 직선주파 하이볼티지 전광석화"
+    ],
+    "matches": {
+      "round1": [],
+      "round2": [],
+      "round3": []
+    },
+    "finals": [
+      {
+        "rank": 1,
+        "player": "오페라오",
+        "uma": "뉴페라오"
+      },
+      {
+        "rank": 2,
+        "player": "택트",
+        "uma": "치요노오"
+      },
+      {
+        "rank": 3,
+        "player": "초보팬",
+        "uma": "타이신"
+      },
+      {
+        "rank": 4,
+        "player": "설상빙화",
+        "uma": "응킹"
+      },
+      {
+        "rank": 5,
+        "player": "매소니",
+        "uma": "시비"
+      }
+    ],
+    "rules": "",
+    "bans": "말밴\n타루마에 브라이트 초후진 타마모 페스타 수키온 헬리오스\n서폿밴\n스피드 후쿠 스태 고루시+춤맥퀸 파워 그래스 근성 루돌프 지능 샤커",
+    "roulette": "",
+    "comment": "케이야스의 처음은 내거다~",
+    "tournament": "로그라이크",
+    "messageId": "manual-301",
+    "format": "manual"
+  },
+  {
+    "round": 302,
+    "date": "2025-05-06",
+    "author": "keiaas",
+    "course": "추쿄 잔디 1200m",
+    "racecourse": "추쿄",
+    "surface": "잔디",
+    "distance": "1200",
+    "direction": "좌회전",
+    "season": "가을",
+    "weather": "흐림",
+    "ground": "다습",
+    "condition": "보통",
+    "distanceCategory": "단거리",
+    "skills": [
+      "레터 체리 가나돌 머미트릭 꽃봉오리 트레센 직선주파 전광석화",
+      "오르막 가속 구간에 짧게 있음, 내리막 초반부터 매우 김"
+    ],
+    "matches": {
+      "round1": [],
+      "round2": [],
+      "round3": []
+    },
+    "finals": [
+      {
+        "rank": 1,
+        "player": "쌈무",
+        "uma": "케이에스 미라클"
+      }
+    ],
+    "rules": "",
+    "bans": "말밴\n에어 샤커, 애니 메지로 맥퀸, 신년 나이스 네이처, 무녀 카와카미 프린세스, 사쿠라 바쿠신 오, 네오 유니버스\n여름바캉스 뱀부 메모리, 시킹 더 펄\n서폿밴\n스피드 스윕 토쇼, 엘 콘도르 파사 스태 슈퍼 크릭 파워 다이타쿠 헬리오스 근성 트윈 터보 지능 메지로 라모누",
+    "roulette": "",
+    "comment": "이 승리를 케이에스에게 바칩니다",
+    "tournament": "로그라이크",
+    "messageId": "manual-302",
+    "format": "manual"
+  },
+  {
     "round": 303,
     "date": "2025-05-17",
     "author": "keiaas",
@@ -71,7 +166,7 @@
       "round1": [
         "초보팬마루젠",
         "슈맘도파인",
-        "벵거동탄맘"
+        "벵거"
       ],
       "round2": [
         "소리킹",
@@ -718,7 +813,7 @@
       },
       {
         "rank": 2,
-        "player": "롱롱",
+        "player": "울울",
         "uma": "캠핑 조던"
       },
       {
@@ -2384,7 +2479,7 @@
         "소리 브라이언"
       ],
       "round2": [
-        "야마닌 사오어",
+        "나는벌레",
         "애피 크릭",
         "살구맛 맥퀸"
       ],
@@ -2412,7 +2507,7 @@
       },
       {
         "rank": 4,
-        "player": "야마닌 사오어",
+        "player": "나는벌레",
         "uma": ""
       }
     ],
@@ -3772,12 +3867,12 @@
       },
       {
         "rank": 3,
-        "player": "케이아스",
+        "player": "Keiaas",
         "uma": ""
       },
       {
         "rank": 4,
-        "player": "짝귀",
+        "player": "초전도체 스즈카",
         "uma": ""
       },
       {
@@ -4258,7 +4353,7 @@
     ],
     "matches": {
       "round1": [
-        "케이아스",
+        "Keiaas",
         "오페라오",
         "라이스샤워(추입)"
       ],
@@ -4276,7 +4371,7 @@
     "finals": [
       {
         "rank": 1,
-        "player": "케이아스",
+        "player": "Keiaas",
         "uma": ""
       },
       {

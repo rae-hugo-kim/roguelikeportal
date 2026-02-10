@@ -679,6 +679,13 @@ function renderRounds() {
   el.innerHTML = html;
 }
 
+function getUmaForPlayer(round, playerName) {
+  const d = DATA.find(x => x.round === round);
+  if (!d || !d.finalsUma) return null;
+  const entry = d.finalsUma.find(e => e.player === playerName);
+  return entry ? entry.uma : null;
+}
+
 function showPlayer(name) {
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   document.getElementById('tab-player').classList.add('active');

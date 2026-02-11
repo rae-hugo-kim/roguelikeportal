@@ -438,8 +438,20 @@ td:first-child { text-align:left; }
           <input type="number" id="publish-round" placeholder="382" style="padding:8px;border:1px solid #ccc;border-radius:4px;width:100px;margin-top:4px;">
         </div>
         <div style="margin-bottom:12px;">
-          <label style="font-weight:bold;font-size:14px;">결승 결과 (1줄 1명, 순위 닉네임 말이름)</label><br>
-          <textarea id="publish-results" rows="6" placeholder="1 쿠다 카렌짱&#10;2 초보팬 골드쉽&#10;3 토미 키타산블랙" style="padding:8px;border:1px solid #ccc;border-radius:4px;width:100%;margin-top:4px;font-family:monospace;"></textarea>
+          <label style="font-weight:bold;font-size:14px;">1경기 (닉네임 말이름 / 구분)</label><br>
+          <input type="text" id="publish-race1" placeholder="쿠다 카렌짱 / 초보팬 골드쉽 / 토미 키타산블랙" style="padding:8px;border:1px solid #ccc;border-radius:4px;width:100%;margin-top:4px;">
+        </div>
+        <div style="margin-bottom:12px;">
+          <label style="font-weight:bold;font-size:14px;">2경기</label><br>
+          <input type="text" id="publish-race2" placeholder="닉네임 말이름 / ..." style="padding:8px;border:1px solid #ccc;border-radius:4px;width:100%;margin-top:4px;">
+        </div>
+        <div style="margin-bottom:12px;">
+          <label style="font-weight:bold;font-size:14px;">3경기</label><br>
+          <input type="text" id="publish-race3" placeholder="닉네임 말이름 / ..." style="padding:8px;border:1px solid #ccc;border-radius:4px;width:100%;margin-top:4px;">
+        </div>
+        <div style="margin-bottom:12px;">
+          <label style="font-weight:bold;font-size:14px;">결승 (순서대로 = 순위)</label><br>
+          <input type="text" id="publish-finals" placeholder="쿠다 카렌짱 / 초보팬 골드쉽 / 토미 키타산블랙" style="padding:8px;border:1px solid #ccc;border-radius:4px;width:100%;margin-top:4px;">
         </div>
         <div style="margin-bottom:12px;">
           <label style="font-weight:bold;font-size:14px;">우승 소감 (선택)</label><br>
@@ -1128,41 +1140,61 @@ function syncToBot(data) {
 // === 결과 발송 ===
 function formatPublishMessage() {
   const round = document.getElementById('publish-round').value;
-  const resultsText = document.getElementById('publish-results').value.trim();
+  const finals = document.getElementById('publish-finals').value.trim();
   const comment = document.getElementById('publish-comment').value.trim();
-  if (!round || !resultsText) return null;
+  if (!round || !finals) return null;
   
-  const medals = ['🥇','🥈','🥉'];
-  const lines = resultsText.split('\n').filter(l=>l.trim());
-  let msg = `**${round}회 로그라이크**\n\n`;
+  // 파서 호환 포맷 생성
+  let msg = `${round}회 로그라이크\n하실 분들은 참가해주세요\n\n`;
   
-  // 마장 정보 (봇에 저장된 값)
+  // 마장 정보
   if (currentTrackInfo) {
     const t = currentTrackInfo;
-    msg += `🏇 마장: ${t.trackType} ${t.trackName} ${t.distance}`;
+    msg += `${t.trackName} ${t.trackType} ${t.distance}`;
     if (t.position) msg += ` ${t.position}`;
-    msg += ` | ${t.season} ${t.weather} ${t.trackCondition} ${t.horseCondition}\n`;
+    msg += ` ${t.season} ${t.weather} ${t.trackCondition} ${t.horseCondition}\n\n`;
   }
   
-  // 밴 정보
+  // 밴 정보 (캐릭터)
   const chars = (currentCharacters||[]).filter(c=>c).map(c=>c.name);
+  if (chars.length) {
+    msg += `캐릭터밴\n`;
+    const r1 = chars.slice(0,3).join(' / ');
+    const r2 = chars.slice(3).join(' / ');
+    if (r1) msg += ` - ${r1}\n`;
+    if (r2) msg += ` - ${r2}\n`;
+  }
+  
+  // 밴 정보 (서포트카드)
   const supps = (currentSupportCards||[]).filter(c=>c).map(c=>c.name);
-  if (chars.length) msg += `🚫 캐릭터 밴: ${chars.join(', ')}\n`;
-  if (supps.length) msg += `🚫 서포트 밴: ${supps.join(', ')}\n`;
+  if (supps.length) {
+    msg += `서포트카드밴\n`;
+    const byType = {};
+    (currentSupportCards||[]).filter(c=>c).forEach(c => {
+      const stat = typeof getStat === 'function' ? getStat(c.file) : '기타';
+      if (!byType[stat]) byType[stat] = {normal:[], op:[]};
+      if (c.isOp) byType[stat].op.push(c.name); else byType[stat].normal.push(c.name);
+    });
+    for (const [stat, cards] of Object.entries(byType)) {
+      let line = ` - ${stat} : `;
+      if (cards.normal.length) line += cards.normal.join(', ');
+      if (cards.op.length) line += (cards.normal.length ? ' + ' : '') + cards.op.join(', ');
+      msg += line + '\n';
+    }
+  }
   
   msg += '\n';
   
-  // 결과
-  lines.forEach((line, i) => {
-    const parts = line.trim().split(/\s+/);
-    const rank = parseInt(parts[0]) || (i+1);
-    const player = parts[1] || '';
-    const uma = parts.slice(2).join(' ') || '';
-    const medal = rank <= 3 ? medals[rank-1] : `${rank}.`;
-    msg += `${medal} ${player}${uma ? ' (' + uma + ')' : ''}\n`;
-  });
+  // 경기 결과
+  const race1 = document.getElementById('publish-race1').value.trim();
+  const race2 = document.getElementById('publish-race2').value.trim();
+  const race3 = document.getElementById('publish-race3').value.trim();
+  if (race1) msg += `1경기: ${race1}\n`;
+  if (race2) msg += `2경기: ${race2}\n`;
+  if (race3) msg += `3경기: ${race3}\n`;
+  msg += `결승: ${finals}\n`;
   
-  if (comment) msg += `\n💬 "${comment}"`;
+  if (comment) msg += `\n${comment}`;
   
   return { round: parseInt(round), message: msg };
 }

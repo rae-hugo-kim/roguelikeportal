@@ -386,6 +386,7 @@ td:first-child { text-align:left; }
 .track-viz-slope-label { position:absolute; top:2px; font-size:8px; font-weight:bold; pointer-events:none; z-index:2; }
 @media(max-width:600px) {
   .track-sections { grid-template-columns:1fr; }
+  #current-bans-grid { grid-template-columns:1fr !important; }
 }
 </style>
 </head>
@@ -402,6 +403,7 @@ td:first-child { text-align:left; }
   <button onclick="showTab('player',this)">👤 참가자 상세</button>
   <button onclick="showTab('roulette',this)">🎲 대회 진행</button>
   <button onclick="showTab('tracks',this)">🏟️ 경기장 정보</button>
+  <button onclick="showTab('current',this)" style="background:linear-gradient(135deg,var(--orange-light),var(--green-light));font-weight:bold;">🔴 현재 회차</button>
 </nav>
 
 <div class="container">
@@ -567,6 +569,46 @@ td:first-child { text-align:left; }
       </div>
     </div>
 
+  </div>
+  <div id="tab-current" class="tab">
+    <div style="max-width:800px;margin:0 auto;">
+      <div id="current-round-header" style="text-align:center;padding:1.5rem;background:linear-gradient(135deg,#f7fbe8,#fff5e6);border-radius:12px;margin-bottom:1.5rem;border:1px solid var(--border);">
+        <h2 style="color:var(--heading);margin-bottom:0.3rem;">🔴 현재 회차 정보</h2>
+        <p id="current-round-status" style="color:var(--text2);font-size:0.85rem;">로딩 중...</p>
+      </div>
+      <div id="current-round-content" style="display:none;">
+        <!-- 마장 정보 -->
+        <div class="section" id="current-course-section">
+          <h3 style="color:var(--heading);margin-bottom:0.8rem;">🏁 마장 정보</h3>
+          <div id="current-course-info" style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.2rem;"></div>
+        </div>
+        <!-- 밴 정보 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem;" id="current-bans-grid">
+          <div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.2rem;">
+            <h3 style="color:#e53935;margin-bottom:0.8rem;font-size:1rem;">🚫 캐릭터 밴</h3>
+            <div id="current-char-bans" style="display:flex;flex-direction:column;gap:4px;"></div>
+          </div>
+          <div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.2rem;">
+            <h3 style="color:#e53935;margin-bottom:0.8rem;font-size:1rem;">🚫 서포트카드 밴</h3>
+            <div id="current-support-bans" style="display:flex;flex-direction:column;gap:4px;"></div>
+          </div>
+        </div>
+        <!-- 코스 시각화 -->
+        <div class="section" id="current-track-viz-section" style="display:none;">
+          <h3 style="color:var(--heading);margin-bottom:0.8rem;">📊 코스 상세</h3>
+          <div id="current-track-viz"></div>
+        </div>
+        <!-- 유효스킬 -->
+        <div class="section" id="current-skills-section" style="display:none;">
+          <h3 style="color:var(--heading);margin-bottom:0.8rem;">🎯 유효스킬</h3>
+          <div id="current-skills-content"></div>
+        </div>
+      </div>
+      <div id="current-round-empty" style="display:none;text-align:center;padding:2rem;color:var(--text2);">
+        <p style="font-size:1.2rem;">📭 아직 설정된 회차 정보가 없습니다</p>
+        <p style="font-size:0.85rem;margin-top:0.5rem;">대회 진행 탭에서 마장/밴을 생성하고 복사하면 자동으로 반영됩니다</p>
+      </div>
+    </div>
   </div>
   <div id="tab-tracks" class="tab">
     <div style="max-width:900px;margin:0 auto;">
@@ -1810,6 +1852,111 @@ function buildTrackViz(course) {
   return html;
 }
 
+// === 현재 회차 정보 ===
+function loadCurrentRound() {
+  const statusEl = document.getElementById('current-round-status');
+  const contentEl = document.getElementById('current-round-content');
+  const emptyEl = document.getElementById('current-round-empty');
+
+  statusEl.textContent = '로딩 중...';
+  contentEl.style.display = 'none';
+  emptyEl.style.display = 'none';
+
+  fetch(`${BOT_API_URL}/api/round`).then(r => r.json()).then(data => {
+    const hasCourse = data.course;
+    const hasBans = data.bans && (data.bans.characters?.length || data.bans.supports?.length);
+
+    if (!hasCourse && !hasBans) {
+      emptyEl.style.display = 'block';
+      statusEl.textContent = '설정된 정보 없음';
+      return;
+    }
+
+    contentEl.style.display = 'block';
+    const updated = data.updatedAt ? new Date(data.updatedAt).toLocaleString('ko-KR', {timeZone:'Asia/Seoul'}) : '';
+    statusEl.textContent = updated ? `마지막 업데이트: ${updated} (by ${data.updatedBy || '?'})` : '';
+
+    // Course info
+    const courseSection = document.getElementById('current-course-section');
+    const courseInfo = document.getElementById('current-course-info');
+    if (hasCourse) {
+      courseSection.style.display = 'block';
+      courseInfo.innerHTML = `<div style="font-size:1.1rem;font-weight:bold;color:var(--heading);margin-bottom:0.5rem;">🏇 ${data.course}</div>`;
+      // Try to find matching track for visualization
+      loadCurrentTrackViz(data.course);
+    } else {
+      courseSection.style.display = 'none';
+    }
+
+    // Bans
+    const charBans = document.getElementById('current-char-bans');
+    const suppBans = document.getElementById('current-support-bans');
+    charBans.innerHTML = (data.bans?.characters || []).map((b, i) =>
+      `<div style="padding:6px 10px;background:${i%2?'var(--bg3)':'var(--bg2)'};border-radius:6px;font-size:0.9rem;">🐴 ${b}</div>`
+    ).join('') || '<div style="color:var(--text2);font-size:0.85rem;">없음</div>';
+
+    suppBans.innerHTML = (data.bans?.supports || []).map((b, i) =>
+      `<div style="padding:6px 10px;background:${i%2?'var(--bg3)':'var(--bg2)'};border-radius:6px;font-size:0.9rem;">🃏 ${b}</div>`
+    ).join('') || '<div style="color:var(--text2);font-size:0.85rem;">없음</div>';
+
+  }).catch(err => {
+    statusEl.textContent = '봇 서버에 연결할 수 없습니다';
+    emptyEl.style.display = 'block';
+  });
+}
+
+function loadCurrentTrackViz(courseStr) {
+  // Parse course string like "잔디 삿포로 경마장 1200m 안쪽 | 봄 맑음 | 마장:양호 컨디션:최상"
+  // or "잔디 삿포로 경마장 1200m"
+  if (!courseStr || !TRACK_DATA) {
+    if (!TRACK_DATA) loadTrackData().then(() => loadCurrentTrackViz(courseStr));
+    return;
+  }
+
+  const vizSection = document.getElementById('current-track-viz-section');
+  const vizEl = document.getElementById('current-track-viz');
+
+  // Extract venue name and distance
+  const distMatch = courseStr.match(/(\d+)m/);
+  const dist = distMatch ? parseInt(distMatch[1]) : null;
+  if (!dist) { vizSection.style.display = 'none'; return; }
+
+  const surfaceMatch = courseStr.match(/(잔디|더트)/);
+  const surface = surfaceMatch ? surfaceMatch[1] : null;
+
+  // Find venue
+  let foundVenue = null, foundCourse = null;
+  for (const v of TRACK_DATA.venues) {
+    if (!courseStr.includes(v.venue)) continue;
+    for (const c of v.courses) {
+      if (c.distance === dist && (!surface || c.surface === surface)) {
+        foundVenue = v; foundCourse = c; break;
+      }
+    }
+    if (foundCourse) break;
+  }
+
+  if (foundCourse) {
+    vizSection.style.display = 'block';
+    vizEl.innerHTML = buildTrackViz(foundCourse);
+    // Also show phases text
+    const p = foundCourse.phases || {};
+    let info = '<div style="margin-top:0.8rem;display:flex;gap:1rem;flex-wrap:wrap;font-size:0.8rem;color:var(--text2);">';
+    if (foundCourse.positionKeep) info += `<span>📍 포지션킵: ${foundCourse.positionKeep.start}~${foundCourse.positionKeep.end}m</span>`;
+    if (p.spurt) info += `<span>🚀 스퍼트: ${p.spurt.start}m~</span>`;
+    if (foundCourse.statBonus && foundCourse.statBonus !== '없음') info += `<span>📊 보정: ${foundCourse.statBonus}</span>`;
+    if (foundCourse.slopes?.length) {
+      foundCourse.slopes.forEach(s => {
+        info += `<span>${s.type==='uphill'?'⬆️ 오르막':'⬇️ 내리막'}: ${s.start}~${s.end}m</span>`;
+      });
+    }
+    info += '</div>';
+    vizEl.innerHTML += info;
+  } else {
+    vizSection.style.display = 'none';
+  }
+}
+
 function navigateToTrackInfo(t) {
   // Load data if needed, then filter and scroll to matching course
   const doNav = () => {
@@ -1863,6 +2010,7 @@ const origShowTab = showTab;
 showTab = function(id, btn) {
   origShowTab(id, btn);
   if (id === 'tracks' && !TRACK_DATA) loadTrackData();
+  if (id === 'current') loadCurrentRound();
 };
 
 </script>

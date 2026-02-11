@@ -1457,6 +1457,8 @@ function copyTrackContent() {
   if (t.position) txt += ` ${t.position}`;
   txt += ` | ${t.season} ${t.weather} | 마장:${t.trackCondition} 컨디션:${t.horseCondition}`;
   navigator.clipboard.writeText(txt).then(() => showRNotification('마장 정보가 복사되었습니다!'));
+  // 경기장 정보 탭 연동
+  navigateToTrackInfo(t);
   // 봇 연동
   syncToBot({ course: `${t.trackType} ${t.trackName} ${t.distance}${t.position ? ' ' + t.position : ''} | ${t.season} ${t.weather} ${t.trackCondition} ${t.horseCondition}` });
   // 유효스킬 자동 로드 + 탭 전환
@@ -1755,6 +1757,49 @@ function buildTrackViz(course) {
     <span class="l-uphill">⬆오르막</span><span class="l-downhill">⬇내리막</span>
   </div>`;
   return html;
+}
+
+function navigateToTrackInfo(t) {
+  // Load data if needed, then filter and scroll to matching course
+  const doNav = () => {
+    if (!TRACK_DATA) return;
+    // Map roulette venue name to venueId
+    const venueShort = t.trackName.replace(/ 경마장$/, '');
+    const venueMap = {'삿포로':'sapporo','하코다테':'hakodate','니가타':'niigata','후쿠시마':'fukushima',
+      '나카야마':'nakayama','도쿄':'tokyo','츄쿄':'chukyo','추쿄':'chukyo','교토':'kyoto','한신':'hanshin',
+      '코쿠라':'kokura','오이':'ooi','가와사키':'kawasaki','후나바시':'funabashi','모리오카':'morioka','롱샹':'longchamp'};
+    const venueId = venueMap[venueShort] || '';
+    const dist = parseInt(t.distance);
+    const surface = t.trackType;
+
+    // Set filters
+    document.getElementById('track-venue-select').value = venueId;
+    document.getElementById('track-surface-select').value = surface;
+    document.getElementById('track-dist-select').value = '';
+    filterTracks();
+
+    // Switch to tracks tab
+    const btn = [...document.querySelectorAll('#main-nav button')].find(b => b.textContent.includes('경기장'));
+    showTab('tracks', btn);
+
+    // Find and expand matching card, scroll to it
+    setTimeout(() => {
+      const cards = document.querySelectorAll('.track-card');
+      for (const card of cards) {
+        const h3 = card.querySelector('h3');
+        if (h3 && h3.textContent.includes(venueShort) && h3.textContent.includes(dist + 'm')) {
+          card.classList.add('expanded');
+          card.scrollIntoView({behavior:'smooth', block:'center'});
+          card.style.boxShadow = '0 0 0 3px var(--green)';
+          setTimeout(() => { card.style.boxShadow = ''; }, 3000);
+          break;
+        }
+      }
+    }, 100);
+  };
+
+  if (TRACK_DATA) doNav();
+  else loadTrackData().then(doNav);
 }
 
 // Load track data when tab is shown

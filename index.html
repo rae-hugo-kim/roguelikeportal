@@ -324,6 +324,47 @@ td:first-child { text-align:left; }
   .slots-container { grid-template-columns:1fr; }
   .slot-image { height:200px !important; }
 }
+
+.track-card {
+  background:var(--bg2); border:1px solid var(--border); border-radius:12px;
+  padding:1.2rem; box-shadow:0 1px 4px rgba(0,0,0,0.04);
+  cursor:pointer; transition:all 0.2s;
+}
+.track-card:hover { border-color:var(--green-soft); box-shadow:0 2px 8px rgba(139,195,74,0.15); }
+.track-card.expanded { border-color:var(--green); }
+.track-header {
+  display:flex; justify-content:space-between; align-items:center; gap:0.8rem; flex-wrap:wrap;
+}
+.track-header h3 { font-size:1rem; color:var(--heading); margin:0; }
+.track-badges { display:flex; gap:6px; flex-wrap:wrap; }
+.track-badge {
+  font-size:0.75rem; padding:2px 8px; border-radius:12px; font-weight:600;
+}
+.track-badge.turf { background:var(--green-light); color:#5d8a2d; }
+.track-badge.dirt { background:var(--orange-light); color:#c67700; }
+.track-badge.stat { background:#e3f2fd; color:#1565c0; }
+.track-detail { display:none; margin-top:1rem; }
+.track-card.expanded .track-detail { display:block; }
+.track-phases {
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:8px; margin-bottom:1rem;
+}
+.phase-box {
+  padding:8px 10px; border-radius:8px; font-size:0.8rem; text-align:center;
+}
+.phase-box.early { background:#e8f5e9; color:#2e7d32; }
+.phase-box.mid { background:#fff3e0; color:#e65100; }
+.phase-box.late { background:#fce4ec; color:#c62828; }
+.phase-box.spurt { background:#f3e5f5; color:#6a1b9a; }
+.phase-label { font-weight:bold; display:block; margin-bottom:2px; }
+.track-sections { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:0.8rem; }
+.track-section h4 { font-size:0.85rem; color:var(--text2); margin-bottom:6px; }
+.track-section ul { list-style:none; font-size:0.8rem; color:var(--text); }
+.track-section li { padding:2px 0; }
+.track-section li::before { content:'▸ '; color:var(--green); }
+.track-img { max-width:100%; border-radius:8px; margin-top:0.8rem; border:1px solid var(--border); }
+@media(max-width:600px) {
+  .track-sections { grid-template-columns:1fr; }
+}
 </style>
 </head>
 <body>
@@ -338,6 +379,7 @@ td:first-child { text-align:left; }
   <button onclick="showTab('rounds',this)">📋 회차별 기록</button>
   <button onclick="showTab('player',this)">👤 참가자 상세</button>
   <button onclick="showTab('roulette',this)">🎲 대회 진행</button>
+  <button onclick="showTab('tracks',this)">🏟️ 경기장 정보</button>
 </nav>
 
 <div class="container">
@@ -506,6 +548,32 @@ td:first-child { text-align:left; }
       </div>
     </div>
 
+  </div>
+  <div id="tab-tracks" class="tab">
+    <div style="max-width:900px;margin:0 auto;">
+      <h2 style="color:var(--heading);margin-bottom:1rem;">🏟️ 경기장 정보</h2>
+      <p style="color:var(--text2);margin-bottom:1.5rem;font-size:0.9rem;">GameTora 기반 경기장·코스 상세 데이터 (전개 구간, 코너, 직선, 스탯 보정)</p>
+      <div style="display:flex;gap:8px;margin-bottom:1.5rem;flex-wrap:wrap;align-items:center;">
+        <select id="track-venue-select" onchange="filterTracks()" style="padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-size:0.9rem;">
+          <option value="">전체 경기장</option>
+        </select>
+        <select id="track-surface-select" onchange="filterTracks()" style="padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-size:0.9rem;">
+          <option value="">잔디/더트</option>
+          <option value="잔디">🌿 잔디</option>
+          <option value="더트">🟤 더트</option>
+        </select>
+        <select id="track-dist-select" onchange="filterTracks()" style="padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-size:0.9rem;">
+          <option value="">전체 거리</option>
+          <option value="단거리">단거리 (~1400m)</option>
+          <option value="마일">마일 (1401~1800m)</option>
+          <option value="중거리">중거리 (1801~2400m)</option>
+          <option value="장거리">장거리 (2401m~)</option>
+        </select>
+        <span id="track-count" style="color:var(--text2);font-size:0.85rem;margin-left:8px;"></span>
+      </div>
+      <div id="track-list" style="display:flex;flex-direction:column;gap:1rem;"></div>
+      <div id="track-loading" style="text-align:center;padding:2rem;color:var(--text2);">로딩 중...</div>
+    </div>
   </div>
 </div>
 
@@ -1494,6 +1562,129 @@ function renderUmaStats() {
   html += '</div></div>';
   return html;
 }
+
+// === 경기장 정보 탭 ===
+let TRACK_DATA = null;
+
+function getDistCategory(d) {
+  if (d <= 1400) return '단거리';
+  if (d <= 1800) return '마일';
+  if (d <= 2400) return '중거리';
+  return '장거리';
+}
+
+function loadTrackData() {
+  if (TRACK_DATA) return Promise.resolve(TRACK_DATA);
+  return fetch('racetrack-data.json').then(r => r.json()).then(d => {
+    TRACK_DATA = d;
+    const sel = document.getElementById('track-venue-select');
+    d.venues.forEach(v => {
+      const opt = document.createElement('option');
+      opt.value = v.venueId;
+      opt.textContent = v.venue;
+      sel.appendChild(opt);
+    });
+    document.getElementById('track-loading').style.display = 'none';
+    filterTracks();
+    return d;
+  }).catch(err => {
+    document.getElementById('track-loading').textContent = '데이터 로드 실패: ' + err.message;
+  });
+}
+
+function filterTracks() {
+  if (!TRACK_DATA) return;
+  const venueId = document.getElementById('track-venue-select').value;
+  const surface = document.getElementById('track-surface-select').value;
+  const distCat = document.getElementById('track-dist-select').value;
+  
+  const list = document.getElementById('track-list');
+  list.innerHTML = '';
+  let count = 0;
+
+  for (const v of TRACK_DATA.venues) {
+    if (venueId && v.venueId !== venueId) continue;
+    for (const c of v.courses) {
+      if (surface && c.surface !== surface) continue;
+      if (distCat && getDistCategory(c.distance) !== distCat) continue;
+      count++;
+      list.appendChild(createTrackCard(v, c));
+    }
+  }
+  document.getElementById('track-count').textContent = `${count}개 코스`;
+}
+
+function createTrackCard(venue, course) {
+  const card = document.createElement('div');
+  card.className = 'track-card';
+  card.onclick = () => card.classList.toggle('expanded');
+
+  const surfClass = course.surface === '잔디' ? 'turf' : 'dirt';
+  const surfIcon = course.surface === '잔디' ? '🌿' : '🟤';
+  const distCat = getDistCategory(course.distance);
+  const statText = course.statBonus !== '없음' ? course.statBonus : '';
+
+  let html = `<div class="track-header">
+    <h3>${venue.venue} ${course.distance}m</h3>
+    <div class="track-badges">
+      <span class="track-badge ${surfClass}">${surfIcon} ${course.surface}</span>
+      <span class="track-badge" style="background:#f5f5f0;color:var(--text2);">${distCat}</span>
+      ${statText ? `<span class="track-badge stat">📊 ${statText} 보정</span>` : ''}
+    </div>
+  </div>`;
+
+  html += `<div class="track-detail">`;
+
+  // Phases
+  if (course.phases) {
+    const p = course.phases;
+    html += `<div class="track-phases">`;
+    if (p.early) html += `<div class="phase-box early"><span class="phase-label">초반</span>${p.early.start}~${p.early.end}m</div>`;
+    if (p.mid) html += `<div class="phase-box mid"><span class="phase-label">중반</span>${p.mid.start}~${p.mid.end}m</div>`;
+    if (p.late) html += `<div class="phase-box late"><span class="phase-label">종반</span>${p.late.start}~${p.late.end}m</div>`;
+    if (p.spurt) html += `<div class="phase-box spurt"><span class="phase-label">스퍼트</span>${p.spurt.start}~${p.spurt.end}m</div>`;
+    html += `</div>`;
+  }
+
+  // Corners & Straights
+  html += `<div class="track-sections">`;
+  html += `<div class="track-section"><h4>🔄 코너</h4><ul>`;
+  if (course.corners?.length) {
+    course.corners.forEach(c => { html += `<li>${c.number}코너: ${c.start}~${c.end}m (${c.end - c.start}m)</li>`; });
+  } else {
+    html += `<li style="color:var(--text2)">코너 없음</li>`;
+  }
+  html += `</ul></div>`;
+  html += `<div class="track-section"><h4>➡️ 직선</h4><ul>`;
+  if (course.straights?.length) {
+    course.straights.forEach(s => { html += `<li>${s.number}직선: ${s.start}~${s.end}m (${s.end - s.start}m)</li>`; });
+  } else {
+    html += `<li style="color:var(--text2)">직선 정보 없음</li>`;
+  }
+  html += `</ul></div></div>`;
+
+  // Position keep & other info
+  html += `<div style="font-size:0.8rem;color:var(--text2);display:flex;gap:1rem;flex-wrap:wrap;">`;
+  if (course.positionKeep) html += `<span>📍 포지션킵: ${course.positionKeep.start}~${course.positionKeep.end}m</span>`;
+  if (course.phases?.spurt) html += `<span>🚀 스퍼트: ${course.phases.spurt.start}m~</span>`;
+  html += `</div>`;
+
+  // Image
+  if (course.imageUrl) {
+    html += `<img class="track-img" src="${course.imageUrl}" alt="${venue.venue} ${course.distance}m ${course.surface}" loading="lazy">`;
+  }
+
+  html += `</div>`;
+  card.innerHTML = html;
+  return card;
+}
+
+// Load track data when tab is shown
+const origShowTab = showTab;
+showTab = function(id, btn) {
+  origShowTab(id, btn);
+  if (id === 'tracks' && !TRACK_DATA) loadTrackData();
+};
 
 </script>
 </body>

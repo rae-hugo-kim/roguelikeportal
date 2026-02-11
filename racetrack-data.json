@@ -1,0 +1,7722 @@
+{
+  "venues": [
+    {
+      "venue": "삿포로",
+      "venueId": "sapporo",
+      "courses": [
+        {
+          "distance": 1200,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 200
+            },
+            "mid": {
+              "start": 200,
+              "end": 800
+            },
+            "late": {
+              "start": 800,
+              "end": 1000
+            },
+            "spurt": {
+              "start": 1000,
+              "end": 1200
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 400,
+              "end": 675
+            },
+            {
+              "number": 4,
+              "start": 675,
+              "end": 934
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 400
+            },
+            {
+              "number": 2,
+              "start": 934,
+              "end": 1200
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 500
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10101.png"
+        },
+        {
+          "distance": 1500,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 250
+            },
+            "mid": {
+              "start": 250,
+              "end": 1000
+            },
+            "late": {
+              "start": 1000,
+              "end": 1250
+            },
+            "spurt": {
+              "start": 1250,
+              "end": 1500
+            }
+          },
+          "corners": [
+            {
+              "number": 2,
+              "start": 150,
+              "end": 425
+            },
+            {
+              "number": 3,
+              "start": 700,
+              "end": 975
+            },
+            {
+              "number": 4,
+              "start": 975,
+              "end": 1234
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 425,
+              "end": 700
+            },
+            {
+              "number": 2,
+              "start": 1234,
+              "end": 1500
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 625
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10102.png"
+        },
+        {
+          "distance": 1800,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 300
+            },
+            "mid": {
+              "start": 300,
+              "end": 1200
+            },
+            "late": {
+              "start": 1200,
+              "end": 1500
+            },
+            "spurt": {
+              "start": 1500,
+              "end": 1800
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 175,
+              "end": 450
+            },
+            {
+              "number": 2,
+              "start": 450,
+              "end": 725
+            },
+            {
+              "number": 3,
+              "start": 1000,
+              "end": 1275
+            },
+            {
+              "number": 4,
+              "start": 1275,
+              "end": 1534
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 175
+            },
+            {
+              "number": 2,
+              "start": 725,
+              "end": 1000
+            },
+            {
+              "number": 3,
+              "start": 1534,
+              "end": 1800
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 750
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10103.png"
+        },
+        {
+          "distance": 2000,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 333
+            },
+            "mid": {
+              "start": 333,
+              "end": 1333
+            },
+            "late": {
+              "start": 1333,
+              "end": 1667
+            },
+            "spurt": {
+              "start": 1667,
+              "end": 2000
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 375,
+              "end": 650
+            },
+            {
+              "number": 2,
+              "start": 650,
+              "end": 925
+            },
+            {
+              "number": 3,
+              "start": 1200,
+              "end": 1475
+            },
+            {
+              "number": 4,
+              "start": 1475,
+              "end": 1734
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 375
+            },
+            {
+              "number": 2,
+              "start": 925,
+              "end": 1200
+            },
+            {
+              "number": 3,
+              "start": 1734,
+              "end": 2000
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 833
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10104.png"
+        },
+        {
+          "distance": 2600,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 433
+            },
+            "mid": {
+              "start": 433,
+              "end": 1733
+            },
+            "late": {
+              "start": 1733,
+              "end": 2167
+            },
+            "spurt": {
+              "start": 2167,
+              "end": 2600
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 175,
+              "end": 450
+            },
+            {
+              "number": 4,
+              "start": 450,
+              "end": 725
+            },
+            {
+              "number": 1,
+              "start": 975,
+              "end": 1250
+            },
+            {
+              "number": 2,
+              "start": 1250,
+              "end": 1525
+            },
+            {
+              "number": 3,
+              "start": 1800,
+              "end": 2075
+            },
+            {
+              "number": 4,
+              "start": 2075,
+              "end": 2334
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 175
+            },
+            {
+              "number": 2,
+              "start": 725,
+              "end": 975
+            },
+            {
+              "number": 3,
+              "start": 1525,
+              "end": 1800
+            },
+            {
+              "number": 4,
+              "start": 2334,
+              "end": 2600
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1083
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10105.png"
+        },
+        {
+          "distance": 1000,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 167
+            },
+            "mid": {
+              "start": 167,
+              "end": 667
+            },
+            "late": {
+              "start": 667,
+              "end": 833
+            },
+            "spurt": {
+              "start": 833,
+              "end": 1000
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 280,
+              "end": 510
+            },
+            {
+              "number": 4,
+              "start": 510,
+              "end": 736
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 280
+            },
+            {
+              "number": 2,
+              "start": 736,
+              "end": 1000
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 417
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10106.png"
+        },
+        {
+          "distance": 1700,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 283
+            },
+            "mid": {
+              "start": 283,
+              "end": 1133
+            },
+            "late": {
+              "start": 1133,
+              "end": 1417
+            },
+            "spurt": {
+              "start": 1417,
+              "end": 1700
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 240,
+              "end": 470
+            },
+            {
+              "number": 2,
+              "start": 470,
+              "end": 700
+            },
+            {
+              "number": 3,
+              "start": 980,
+              "end": 1210
+            },
+            {
+              "number": 4,
+              "start": 1210,
+              "end": 1436
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 240
+            },
+            {
+              "number": 2,
+              "start": 700,
+              "end": 980
+            },
+            {
+              "number": 3,
+              "start": 1436,
+              "end": 1700
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 708
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10107.png"
+        },
+        {
+          "distance": 2400,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 400
+            },
+            "mid": {
+              "start": 400,
+              "end": 1600
+            },
+            "late": {
+              "start": 1600,
+              "end": 2000
+            },
+            "spurt": {
+              "start": 2000,
+              "end": 2400
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 200,
+              "end": 430
+            },
+            {
+              "number": 4,
+              "start": 430,
+              "end": 660
+            },
+            {
+              "number": 1,
+              "start": 940,
+              "end": 1170
+            },
+            {
+              "number": 2,
+              "start": 1170,
+              "end": 1400
+            },
+            {
+              "number": 3,
+              "start": 1680,
+              "end": 1910
+            },
+            {
+              "number": 4,
+              "start": 1910,
+              "end": 2136
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 200
+            },
+            {
+              "number": 2,
+              "start": 660,
+              "end": 940
+            },
+            {
+              "number": 3,
+              "start": 1408,
+              "end": 1680
+            },
+            {
+              "number": 4,
+              "start": 2136,
+              "end": 2400
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1000
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10108.png"
+        }
+      ]
+    },
+    {
+      "venue": "하코다테",
+      "venueId": "hakodate",
+      "courses": [
+        {
+          "distance": 1000,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 167
+            },
+            "mid": {
+              "start": 167,
+              "end": 667
+            },
+            "late": {
+              "start": 667,
+              "end": 833
+            },
+            "spurt": {
+              "start": 833,
+              "end": 1000
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 310,
+              "end": 530
+            },
+            {
+              "number": 4,
+              "start": 530,
+              "end": 738
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 310
+            },
+            {
+              "number": 2,
+              "start": 738,
+              "end": 1000
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 417
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10201.png"
+        },
+        {
+          "distance": 1200,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 200
+            },
+            "mid": {
+              "start": 200,
+              "end": 800
+            },
+            "late": {
+              "start": 800,
+              "end": 1000
+            },
+            "spurt": {
+              "start": 1000,
+              "end": 1200
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 510,
+              "end": 730
+            },
+            {
+              "number": 4,
+              "start": 730,
+              "end": 938
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 510
+            },
+            {
+              "number": 2,
+              "start": 938,
+              "end": 1200
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 500
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10202.png"
+        },
+        {
+          "distance": 1800,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 300
+            },
+            "mid": {
+              "start": 300,
+              "end": 1200
+            },
+            "late": {
+              "start": 1200,
+              "end": 1500
+            },
+            "spurt": {
+              "start": 1500,
+              "end": 1800
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 320,
+              "end": 540
+            },
+            {
+              "number": 2,
+              "start": 540,
+              "end": 760
+            },
+            {
+              "number": 3,
+              "start": 1110,
+              "end": 1330
+            },
+            {
+              "number": 4,
+              "start": 1330,
+              "end": 1538
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 320
+            },
+            {
+              "number": 2,
+              "start": 760,
+              "end": 1110
+            },
+            {
+              "number": 3,
+              "start": 1538,
+              "end": 1800
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 750
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10203.png"
+        },
+        {
+          "distance": 2000,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 333
+            },
+            "mid": {
+              "start": 333,
+              "end": 1333
+            },
+            "late": {
+              "start": 1333,
+              "end": 1667
+            },
+            "spurt": {
+              "start": 1667,
+              "end": 2000
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 520,
+              "end": 740
+            },
+            {
+              "number": 2,
+              "start": 740,
+              "end": 960
+            },
+            {
+              "number": 3,
+              "start": 1310,
+              "end": 1530
+            },
+            {
+              "number": 4,
+              "start": 1530,
+              "end": 1738
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 520
+            },
+            {
+              "number": 2,
+              "start": 960,
+              "end": 1310
+            },
+            {
+              "number": 3,
+              "start": 1738,
+              "end": 2000
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 833
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10204.png"
+        },
+        {
+          "distance": 2600,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 433
+            },
+            "mid": {
+              "start": 433,
+              "end": 1733
+            },
+            "late": {
+              "start": 1733,
+              "end": 2167
+            },
+            "spurt": {
+              "start": 2167,
+              "end": 2600
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 260,
+              "end": 500
+            },
+            {
+              "number": 4,
+              "start": 500,
+              "end": 730
+            },
+            {
+              "number": 1,
+              "start": 1120,
+              "end": 1340
+            },
+            {
+              "number": 2,
+              "start": 1340,
+              "end": 1560
+            },
+            {
+              "number": 3,
+              "start": 1910,
+              "end": 2130
+            },
+            {
+              "number": 4,
+              "start": 2130,
+              "end": 2338
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 260
+            },
+            {
+              "number": 2,
+              "start": 730,
+              "end": 1120
+            },
+            {
+              "number": 3,
+              "start": 1560,
+              "end": 1910
+            },
+            {
+              "number": 4,
+              "start": 2338,
+              "end": 2600
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1083
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10205.png"
+        },
+        {
+          "distance": 1000,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 167
+            },
+            "mid": {
+              "start": 167,
+              "end": 667
+            },
+            "late": {
+              "start": 667,
+              "end": 833
+            },
+            "spurt": {
+              "start": 833,
+              "end": 1000
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 370,
+              "end": 560
+            },
+            {
+              "number": 4,
+              "start": 560,
+              "end": 740
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 370
+            },
+            {
+              "number": 2,
+              "start": 740,
+              "end": 1000
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 417
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10206.png"
+        },
+        {
+          "distance": 1700,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 283
+            },
+            "mid": {
+              "start": 283,
+              "end": 1133
+            },
+            "late": {
+              "start": 1133,
+              "end": 1417
+            },
+            "spurt": {
+              "start": 1417,
+              "end": 1700
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 350,
+              "end": 540
+            },
+            {
+              "number": 2,
+              "start": 540,
+              "end": 730
+            },
+            {
+              "number": 3,
+              "start": 1070,
+              "end": 1260
+            },
+            {
+              "number": 4,
+              "start": 1260,
+              "end": 1440
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 350
+            },
+            {
+              "number": 2,
+              "start": 730,
+              "end": 1070
+            },
+            {
+              "number": 3,
+              "start": 1440,
+              "end": 1700
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 708
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10207.png"
+        },
+        {
+          "distance": 2400,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 400
+            },
+            "mid": {
+              "start": 400,
+              "end": 1600
+            },
+            "late": {
+              "start": 1600,
+              "end": 2000
+            },
+            "spurt": {
+              "start": 2000,
+              "end": 2400
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 292,
+              "end": 482
+            },
+            {
+              "number": 4,
+              "start": 482,
+              "end": 672
+            },
+            {
+              "number": 1,
+              "start": 1040,
+              "end": 1230
+            },
+            {
+              "number": 2,
+              "start": 1230,
+              "end": 1420
+            },
+            {
+              "number": 3,
+              "start": 1770,
+              "end": 1960
+            },
+            {
+              "number": 4,
+              "start": 1960,
+              "end": 2140
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 292
+            },
+            {
+              "number": 2,
+              "start": 672,
+              "end": 1040
+            },
+            {
+              "number": 3,
+              "start": 1420,
+              "end": 1770
+            },
+            {
+              "number": 4,
+              "start": 2140,
+              "end": 2400
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1000
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10208.png"
+        }
+      ]
+    },
+    {
+      "venue": "니가타",
+      "venueId": "niigata",
+      "courses": [
+        {
+          "distance": 1000,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 167
+            },
+            "mid": {
+              "start": 167,
+              "end": 667
+            },
+            "late": {
+              "start": 667,
+              "end": 833
+            },
+            "spurt": {
+              "start": 833,
+              "end": 1000
+            }
+          },
+          "corners": [],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 1000
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 417
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10301.png"
+        },
+        {
+          "distance": 1200,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 200
+            },
+            "mid": {
+              "start": 200,
+              "end": 800
+            },
+            "late": {
+              "start": 800,
+              "end": 1000
+            },
+            "spurt": {
+              "start": 1000,
+              "end": 1200
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 450,
+              "end": 650
+            },
+            {
+              "number": 4,
+              "start": 650,
+              "end": 842
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 450
+            },
+            {
+              "number": 2,
+              "start": 842,
+              "end": 1200
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 500
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10302.png"
+        },
+        {
+          "distance": 1400,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 233
+            },
+            "mid": {
+              "start": 233,
+              "end": 933
+            },
+            "late": {
+              "start": 933,
+              "end": 1167
+            },
+            "spurt": {
+              "start": 1167,
+              "end": 1400
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 650,
+              "end": 850
+            },
+            {
+              "number": 4,
+              "start": 850,
+              "end": 1042
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 650
+            },
+            {
+              "number": 2,
+              "start": 1042,
+              "end": 1400
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 583
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10303.png"
+        },
+        {
+          "distance": 1600,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 267
+            },
+            "mid": {
+              "start": 267,
+              "end": 1067
+            },
+            "late": {
+              "start": 1067,
+              "end": 1333
+            },
+            "spurt": {
+              "start": 1333,
+              "end": 1600
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 550,
+              "end": 750
+            },
+            {
+              "number": 4,
+              "start": 750,
+              "end": 942
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 550
+            },
+            {
+              "number": 2,
+              "start": 942,
+              "end": 1600
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 667
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10304.png"
+        },
+        {
+          "distance": 1800,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 300
+            },
+            "mid": {
+              "start": 300,
+              "end": 1200
+            },
+            "late": {
+              "start": 1200,
+              "end": 1500
+            },
+            "spurt": {
+              "start": 1500,
+              "end": 1800
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 750,
+              "end": 950
+            },
+            {
+              "number": 4,
+              "start": 950,
+              "end": 1142
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 750
+            },
+            {
+              "number": 2,
+              "start": 1142,
+              "end": 1800
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 750
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10305.png"
+        },
+        {
+          "distance": 2000,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 333
+            },
+            "mid": {
+              "start": 333,
+              "end": 1333
+            },
+            "late": {
+              "start": 1333,
+              "end": 1667
+            },
+            "spurt": {
+              "start": 1667,
+              "end": 2000
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 420,
+              "end": 620
+            },
+            {
+              "number": 2,
+              "start": 620,
+              "end": 820
+            },
+            {
+              "number": 3,
+              "start": 1250,
+              "end": 1450
+            },
+            {
+              "number": 4,
+              "start": 1450,
+              "end": 1642
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 420
+            },
+            {
+              "number": 2,
+              "start": 820,
+              "end": 1250
+            },
+            {
+              "number": 3,
+              "start": 1642,
+              "end": 2000
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 833
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10306.png"
+        },
+        {
+          "distance": 2000,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 333
+            },
+            "mid": {
+              "start": 333,
+              "end": 1333
+            },
+            "late": {
+              "start": 1333,
+              "end": 1667
+            },
+            "spurt": {
+              "start": 1667,
+              "end": 2000
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 950,
+              "end": 1150
+            },
+            {
+              "number": 4,
+              "start": 1150,
+              "end": 1342
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 950
+            },
+            {
+              "number": 2,
+              "start": 1342,
+              "end": 2000
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 833
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10307.png"
+        },
+        {
+          "distance": 2200,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 367
+            },
+            "mid": {
+              "start": 367,
+              "end": 1467
+            },
+            "late": {
+              "start": 1467,
+              "end": 1833
+            },
+            "spurt": {
+              "start": 1833,
+              "end": 2200
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 650,
+              "end": 850
+            },
+            {
+              "number": 2,
+              "start": 850,
+              "end": 1050
+            },
+            {
+              "number": 3,
+              "start": 1450,
+              "end": 1650
+            },
+            {
+              "number": 4,
+              "start": 1650,
+              "end": 1842
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 650
+            },
+            {
+              "number": 2,
+              "start": 1050,
+              "end": 1450
+            },
+            {
+              "number": 3,
+              "start": 1842,
+              "end": 2200
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 917
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10308.png"
+        },
+        {
+          "distance": 2400,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 400
+            },
+            "mid": {
+              "start": 400,
+              "end": 1600
+            },
+            "late": {
+              "start": 1600,
+              "end": 2000
+            },
+            "spurt": {
+              "start": 2000,
+              "end": 2400
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 810,
+              "end": 1010
+            },
+            {
+              "number": 2,
+              "start": 1010,
+              "end": 1210
+            },
+            {
+              "number": 3,
+              "start": 1650,
+              "end": 1850
+            },
+            {
+              "number": 4,
+              "start": 1850,
+              "end": 2042
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 810
+            },
+            {
+              "number": 2,
+              "start": 1210,
+              "end": 1650
+            },
+            {
+              "number": 3,
+              "start": 2042,
+              "end": 2400
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1000
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10309.png"
+        },
+        {
+          "distance": 1200,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 200
+            },
+            "mid": {
+              "start": 200,
+              "end": 800
+            },
+            "late": {
+              "start": 800,
+              "end": 1000
+            },
+            "spurt": {
+              "start": 1000,
+              "end": 1200
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 540,
+              "end": 700
+            },
+            {
+              "number": 4,
+              "start": 700,
+              "end": 847
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 540
+            },
+            {
+              "number": 2,
+              "start": 847,
+              "end": 1200
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 500
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10310.png"
+        },
+        {
+          "distance": 1800,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 300
+            },
+            "mid": {
+              "start": 300,
+              "end": 1200
+            },
+            "late": {
+              "start": 1200,
+              "end": 1500
+            },
+            "spurt": {
+              "start": 1500,
+              "end": 1800
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 400,
+              "end": 560
+            },
+            {
+              "number": 2,
+              "start": 560,
+              "end": 720
+            },
+            {
+              "number": 3,
+              "start": 1140,
+              "end": 1300
+            },
+            {
+              "number": 4,
+              "start": 1300,
+              "end": 1447
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 400
+            },
+            {
+              "number": 2,
+              "start": 720,
+              "end": 1140
+            },
+            {
+              "number": 3,
+              "start": 1447,
+              "end": 1800
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 750
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10311.png"
+        },
+        {
+          "distance": 2500,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 417
+            },
+            "mid": {
+              "start": 417,
+              "end": 1667
+            },
+            "late": {
+              "start": 1667,
+              "end": 2083
+            },
+            "spurt": {
+              "start": 2083,
+              "end": 2500
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 380,
+              "end": 540
+            },
+            {
+              "number": 4,
+              "start": 540,
+              "end": 700
+            },
+            {
+              "number": 1,
+              "start": 1120,
+              "end": 1280
+            },
+            {
+              "number": 2,
+              "start": 1280,
+              "end": 1440
+            },
+            {
+              "number": 3,
+              "start": 1850,
+              "end": 2010
+            },
+            {
+              "number": 4,
+              "start": 2010,
+              "end": 2170
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 380
+            },
+            {
+              "number": 2,
+              "start": 700,
+              "end": 1120
+            },
+            {
+              "number": 3,
+              "start": 1440,
+              "end": 1850
+            },
+            {
+              "number": 4,
+              "start": 2170,
+              "end": 2500
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1042
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10312.png"
+        }
+      ]
+    },
+    {
+      "venue": "후쿠시마",
+      "venueId": "fukushima",
+      "courses": [
+        {
+          "distance": 1200,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 200
+            },
+            "mid": {
+              "start": 200,
+              "end": 800
+            },
+            "late": {
+              "start": 800,
+              "end": 1000
+            },
+            "spurt": {
+              "start": 1000,
+              "end": 1200
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 420,
+              "end": 720
+            },
+            {
+              "number": 4,
+              "start": 720,
+              "end": 908
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 420
+            },
+            {
+              "number": 2,
+              "start": 908,
+              "end": 1200
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 500
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10401.png"
+        },
+        {
+          "distance": 1800,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 300
+            },
+            "mid": {
+              "start": 300,
+              "end": 1200
+            },
+            "late": {
+              "start": 1200,
+              "end": 1500
+            },
+            "spurt": {
+              "start": 1500,
+              "end": 1800
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 330,
+              "end": 530
+            },
+            {
+              "number": 2,
+              "start": 530,
+              "end": 730
+            },
+            {
+              "number": 3,
+              "start": 1020,
+              "end": 1320
+            },
+            {
+              "number": 4,
+              "start": 1320,
+              "end": 1508
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 330
+            },
+            {
+              "number": 2,
+              "start": 730,
+              "end": 1020
+            },
+            {
+              "number": 3,
+              "start": 1508,
+              "end": 1800
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 750
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10402.png"
+        },
+        {
+          "distance": 2000,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 333
+            },
+            "mid": {
+              "start": 333,
+              "end": 1333
+            },
+            "late": {
+              "start": 1333,
+              "end": 1667
+            },
+            "spurt": {
+              "start": 1667,
+              "end": 2000
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 530,
+              "end": 730
+            },
+            {
+              "number": 2,
+              "start": 730,
+              "end": 930
+            },
+            {
+              "number": 3,
+              "start": 1220,
+              "end": 1520
+            },
+            {
+              "number": 4,
+              "start": 1520,
+              "end": 1708
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 530
+            },
+            {
+              "number": 2,
+              "start": 930,
+              "end": 1220
+            },
+            {
+              "number": 3,
+              "start": 1708,
+              "end": 2000
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 833
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10403.png"
+        },
+        {
+          "distance": 2600,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 433
+            },
+            "mid": {
+              "start": 433,
+              "end": 1733
+            },
+            "late": {
+              "start": 1733,
+              "end": 2167
+            },
+            "spurt": {
+              "start": 2167,
+              "end": 2600
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 220,
+              "end": 520
+            },
+            {
+              "number": 4,
+              "start": 520,
+              "end": 720
+            },
+            {
+              "number": 1,
+              "start": 1130,
+              "end": 1330
+            },
+            {
+              "number": 2,
+              "start": 1330,
+              "end": 1530
+            },
+            {
+              "number": 3,
+              "start": 1820,
+              "end": 2120
+            },
+            {
+              "number": 4,
+              "start": 2120,
+              "end": 2308
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 220
+            },
+            {
+              "number": 2,
+              "start": 720,
+              "end": 1130
+            },
+            {
+              "number": 3,
+              "start": 1530,
+              "end": 1820
+            },
+            {
+              "number": 4,
+              "start": 2308,
+              "end": 2600
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1083
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10404.png"
+        },
+        {
+          "distance": 1150,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 192
+            },
+            "mid": {
+              "start": 192,
+              "end": 767
+            },
+            "late": {
+              "start": 767,
+              "end": 958
+            },
+            "spurt": {
+              "start": 958,
+              "end": 1150
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 500,
+              "end": 710
+            },
+            {
+              "number": 4,
+              "start": 710,
+              "end": 855
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 500
+            },
+            {
+              "number": 2,
+              "start": 855,
+              "end": 1150
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 479
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10405.png"
+        },
+        {
+          "distance": 1700,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 283
+            },
+            "mid": {
+              "start": 283,
+              "end": 1133
+            },
+            "late": {
+              "start": 1133,
+              "end": 1417
+            },
+            "spurt": {
+              "start": 1417,
+              "end": 1700
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 360,
+              "end": 530
+            },
+            {
+              "number": 2,
+              "start": 530,
+              "end": 700
+            },
+            {
+              "number": 3,
+              "start": 1050,
+              "end": 1260
+            },
+            {
+              "number": 4,
+              "start": 1260,
+              "end": 1405
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 360
+            },
+            {
+              "number": 2,
+              "start": 700,
+              "end": 1050
+            },
+            {
+              "number": 3,
+              "start": 1405,
+              "end": 1700
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 708
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10406.png"
+        },
+        {
+          "distance": 2400,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 400
+            },
+            "mid": {
+              "start": 400,
+              "end": 1600
+            },
+            "late": {
+              "start": 1600,
+              "end": 2000
+            },
+            "spurt": {
+              "start": 2000,
+              "end": 2400
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 310,
+              "end": 520
+            },
+            {
+              "number": 4,
+              "start": 520,
+              "end": 680
+            },
+            {
+              "number": 1,
+              "start": 1060,
+              "end": 1230
+            },
+            {
+              "number": 2,
+              "start": 1230,
+              "end": 1400
+            },
+            {
+              "number": 3,
+              "start": 1750,
+              "end": 1960
+            },
+            {
+              "number": 4,
+              "start": 1960,
+              "end": 2105
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 310
+            },
+            {
+              "number": 2,
+              "start": 680,
+              "end": 1060
+            },
+            {
+              "number": 3,
+              "start": 1400,
+              "end": 1750
+            },
+            {
+              "number": 4,
+              "start": 2105,
+              "end": 2400
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1000
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10407.png"
+        }
+      ]
+    },
+    {
+      "venue": "나카야마",
+      "venueId": "nakayama",
+      "courses": [
+        {
+          "distance": 1200,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 200
+            },
+            "mid": {
+              "start": 200,
+              "end": 800
+            },
+            "late": {
+              "start": 800,
+              "end": 1000
+            },
+            "spurt": {
+              "start": 1000,
+              "end": 1200
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 300,
+              "end": 650
+            },
+            {
+              "number": 4,
+              "start": 650,
+              "end": 890
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 890,
+              "end": 1200
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 500
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10501.png"
+        },
+        {
+          "distance": 1600,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 267
+            },
+            "mid": {
+              "start": 267,
+              "end": 1067
+            },
+            "late": {
+              "start": 1067,
+              "end": 1333
+            },
+            "spurt": {
+              "start": 1333,
+              "end": 1600
+            }
+          },
+          "corners": [
+            {
+              "number": 2,
+              "start": 50,
+              "end": 500
+            },
+            {
+              "number": 3,
+              "start": 700,
+              "end": 1050
+            },
+            {
+              "number": 4,
+              "start": 1050,
+              "end": 1290
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 1290,
+              "end": 1600
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 667
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10502.png"
+        },
+        {
+          "distance": 1800,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 300
+            },
+            "mid": {
+              "start": 300,
+              "end": 1200
+            },
+            "late": {
+              "start": 1200,
+              "end": 1500
+            },
+            "spurt": {
+              "start": 1500,
+              "end": 1800
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 175,
+              "end": 425
+            },
+            {
+              "number": 2,
+              "start": 425,
+              "end": 675
+            },
+            {
+              "number": 3,
+              "start": 1000,
+              "end": 1250
+            },
+            {
+              "number": 4,
+              "start": 1250,
+              "end": 1490
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 175
+            },
+            {
+              "number": 2,
+              "start": 675,
+              "end": 1000
+            },
+            {
+              "number": 3,
+              "start": 1490,
+              "end": 1800
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 750
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10503.png"
+        },
+        {
+          "distance": 2000,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 333
+            },
+            "mid": {
+              "start": 333,
+              "end": 1333
+            },
+            "late": {
+              "start": 1333,
+              "end": 1667
+            },
+            "spurt": {
+              "start": 1667,
+              "end": 2000
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 375,
+              "end": 625
+            },
+            {
+              "number": 2,
+              "start": 625,
+              "end": 875
+            },
+            {
+              "number": 3,
+              "start": 1200,
+              "end": 1450
+            },
+            {
+              "number": 4,
+              "start": 1450,
+              "end": 1690
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 375
+            },
+            {
+              "number": 2,
+              "start": 875,
+              "end": 1200
+            },
+            {
+              "number": 3,
+              "start": 1690,
+              "end": 2000
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 833
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10504.png"
+        },
+        {
+          "distance": 2200,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 367
+            },
+            "mid": {
+              "start": 367,
+              "end": 1467
+            },
+            "late": {
+              "start": 1467,
+              "end": 1833
+            },
+            "spurt": {
+              "start": 1833,
+              "end": 2200
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 403,
+              "end": 650
+            },
+            {
+              "number": 2,
+              "start": 650,
+              "end": 1100
+            },
+            {
+              "number": 3,
+              "start": 1300,
+              "end": 1650
+            },
+            {
+              "number": 4,
+              "start": 1650,
+              "end": 1890
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 403
+            },
+            {
+              "number": 2,
+              "start": 1890,
+              "end": 2200
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 917
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10505.png"
+        },
+        {
+          "distance": 2500,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 417
+            },
+            "mid": {
+              "start": 417,
+              "end": 1667
+            },
+            "late": {
+              "start": 1667,
+              "end": 2083
+            },
+            "spurt": {
+              "start": 2083,
+              "end": 2500
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 100,
+              "end": 246
+            },
+            {
+              "number": 4,
+              "start": 246,
+              "end": 496
+            },
+            {
+              "number": 1,
+              "start": 875,
+              "end": 1125
+            },
+            {
+              "number": 2,
+              "start": 1125,
+              "end": 1375
+            },
+            {
+              "number": 3,
+              "start": 1700,
+              "end": 1950
+            },
+            {
+              "number": 4,
+              "start": 1950,
+              "end": 2190
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 496,
+              "end": 875
+            },
+            {
+              "number": 2,
+              "start": 1375,
+              "end": 1700
+            },
+            {
+              "number": 3,
+              "start": 2190,
+              "end": 2500
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1042
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10506.png"
+        },
+        {
+          "distance": 3600,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 600
+            },
+            "mid": {
+              "start": 600,
+              "end": 2400
+            },
+            "late": {
+              "start": 2400,
+              "end": 3000
+            },
+            "spurt": {
+              "start": 3000,
+              "end": 3600
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 290,
+              "end": 540
+            },
+            {
+              "number": 2,
+              "start": 540,
+              "end": 790
+            },
+            {
+              "number": 3,
+              "start": 1115,
+              "end": 1365
+            },
+            {
+              "number": 4,
+              "start": 1365,
+              "end": 1615
+            },
+            {
+              "number": 1,
+              "start": 1975,
+              "end": 2225
+            },
+            {
+              "number": 2,
+              "start": 2225,
+              "end": 2475
+            },
+            {
+              "number": 3,
+              "start": 2800,
+              "end": 3050
+            },
+            {
+              "number": 4,
+              "start": 3050,
+              "end": 3290
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 290
+            },
+            {
+              "number": 2,
+              "start": 790,
+              "end": 1115
+            },
+            {
+              "number": 3,
+              "start": 1615,
+              "end": 1975
+            },
+            {
+              "number": 4,
+              "start": 2475,
+              "end": 2800
+            },
+            {
+              "number": 5,
+              "start": 3290,
+              "end": 3600
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1500
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10507.png"
+        },
+        {
+          "distance": 1200,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 200
+            },
+            "mid": {
+              "start": 200,
+              "end": 800
+            },
+            "late": {
+              "start": 800,
+              "end": 1000
+            },
+            "spurt": {
+              "start": 1000,
+              "end": 1200
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 500,
+              "end": 700
+            },
+            {
+              "number": 4,
+              "start": 700,
+              "end": 892
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 500
+            },
+            {
+              "number": 2,
+              "start": 892,
+              "end": 1200
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 500
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10508.png"
+        },
+        {
+          "distance": 1800,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 300
+            },
+            "mid": {
+              "start": 300,
+              "end": 1200
+            },
+            "late": {
+              "start": 1200,
+              "end": 1500
+            },
+            "spurt": {
+              "start": 1500,
+              "end": 1800
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 350,
+              "end": 550
+            },
+            {
+              "number": 2,
+              "start": 550,
+              "end": 750
+            },
+            {
+              "number": 3,
+              "start": 1100,
+              "end": 1300
+            },
+            {
+              "number": 4,
+              "start": 1300,
+              "end": 1492
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 350
+            },
+            {
+              "number": 2,
+              "start": 750,
+              "end": 1100
+            },
+            {
+              "number": 3,
+              "start": 1492,
+              "end": 1800
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 750
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10509.png"
+        },
+        {
+          "distance": 2400,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 400
+            },
+            "mid": {
+              "start": 400,
+              "end": 1600
+            },
+            "late": {
+              "start": 1600,
+              "end": 2000
+            },
+            "spurt": {
+              "start": 2000,
+              "end": 2400
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 200,
+              "end": 400
+            },
+            {
+              "number": 4,
+              "start": 400,
+              "end": 600
+            },
+            {
+              "number": 1,
+              "start": 950,
+              "end": 1150
+            },
+            {
+              "number": 2,
+              "start": 1150,
+              "end": 1350
+            },
+            {
+              "number": 3,
+              "start": 1700,
+              "end": 1900
+            },
+            {
+              "number": 4,
+              "start": 1900,
+              "end": 2092
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 200
+            },
+            {
+              "number": 2,
+              "start": 600,
+              "end": 950
+            },
+            {
+              "number": 3,
+              "start": 1350,
+              "end": 1700
+            },
+            {
+              "number": 4,
+              "start": 2092,
+              "end": 2400
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1000
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10510.png"
+        },
+        {
+          "distance": 2500,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 417
+            },
+            "mid": {
+              "start": 417,
+              "end": 1667
+            },
+            "late": {
+              "start": 1667,
+              "end": 2083
+            },
+            "spurt": {
+              "start": 2083,
+              "end": 2500
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 300,
+              "end": 500
+            },
+            {
+              "number": 4,
+              "start": 500,
+              "end": 700
+            },
+            {
+              "number": 1,
+              "start": 1050,
+              "end": 1250
+            },
+            {
+              "number": 2,
+              "start": 1250,
+              "end": 1450
+            },
+            {
+              "number": 3,
+              "start": 1800,
+              "end": 2000
+            },
+            {
+              "number": 4,
+              "start": 2000,
+              "end": 2192
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 300
+            },
+            {
+              "number": 2,
+              "start": 700,
+              "end": 1050
+            },
+            {
+              "number": 3,
+              "start": 1450,
+              "end": 1800
+            },
+            {
+              "number": 4,
+              "start": 2192,
+              "end": 2500
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1042
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10511.png"
+        }
+      ]
+    },
+    {
+      "venue": "도쿄",
+      "venueId": "tokyo",
+      "courses": [
+        {
+          "distance": 1400,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 233
+            },
+            "mid": {
+              "start": 233,
+              "end": 933
+            },
+            "late": {
+              "start": 933,
+              "end": 1167
+            },
+            "spurt": {
+              "start": 1167,
+              "end": 1400
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 350,
+              "end": 625
+            },
+            {
+              "number": 4,
+              "start": 625,
+              "end": 875
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 350
+            },
+            {
+              "number": 2,
+              "start": 875,
+              "end": 1400
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 583
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10601.png"
+        },
+        {
+          "distance": 1600,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 267
+            },
+            "mid": {
+              "start": 267,
+              "end": 1067
+            },
+            "late": {
+              "start": 1067,
+              "end": 1333
+            },
+            "spurt": {
+              "start": 1333,
+              "end": 1600
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 550,
+              "end": 825
+            },
+            {
+              "number": 4,
+              "start": 825,
+              "end": 1075
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 550
+            },
+            {
+              "number": 2,
+              "start": 1075,
+              "end": 1600
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 667
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10602.png"
+        },
+        {
+          "distance": 1800,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 300
+            },
+            "mid": {
+              "start": 300,
+              "end": 1200
+            },
+            "late": {
+              "start": 1200,
+              "end": 1500
+            },
+            "spurt": {
+              "start": 1500,
+              "end": 1800
+            }
+          },
+          "corners": [
+            {
+              "number": 2,
+              "start": 75,
+              "end": 325
+            },
+            {
+              "number": 3,
+              "start": 750,
+              "end": 1025
+            },
+            {
+              "number": 4,
+              "start": 1025,
+              "end": 1275
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 325,
+              "end": 750
+            },
+            {
+              "number": 2,
+              "start": 1275,
+              "end": 1800
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 750
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10603.png"
+        },
+        {
+          "distance": 2000,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 333
+            },
+            "mid": {
+              "start": 333,
+              "end": 1333
+            },
+            "late": {
+              "start": 1333,
+              "end": 1667
+            },
+            "spurt": {
+              "start": 1667,
+              "end": 2000
+            }
+          },
+          "corners": [
+            {
+              "number": 2,
+              "start": 200,
+              "end": 400
+            },
+            {
+              "number": 3,
+              "start": 950,
+              "end": 1225
+            },
+            {
+              "number": 4,
+              "start": 1225,
+              "end": 1475
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 400,
+              "end": 950
+            },
+            {
+              "number": 2,
+              "start": 1475,
+              "end": 2000
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 833
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10604.png"
+        },
+        {
+          "distance": 2300,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 383
+            },
+            "mid": {
+              "start": 383,
+              "end": 1533
+            },
+            "late": {
+              "start": 1533,
+              "end": 1917
+            },
+            "spurt": {
+              "start": 1917,
+              "end": 2300
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 225,
+              "end": 475
+            },
+            {
+              "number": 2,
+              "start": 475,
+              "end": 800
+            },
+            {
+              "number": 3,
+              "start": 1250,
+              "end": 1525
+            },
+            {
+              "number": 4,
+              "start": 1525,
+              "end": 1775
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 225
+            },
+            {
+              "number": 2,
+              "start": 800,
+              "end": 1250
+            },
+            {
+              "number": 3,
+              "start": 1775,
+              "end": 2300
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 958
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10605.png"
+        },
+        {
+          "distance": 2400,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 400
+            },
+            "mid": {
+              "start": 400,
+              "end": 1600
+            },
+            "late": {
+              "start": 1600,
+              "end": 2000
+            },
+            "spurt": {
+              "start": 2000,
+              "end": 2400
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 325,
+              "end": 575
+            },
+            {
+              "number": 2,
+              "start": 575,
+              "end": 900
+            },
+            {
+              "number": 3,
+              "start": 1350,
+              "end": 1625
+            },
+            {
+              "number": 4,
+              "start": 1625,
+              "end": 1875
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 325
+            },
+            {
+              "number": 2,
+              "start": 900,
+              "end": 1350
+            },
+            {
+              "number": 3,
+              "start": 1875,
+              "end": 2400
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1000
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10606.png"
+        },
+        {
+          "distance": 2500,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 417
+            },
+            "mid": {
+              "start": 417,
+              "end": 1667
+            },
+            "late": {
+              "start": 1667,
+              "end": 2083
+            },
+            "spurt": {
+              "start": 2083,
+              "end": 2500
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 425,
+              "end": 675
+            },
+            {
+              "number": 2,
+              "start": 675,
+              "end": 1000
+            },
+            {
+              "number": 3,
+              "start": 1450,
+              "end": 1725
+            },
+            {
+              "number": 4,
+              "start": 1725,
+              "end": 1975
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 425
+            },
+            {
+              "number": 2,
+              "start": 1000,
+              "end": 1450
+            },
+            {
+              "number": 3,
+              "start": 1975,
+              "end": 2500
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1042
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10607.png"
+        },
+        {
+          "distance": 3400,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 567
+            },
+            "mid": {
+              "start": 567,
+              "end": 2267
+            },
+            "late": {
+              "start": 2267,
+              "end": 2833
+            },
+            "spurt": {
+              "start": 2833,
+              "end": 3400
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 292,
+              "end": 567
+            },
+            {
+              "number": 4,
+              "start": 567,
+              "end": 842
+            },
+            {
+              "number": 1,
+              "start": 1325,
+              "end": 1575
+            },
+            {
+              "number": 2,
+              "start": 1575,
+              "end": 1900
+            },
+            {
+              "number": 3,
+              "start": 2350,
+              "end": 2625
+            },
+            {
+              "number": 4,
+              "start": 2625,
+              "end": 2875
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 292
+            },
+            {
+              "number": 2,
+              "start": 842,
+              "end": 1325
+            },
+            {
+              "number": 3,
+              "start": 1900,
+              "end": 2350
+            },
+            {
+              "number": 4,
+              "start": 2875,
+              "end": 3400
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1417
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10608.png"
+        },
+        {
+          "distance": 1300,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 217
+            },
+            "mid": {
+              "start": 217,
+              "end": 867
+            },
+            "late": {
+              "start": 867,
+              "end": 1083
+            },
+            "spurt": {
+              "start": 1083,
+              "end": 1300
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 350,
+              "end": 575
+            },
+            {
+              "number": 4,
+              "start": 575,
+              "end": 799
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 350
+            },
+            {
+              "number": 2,
+              "start": 799,
+              "end": 1300
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 542
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10609.png"
+        },
+        {
+          "distance": 1400,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 233
+            },
+            "mid": {
+              "start": 233,
+              "end": 933
+            },
+            "late": {
+              "start": 933,
+              "end": 1167
+            },
+            "spurt": {
+              "start": 1167,
+              "end": 1400
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 450,
+              "end": 675
+            },
+            {
+              "number": 4,
+              "start": 675,
+              "end": 899
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 450
+            },
+            {
+              "number": 2,
+              "start": 899,
+              "end": 1400
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 583
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10610.png"
+        },
+        {
+          "distance": 1600,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 267
+            },
+            "mid": {
+              "start": 267,
+              "end": 1067
+            },
+            "late": {
+              "start": 1067,
+              "end": 1333
+            },
+            "spurt": {
+              "start": 1333,
+              "end": 1600
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 650,
+              "end": 875
+            },
+            {
+              "number": 4,
+              "start": 875,
+              "end": 1099
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 650
+            },
+            {
+              "number": 2,
+              "start": 1099,
+              "end": 1600
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 667
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10611.png"
+        },
+        {
+          "distance": 2100,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 350
+            },
+            "mid": {
+              "start": 350,
+              "end": 1400
+            },
+            "late": {
+              "start": 1400,
+              "end": 1750
+            },
+            "spurt": {
+              "start": 1750,
+              "end": 2100
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 200,
+              "end": 450
+            },
+            {
+              "number": 2,
+              "start": 450,
+              "end": 700
+            },
+            {
+              "number": 3,
+              "start": 1150,
+              "end": 1375
+            },
+            {
+              "number": 4,
+              "start": 1375,
+              "end": 1599
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 200
+            },
+            {
+              "number": 2,
+              "start": 700,
+              "end": 1150
+            },
+            {
+              "number": 3,
+              "start": 1599,
+              "end": 2100
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 875
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10612.png"
+        },
+        {
+          "distance": 2400,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 400
+            },
+            "mid": {
+              "start": 400,
+              "end": 1600
+            },
+            "late": {
+              "start": 1600,
+              "end": 2000
+            },
+            "spurt": {
+              "start": 2000,
+              "end": 2400
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 500,
+              "end": 750
+            },
+            {
+              "number": 2,
+              "start": 750,
+              "end": 1000
+            },
+            {
+              "number": 3,
+              "start": 1450,
+              "end": 1675
+            },
+            {
+              "number": 4,
+              "start": 1675,
+              "end": 1900
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 500
+            },
+            {
+              "number": 2,
+              "start": 1000,
+              "end": 1450
+            },
+            {
+              "number": 3,
+              "start": 1900,
+              "end": 2400
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1000
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10613.png"
+        }
+      ]
+    },
+    {
+      "venue": "추쿄",
+      "venueId": "chukyo",
+      "courses": [
+        {
+          "distance": 1200,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 200
+            },
+            "mid": {
+              "start": 200,
+              "end": 800
+            },
+            "late": {
+              "start": 800,
+              "end": 1000
+            },
+            "spurt": {
+              "start": 1000,
+              "end": 1200
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 300,
+              "end": 550
+            },
+            {
+              "number": 4,
+              "start": 550,
+              "end": 788
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 300
+            },
+            {
+              "number": 2,
+              "start": 788,
+              "end": 1200
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 500
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10701.png"
+        },
+        {
+          "distance": 1400,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 233
+            },
+            "mid": {
+              "start": 233,
+              "end": 933
+            },
+            "late": {
+              "start": 933,
+              "end": 1167
+            },
+            "spurt": {
+              "start": 1167,
+              "end": 1400
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 500,
+              "end": 750
+            },
+            {
+              "number": 4,
+              "start": 750,
+              "end": 988
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 500
+            },
+            {
+              "number": 2,
+              "start": 988,
+              "end": 1400
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 583
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10702.png"
+        },
+        {
+          "distance": 1600,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 267
+            },
+            "mid": {
+              "start": 267,
+              "end": 1067
+            },
+            "late": {
+              "start": 1067,
+              "end": 1333
+            },
+            "spurt": {
+              "start": 1333,
+              "end": 1600
+            }
+          },
+          "corners": [
+            {
+              "number": 2,
+              "start": 150,
+              "end": 300
+            },
+            {
+              "number": 3,
+              "start": 700,
+              "end": 950
+            },
+            {
+              "number": 4,
+              "start": 950,
+              "end": 1188
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 300,
+              "end": 700
+            },
+            {
+              "number": 2,
+              "start": 1188,
+              "end": 1600
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 667
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10703.png"
+        },
+        {
+          "distance": 2000,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 333
+            },
+            "mid": {
+              "start": 333,
+              "end": 1333
+            },
+            "late": {
+              "start": 1333,
+              "end": 1667
+            },
+            "spurt": {
+              "start": 1667,
+              "end": 2000
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 300,
+              "end": 500
+            },
+            {
+              "number": 2,
+              "start": 500,
+              "end": 700
+            },
+            {
+              "number": 3,
+              "start": 1100,
+              "end": 1350
+            },
+            {
+              "number": 4,
+              "start": 1350,
+              "end": 1588
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 300
+            },
+            {
+              "number": 2,
+              "start": 700,
+              "end": 1100
+            },
+            {
+              "number": 3,
+              "start": 1588,
+              "end": 2000
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 833
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10704.png"
+        },
+        {
+          "distance": 2200,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 367
+            },
+            "mid": {
+              "start": 367,
+              "end": 1467
+            },
+            "late": {
+              "start": 1467,
+              "end": 1833
+            },
+            "spurt": {
+              "start": 1833,
+              "end": 2200
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 500,
+              "end": 700
+            },
+            {
+              "number": 2,
+              "start": 700,
+              "end": 900
+            },
+            {
+              "number": 3,
+              "start": 1300,
+              "end": 1550
+            },
+            {
+              "number": 4,
+              "start": 1550,
+              "end": 1788
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 500
+            },
+            {
+              "number": 2,
+              "start": 900,
+              "end": 1300
+            },
+            {
+              "number": 3,
+              "start": 1788,
+              "end": 2200
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 917
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10705.png"
+        },
+        {
+          "distance": 1200,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 200
+            },
+            "mid": {
+              "start": 200,
+              "end": 800
+            },
+            "late": {
+              "start": 800,
+              "end": 1000
+            },
+            "spurt": {
+              "start": 1000,
+              "end": 1200
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 400,
+              "end": 600
+            },
+            {
+              "number": 4,
+              "start": 600,
+              "end": 790
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 400
+            },
+            {
+              "number": 2,
+              "start": 790,
+              "end": 1200
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 500
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10706.png"
+        },
+        {
+          "distance": 1400,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 233
+            },
+            "mid": {
+              "start": 233,
+              "end": 933
+            },
+            "late": {
+              "start": 933,
+              "end": 1167
+            },
+            "spurt": {
+              "start": 1167,
+              "end": 1400
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 600,
+              "end": 800
+            },
+            {
+              "number": 4,
+              "start": 800,
+              "end": 990
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 600
+            },
+            {
+              "number": 2,
+              "start": 990,
+              "end": 1400
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 583
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10707.png"
+        },
+        {
+          "distance": 1800,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 300
+            },
+            "mid": {
+              "start": 300,
+              "end": 1200
+            },
+            "late": {
+              "start": 1200,
+              "end": 1500
+            },
+            "spurt": {
+              "start": 1500,
+              "end": 1800
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 270,
+              "end": 435
+            },
+            {
+              "number": 2,
+              "start": 435,
+              "end": 600
+            },
+            {
+              "number": 3,
+              "start": 1000,
+              "end": 1200
+            },
+            {
+              "number": 4,
+              "start": 1200,
+              "end": 1390
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 270
+            },
+            {
+              "number": 2,
+              "start": 600,
+              "end": 1000
+            },
+            {
+              "number": 3,
+              "start": 1390,
+              "end": 1800
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 750
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10708.png"
+        },
+        {
+          "distance": 1900,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 317
+            },
+            "mid": {
+              "start": 317,
+              "end": 1267
+            },
+            "late": {
+              "start": 1267,
+              "end": 1583
+            },
+            "spurt": {
+              "start": 1583,
+              "end": 1900
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 370,
+              "end": 535
+            },
+            {
+              "number": 2,
+              "start": 535,
+              "end": 700
+            },
+            {
+              "number": 3,
+              "start": 1100,
+              "end": 1300
+            },
+            {
+              "number": 4,
+              "start": 1300,
+              "end": 1490
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 370
+            },
+            {
+              "number": 2,
+              "start": 700,
+              "end": 1100
+            },
+            {
+              "number": 3,
+              "start": 1490,
+              "end": 1900
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 792
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10709.png"
+        }
+      ]
+    },
+    {
+      "venue": "교토",
+      "venueId": "kyoto",
+      "courses": [
+        {
+          "distance": 1200,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 200
+            },
+            "mid": {
+              "start": 200,
+              "end": 800
+            },
+            "late": {
+              "start": 800,
+              "end": 1000
+            },
+            "spurt": {
+              "start": 1000,
+              "end": 1200
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 320,
+              "end": 595
+            },
+            {
+              "number": 4,
+              "start": 595,
+              "end": 872
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 320
+            },
+            {
+              "number": 2,
+              "start": 872,
+              "end": 1200
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 500
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10801.png"
+        },
+        {
+          "distance": 1400,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 233
+            },
+            "mid": {
+              "start": 233,
+              "end": 933
+            },
+            "late": {
+              "start": 933,
+              "end": 1167
+            },
+            "spurt": {
+              "start": 1167,
+              "end": 1400
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 520,
+              "end": 795
+            },
+            {
+              "number": 4,
+              "start": 795,
+              "end": 1072
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 520
+            },
+            {
+              "number": 2,
+              "start": 1072,
+              "end": 1400
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 583
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10802.png"
+        },
+        {
+          "distance": 1400,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 233
+            },
+            "mid": {
+              "start": 233,
+              "end": 933
+            },
+            "late": {
+              "start": 933,
+              "end": 1167
+            },
+            "spurt": {
+              "start": 1167,
+              "end": 1400
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 500,
+              "end": 750
+            },
+            {
+              "number": 4,
+              "start": 750,
+              "end": 997
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 500
+            },
+            {
+              "number": 2,
+              "start": 997,
+              "end": 1400
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 583
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10803.png"
+        },
+        {
+          "distance": 1600,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 267
+            },
+            "mid": {
+              "start": 267,
+              "end": 1067
+            },
+            "late": {
+              "start": 1067,
+              "end": 1333
+            },
+            "spurt": {
+              "start": 1333,
+              "end": 1600
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 720,
+              "end": 995
+            },
+            {
+              "number": 4,
+              "start": 995,
+              "end": 1272
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 200,
+              "end": 720
+            },
+            {
+              "number": 2,
+              "start": 1272,
+              "end": 1600
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 667
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10804.png"
+        },
+        {
+          "distance": 1600,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 267
+            },
+            "mid": {
+              "start": 267,
+              "end": 1067
+            },
+            "late": {
+              "start": 1067,
+              "end": 1333
+            },
+            "spurt": {
+              "start": 1333,
+              "end": 1600
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 700,
+              "end": 950
+            },
+            {
+              "number": 4,
+              "start": 950,
+              "end": 1197
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 200,
+              "end": 700
+            },
+            {
+              "number": 2,
+              "start": 1197,
+              "end": 1600
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 667
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10805.png"
+        },
+        {
+          "distance": 1800,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 300
+            },
+            "mid": {
+              "start": 300,
+              "end": 1200
+            },
+            "late": {
+              "start": 1200,
+              "end": 1500
+            },
+            "spurt": {
+              "start": 1500,
+              "end": 1800
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 900,
+              "end": 1150
+            },
+            {
+              "number": 4,
+              "start": 1150,
+              "end": 1397
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 400,
+              "end": 900
+            },
+            {
+              "number": 2,
+              "start": 1397,
+              "end": 1800
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 750
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10806.png"
+        },
+        {
+          "distance": 2000,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 333
+            },
+            "mid": {
+              "start": 333,
+              "end": 1333
+            },
+            "late": {
+              "start": 1333,
+              "end": 1667
+            },
+            "spurt": {
+              "start": 1667,
+              "end": 2000
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 400,
+              "end": 585
+            },
+            {
+              "number": 2,
+              "start": 585,
+              "end": 770
+            },
+            {
+              "number": 3,
+              "start": 1120,
+              "end": 1395
+            },
+            {
+              "number": 4,
+              "start": 1395,
+              "end": 1672
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 400
+            },
+            {
+              "number": 2,
+              "start": 770,
+              "end": 1120
+            },
+            {
+              "number": 3,
+              "start": 1672,
+              "end": 2000
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 833
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10807.png"
+        },
+        {
+          "distance": 2200,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 367
+            },
+            "mid": {
+              "start": 367,
+              "end": 1467
+            },
+            "late": {
+              "start": 1467,
+              "end": 1833
+            },
+            "spurt": {
+              "start": 1833,
+              "end": 2200
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 400,
+              "end": 600
+            },
+            {
+              "number": 2,
+              "start": 600,
+              "end": 800
+            },
+            {
+              "number": 3,
+              "start": 1300,
+              "end": 1550
+            },
+            {
+              "number": 4,
+              "start": 1550,
+              "end": 1797
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 400
+            },
+            {
+              "number": 2,
+              "start": 800,
+              "end": 1300
+            },
+            {
+              "number": 3,
+              "start": 1797,
+              "end": 2200
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 917
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10808.png"
+        },
+        {
+          "distance": 2400,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 400
+            },
+            "mid": {
+              "start": 400,
+              "end": 1600
+            },
+            "late": {
+              "start": 1600,
+              "end": 2000
+            },
+            "spurt": {
+              "start": 2000,
+              "end": 2400
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 600,
+              "end": 800
+            },
+            {
+              "number": 2,
+              "start": 800,
+              "end": 1000
+            },
+            {
+              "number": 3,
+              "start": 1500,
+              "end": 1750
+            },
+            {
+              "number": 4,
+              "start": 1750,
+              "end": 1997
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 600
+            },
+            {
+              "number": 2,
+              "start": 1000,
+              "end": 1500
+            },
+            {
+              "number": 3,
+              "start": 1997,
+              "end": 2400
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1000
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10809.png"
+        },
+        {
+          "distance": 3000,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 500
+            },
+            "mid": {
+              "start": 500,
+              "end": 2000
+            },
+            "late": {
+              "start": 2000,
+              "end": 2500
+            },
+            "spurt": {
+              "start": 2500,
+              "end": 3000
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 261,
+              "end": 511
+            },
+            {
+              "number": 4,
+              "start": 511,
+              "end": 761
+            },
+            {
+              "number": 1,
+              "start": 1250,
+              "end": 1450
+            },
+            {
+              "number": 2,
+              "start": 1450,
+              "end": 1650
+            },
+            {
+              "number": 3,
+              "start": 2100,
+              "end": 2350
+            },
+            {
+              "number": 4,
+              "start": 2350,
+              "end": 2597
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 261
+            },
+            {
+              "number": 2,
+              "start": 761,
+              "end": 1250
+            },
+            {
+              "number": 3,
+              "start": 1650,
+              "end": 2100
+            },
+            {
+              "number": 4,
+              "start": 2597,
+              "end": 3000
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1250
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10810.png"
+        },
+        {
+          "distance": 3200,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 533
+            },
+            "mid": {
+              "start": 533,
+              "end": 2133
+            },
+            "late": {
+              "start": 2133,
+              "end": 2667
+            },
+            "spurt": {
+              "start": 2667,
+              "end": 3200
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 458,
+              "end": 708
+            },
+            {
+              "number": 4,
+              "start": 708,
+              "end": 958
+            },
+            {
+              "number": 1,
+              "start": 1450,
+              "end": 1650
+            },
+            {
+              "number": 2,
+              "start": 1650,
+              "end": 1850
+            },
+            {
+              "number": 3,
+              "start": 2300,
+              "end": 2550
+            },
+            {
+              "number": 4,
+              "start": 2550,
+              "end": 2797
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 458
+            },
+            {
+              "number": 2,
+              "start": 958,
+              "end": 1450
+            },
+            {
+              "number": 3,
+              "start": 1850,
+              "end": 2300
+            },
+            {
+              "number": 4,
+              "start": 2797,
+              "end": 3200
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1333
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10811.png"
+        },
+        {
+          "distance": 1200,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 200
+            },
+            "mid": {
+              "start": 200,
+              "end": 800
+            },
+            "late": {
+              "start": 800,
+              "end": 1000
+            },
+            "spurt": {
+              "start": 1000,
+              "end": 1200
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 400,
+              "end": 625
+            },
+            {
+              "number": 4,
+              "start": 625,
+              "end": 871
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 400
+            },
+            {
+              "number": 2,
+              "start": 871,
+              "end": 1200
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 500
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10812.png"
+        },
+        {
+          "distance": 1400,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 233
+            },
+            "mid": {
+              "start": 233,
+              "end": 933
+            },
+            "late": {
+              "start": 933,
+              "end": 1167
+            },
+            "spurt": {
+              "start": 1167,
+              "end": 1400
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 600,
+              "end": 825
+            },
+            {
+              "number": 4,
+              "start": 825,
+              "end": 1071
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 100,
+              "end": 600
+            },
+            {
+              "number": 2,
+              "start": 1071,
+              "end": 1400
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 583
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10813.png"
+        },
+        {
+          "distance": 1800,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 300
+            },
+            "mid": {
+              "start": 300,
+              "end": 1200
+            },
+            "late": {
+              "start": 1200,
+              "end": 1500
+            },
+            "spurt": {
+              "start": 1500,
+              "end": 1800
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 300,
+              "end": 450
+            },
+            {
+              "number": 2,
+              "start": 450,
+              "end": 600
+            },
+            {
+              "number": 3,
+              "start": 1000,
+              "end": 1225
+            },
+            {
+              "number": 4,
+              "start": 1225,
+              "end": 1471
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 300
+            },
+            {
+              "number": 2,
+              "start": 600,
+              "end": 1000
+            },
+            {
+              "number": 3,
+              "start": 1471,
+              "end": 1800
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 750
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10814.png"
+        },
+        {
+          "distance": 1900,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 317
+            },
+            "mid": {
+              "start": 317,
+              "end": 1267
+            },
+            "late": {
+              "start": 1267,
+              "end": 1583
+            },
+            "spurt": {
+              "start": 1583,
+              "end": 1900
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 400,
+              "end": 550
+            },
+            {
+              "number": 2,
+              "start": 550,
+              "end": 700
+            },
+            {
+              "number": 3,
+              "start": 1100,
+              "end": 1325
+            },
+            {
+              "number": 4,
+              "start": 1325,
+              "end": 1571
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 400
+            },
+            {
+              "number": 2,
+              "start": 700,
+              "end": 1100
+            },
+            {
+              "number": 3,
+              "start": 1571,
+              "end": 1900
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 792
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10815.png"
+        }
+      ]
+    },
+    {
+      "venue": "한신",
+      "venueId": "hanshin",
+      "courses": [
+        {
+          "distance": 1200,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 200
+            },
+            "mid": {
+              "start": 200,
+              "end": 800
+            },
+            "late": {
+              "start": 800,
+              "end": 1000
+            },
+            "spurt": {
+              "start": 1000,
+              "end": 1200
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 250,
+              "end": 550
+            },
+            {
+              "number": 4,
+              "start": 550,
+              "end": 844
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 250
+            },
+            {
+              "number": 2,
+              "start": 844,
+              "end": 1200
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 500
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10901.png"
+        },
+        {
+          "distance": 1400,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 233
+            },
+            "mid": {
+              "start": 233,
+              "end": 933
+            },
+            "late": {
+              "start": 933,
+              "end": 1167
+            },
+            "spurt": {
+              "start": 1167,
+              "end": 1400
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 450,
+              "end": 750
+            },
+            {
+              "number": 4,
+              "start": 750,
+              "end": 1044
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 450
+            },
+            {
+              "number": 2,
+              "start": 1044,
+              "end": 1400
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 583
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10902.png"
+        },
+        {
+          "distance": 1600,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 267
+            },
+            "mid": {
+              "start": 267,
+              "end": 1067
+            },
+            "late": {
+              "start": 1067,
+              "end": 1333
+            },
+            "spurt": {
+              "start": 1333,
+              "end": 1600
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 450,
+              "end": 800
+            },
+            {
+              "number": 4,
+              "start": 800,
+              "end": 1127
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 450
+            },
+            {
+              "number": 2,
+              "start": 1127,
+              "end": 1600
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 667
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10903.png"
+        },
+        {
+          "distance": 1800,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 300
+            },
+            "mid": {
+              "start": 300,
+              "end": 1200
+            },
+            "late": {
+              "start": 1200,
+              "end": 1500
+            },
+            "spurt": {
+              "start": 1500,
+              "end": 1800
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 650,
+              "end": 1000
+            },
+            {
+              "number": 4,
+              "start": 1000,
+              "end": 1327
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 650
+            },
+            {
+              "number": 2,
+              "start": 1327,
+              "end": 1800
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 750
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10904.png"
+        },
+        {
+          "distance": 2000,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 333
+            },
+            "mid": {
+              "start": 333,
+              "end": 1333
+            },
+            "late": {
+              "start": 1333,
+              "end": 1667
+            },
+            "spurt": {
+              "start": 1667,
+              "end": 2000
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 370,
+              "end": 560
+            },
+            {
+              "number": 2,
+              "start": 560,
+              "end": 750
+            },
+            {
+              "number": 3,
+              "start": 1050,
+              "end": 1350
+            },
+            {
+              "number": 4,
+              "start": 1350,
+              "end": 1644
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 370
+            },
+            {
+              "number": 2,
+              "start": 750,
+              "end": 1050
+            },
+            {
+              "number": 3,
+              "start": 1644,
+              "end": 2000
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 833
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10905.png"
+        },
+        {
+          "distance": 2200,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 367
+            },
+            "mid": {
+              "start": 367,
+              "end": 1467
+            },
+            "late": {
+              "start": 1467,
+              "end": 1833
+            },
+            "spurt": {
+              "start": 1833,
+              "end": 2200
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 520,
+              "end": 710
+            },
+            {
+              "number": 2,
+              "start": 710,
+              "end": 900
+            },
+            {
+              "number": 3,
+              "start": 1250,
+              "end": 1550
+            },
+            {
+              "number": 4,
+              "start": 1550,
+              "end": 1844
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 520
+            },
+            {
+              "number": 2,
+              "start": 900,
+              "end": 1250
+            },
+            {
+              "number": 3,
+              "start": 1844,
+              "end": 2200
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 917
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10906.png"
+        },
+        {
+          "distance": 2400,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 400
+            },
+            "mid": {
+              "start": 400,
+              "end": 1600
+            },
+            "late": {
+              "start": 1600,
+              "end": 2000
+            },
+            "spurt": {
+              "start": 2000,
+              "end": 2400
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 382,
+              "end": 572
+            },
+            {
+              "number": 2,
+              "start": 558,
+              "end": 748
+            },
+            {
+              "number": 3,
+              "start": 1250,
+              "end": 1600
+            },
+            {
+              "number": 4,
+              "start": 1600,
+              "end": 1927
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 750,
+              "end": 1250
+            },
+            {
+              "number": 2,
+              "start": 1927,
+              "end": 2400
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1000
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10907.png"
+        },
+        {
+          "distance": 2600,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 433
+            },
+            "mid": {
+              "start": 433,
+              "end": 1733
+            },
+            "late": {
+              "start": 1733,
+              "end": 2167
+            },
+            "spurt": {
+              "start": 2167,
+              "end": 2600
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 570,
+              "end": 760
+            },
+            {
+              "number": 2,
+              "start": 760,
+              "end": 950
+            },
+            {
+              "number": 3,
+              "start": 1450,
+              "end": 1800
+            },
+            {
+              "number": 4,
+              "start": 1800,
+              "end": 2127
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 570
+            },
+            {
+              "number": 2,
+              "start": 950,
+              "end": 1450
+            },
+            {
+              "number": 3,
+              "start": 2127,
+              "end": 2600
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1083
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10908.png"
+        },
+        {
+          "distance": 3000,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 500
+            },
+            "mid": {
+              "start": 500,
+              "end": 2000
+            },
+            "late": {
+              "start": 2000,
+              "end": 2500
+            },
+            "spurt": {
+              "start": 2500,
+              "end": 3000
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 348,
+              "end": 648
+            },
+            {
+              "number": 4,
+              "start": 648,
+              "end": 948
+            },
+            {
+              "number": 1,
+              "start": 1320,
+              "end": 1510
+            },
+            {
+              "number": 2,
+              "start": 1510,
+              "end": 1700
+            },
+            {
+              "number": 3,
+              "start": 2050,
+              "end": 2350
+            },
+            {
+              "number": 4,
+              "start": 2350,
+              "end": 2644
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 348
+            },
+            {
+              "number": 2,
+              "start": 948,
+              "end": 1320
+            },
+            {
+              "number": 3,
+              "start": 1700,
+              "end": 2050
+            },
+            {
+              "number": 4,
+              "start": 2644,
+              "end": 3000
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1250
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10909.png"
+        },
+        {
+          "distance": 1200,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 200
+            },
+            "mid": {
+              "start": 200,
+              "end": 800
+            },
+            "late": {
+              "start": 800,
+              "end": 1000
+            },
+            "spurt": {
+              "start": 1000,
+              "end": 1200
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 350,
+              "end": 600
+            },
+            {
+              "number": 4,
+              "start": 600,
+              "end": 848
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 350
+            },
+            {
+              "number": 2,
+              "start": 848,
+              "end": 1200
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 500
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10910.png"
+        },
+        {
+          "distance": 1400,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 233
+            },
+            "mid": {
+              "start": 233,
+              "end": 933
+            },
+            "late": {
+              "start": 933,
+              "end": 1167
+            },
+            "spurt": {
+              "start": 1167,
+              "end": 1400
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 550,
+              "end": 800
+            },
+            {
+              "number": 4,
+              "start": 800,
+              "end": 1048
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 550
+            },
+            {
+              "number": 2,
+              "start": 1048,
+              "end": 1400
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 583
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10911.png"
+        },
+        {
+          "distance": 1800,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 300
+            },
+            "mid": {
+              "start": 300,
+              "end": 1200
+            },
+            "late": {
+              "start": 1200,
+              "end": 1500
+            },
+            "spurt": {
+              "start": 1500,
+              "end": 1800
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 330,
+              "end": 480
+            },
+            {
+              "number": 2,
+              "start": 480,
+              "end": 630
+            },
+            {
+              "number": 3,
+              "start": 950,
+              "end": 1200
+            },
+            {
+              "number": 4,
+              "start": 1200,
+              "end": 1448
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 330
+            },
+            {
+              "number": 2,
+              "start": 630,
+              "end": 950
+            },
+            {
+              "number": 3,
+              "start": 1448,
+              "end": 1800
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 750
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10912.png"
+        },
+        {
+          "distance": 2000,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 333
+            },
+            "mid": {
+              "start": 333,
+              "end": 1333
+            },
+            "late": {
+              "start": 1333,
+              "end": 1667
+            },
+            "spurt": {
+              "start": 1667,
+              "end": 2000
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 500,
+              "end": 650
+            },
+            {
+              "number": 2,
+              "start": 650,
+              "end": 800
+            },
+            {
+              "number": 3,
+              "start": 1150,
+              "end": 1400
+            },
+            {
+              "number": 4,
+              "start": 1400,
+              "end": 1648
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 500
+            },
+            {
+              "number": 2,
+              "start": 800,
+              "end": 1150
+            },
+            {
+              "number": 3,
+              "start": 1648,
+              "end": 2000
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 833
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10913.png"
+        },
+        {
+          "distance": 3200,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 533
+            },
+            "mid": {
+              "start": 533,
+              "end": 2133
+            },
+            "late": {
+              "start": 2133,
+              "end": 2667
+            },
+            "spurt": {
+              "start": 2667,
+              "end": 3200
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 370,
+              "end": 720
+            },
+            {
+              "number": 4,
+              "start": 720,
+              "end": 1070
+            },
+            {
+              "number": 1,
+              "start": 1520,
+              "end": 1710
+            },
+            {
+              "number": 2,
+              "start": 1710,
+              "end": 1900
+            },
+            {
+              "number": 3,
+              "start": 2250,
+              "end": 2550
+            },
+            {
+              "number": 4,
+              "start": 2550,
+              "end": 2844
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 370
+            },
+            {
+              "number": 2,
+              "start": 1070,
+              "end": 1520
+            },
+            {
+              "number": 3,
+              "start": 1900,
+              "end": 2250
+            },
+            {
+              "number": 4,
+              "start": 2844,
+              "end": 3200
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1333
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10914.png"
+        }
+      ]
+    },
+    {
+      "venue": "코쿠라",
+      "venueId": "kokura",
+      "courses": [
+        {
+          "distance": 1200,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 200
+            },
+            "mid": {
+              "start": 200,
+              "end": 800
+            },
+            "late": {
+              "start": 800,
+              "end": 1000
+            },
+            "spurt": {
+              "start": 1000,
+              "end": 1200
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 500,
+              "end": 705
+            },
+            {
+              "number": 4,
+              "start": 705,
+              "end": 907
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 500
+            },
+            {
+              "number": 2,
+              "start": 907,
+              "end": 1200
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 500
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11001.png"
+        },
+        {
+          "distance": 1800,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 300
+            },
+            "mid": {
+              "start": 300,
+              "end": 1200
+            },
+            "late": {
+              "start": 1200,
+              "end": 1500
+            },
+            "spurt": {
+              "start": 1500,
+              "end": 1800
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 290,
+              "end": 495
+            },
+            {
+              "number": 2,
+              "start": 495,
+              "end": 700
+            },
+            {
+              "number": 3,
+              "start": 1100,
+              "end": 1305
+            },
+            {
+              "number": 4,
+              "start": 1305,
+              "end": 1507
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 290
+            },
+            {
+              "number": 2,
+              "start": 700,
+              "end": 1100
+            },
+            {
+              "number": 3,
+              "start": 1507,
+              "end": 1800
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 750
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11002.png"
+        },
+        {
+          "distance": 2000,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 333
+            },
+            "mid": {
+              "start": 333,
+              "end": 1333
+            },
+            "late": {
+              "start": 1333,
+              "end": 1667
+            },
+            "spurt": {
+              "start": 1667,
+              "end": 2000
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 490,
+              "end": 695
+            },
+            {
+              "number": 2,
+              "start": 695,
+              "end": 900
+            },
+            {
+              "number": 3,
+              "start": 1300,
+              "end": 1505
+            },
+            {
+              "number": 4,
+              "start": 1505,
+              "end": 1707
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 490
+            },
+            {
+              "number": 2,
+              "start": 900,
+              "end": 1300
+            },
+            {
+              "number": 3,
+              "start": 1707,
+              "end": 2000
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 833
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11003.png"
+        },
+        {
+          "distance": 2600,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 433
+            },
+            "mid": {
+              "start": 433,
+              "end": 1733
+            },
+            "late": {
+              "start": 1733,
+              "end": 2167
+            },
+            "spurt": {
+              "start": 2167,
+              "end": 2600
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 309,
+              "end": 514
+            },
+            {
+              "number": 4,
+              "start": 514,
+              "end": 719
+            },
+            {
+              "number": 1,
+              "start": 1110,
+              "end": 1315
+            },
+            {
+              "number": 2,
+              "start": 1315,
+              "end": 1520
+            },
+            {
+              "number": 3,
+              "start": 1900,
+              "end": 2105
+            },
+            {
+              "number": 4,
+              "start": 2105,
+              "end": 2307
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 309
+            },
+            {
+              "number": 2,
+              "start": 719,
+              "end": 1110
+            },
+            {
+              "number": 3,
+              "start": 1520,
+              "end": 1900
+            },
+            {
+              "number": 4,
+              "start": 2307,
+              "end": 2600
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1083
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11004.png"
+        },
+        {
+          "distance": 1000,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 167
+            },
+            "mid": {
+              "start": 167,
+              "end": 667
+            },
+            "late": {
+              "start": 667,
+              "end": 833
+            },
+            "spurt": {
+              "start": 833,
+              "end": 1000
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 360,
+              "end": 540
+            },
+            {
+              "number": 4,
+              "start": 540,
+              "end": 709
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 360
+            },
+            {
+              "number": 2,
+              "start": 709,
+              "end": 1000
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 417
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11005.png"
+        },
+        {
+          "distance": 1700,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 283
+            },
+            "mid": {
+              "start": 283,
+              "end": 1133
+            },
+            "late": {
+              "start": 1133,
+              "end": 1417
+            },
+            "spurt": {
+              "start": 1417,
+              "end": 1700
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 340,
+              "end": 520
+            },
+            {
+              "number": 2,
+              "start": 520,
+              "end": 700
+            },
+            {
+              "number": 3,
+              "start": 1060,
+              "end": 1240
+            },
+            {
+              "number": 4,
+              "start": 1240,
+              "end": 1409
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 340
+            },
+            {
+              "number": 2,
+              "start": 700,
+              "end": 1060
+            },
+            {
+              "number": 3,
+              "start": 1409,
+              "end": 1700
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 708
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11006.png"
+        },
+        {
+          "distance": 2400,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 400
+            },
+            "mid": {
+              "start": 400,
+              "end": 1600
+            },
+            "late": {
+              "start": 1600,
+              "end": 2000
+            },
+            "spurt": {
+              "start": 2000,
+              "end": 2400
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 312,
+              "end": 492
+            },
+            {
+              "number": 4,
+              "start": 492,
+              "end": 672
+            },
+            {
+              "number": 1,
+              "start": 1040,
+              "end": 1220
+            },
+            {
+              "number": 2,
+              "start": 1220,
+              "end": 1400
+            },
+            {
+              "number": 3,
+              "start": 1760,
+              "end": 1940
+            },
+            {
+              "number": 4,
+              "start": 1940,
+              "end": 2109
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 312
+            },
+            {
+              "number": 2,
+              "start": 672,
+              "end": 1040
+            },
+            {
+              "number": 3,
+              "start": 1400,
+              "end": 1760
+            },
+            {
+              "number": 4,
+              "start": 2109,
+              "end": 2400
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1000
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11007.png"
+        }
+      ]
+    },
+    {
+      "venue": "오이",
+      "venueId": "ooi",
+      "courses": [
+        {
+          "distance": 1200,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 200
+            },
+            "mid": {
+              "start": 200,
+              "end": 800
+            },
+            "late": {
+              "start": 800,
+              "end": 1000
+            },
+            "spurt": {
+              "start": 1000,
+              "end": 1200
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 500,
+              "end": 650
+            },
+            {
+              "number": 4,
+              "start": 650,
+              "end": 814
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 500
+            },
+            {
+              "number": 2,
+              "start": 814,
+              "end": 1200
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 500
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10101/11101.png"
+        },
+        {
+          "distance": 1800,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 300
+            },
+            "mid": {
+              "start": 300,
+              "end": 1200
+            },
+            "late": {
+              "start": 1200,
+              "end": 1500
+            },
+            "spurt": {
+              "start": 1500,
+              "end": 1800
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 300,
+              "end": 450
+            },
+            {
+              "number": 2,
+              "start": 500,
+              "end": 650
+            },
+            {
+              "number": 3,
+              "start": 1100,
+              "end": 1250
+            },
+            {
+              "number": 4,
+              "start": 1250,
+              "end": 1414
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 301
+            },
+            {
+              "number": 3,
+              "start": 1414,
+              "end": 1800
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 750
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10101/11102.png"
+        },
+        {
+          "distance": 2000,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 333
+            },
+            "mid": {
+              "start": 333,
+              "end": 1333
+            },
+            "late": {
+              "start": 1333,
+              "end": 1667
+            },
+            "spurt": {
+              "start": 1667,
+              "end": 2000
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 500,
+              "end": 650
+            },
+            {
+              "number": 2,
+              "start": 650,
+              "end": 800
+            },
+            {
+              "number": 3,
+              "start": 1300,
+              "end": 1450
+            },
+            {
+              "number": 4,
+              "start": 1450,
+              "end": 1614
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 500
+            },
+            {
+              "number": 2,
+              "start": 800,
+              "end": 1300
+            },
+            {
+              "number": 3,
+              "start": 1614,
+              "end": 2000
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 833
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10101/11103.png"
+        }
+      ]
+    },
+    {
+      "venue": "가와사키",
+      "venueId": "kawasaki",
+      "courses": [
+        {
+          "distance": 1400,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 233
+            },
+            "mid": {
+              "start": 233,
+              "end": 933
+            },
+            "late": {
+              "start": 933,
+              "end": 1167
+            },
+            "spurt": {
+              "start": 1167,
+              "end": 1400
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 300,
+              "end": 400
+            },
+            {
+              "number": 2,
+              "start": 400,
+              "end": 500
+            },
+            {
+              "number": 3,
+              "start": 900,
+              "end": 1000
+            },
+            {
+              "number": 4,
+              "start": 1000,
+              "end": 1100
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 300
+            },
+            {
+              "number": 2,
+              "start": 500,
+              "end": 900
+            },
+            {
+              "number": 3,
+              "start": 1100,
+              "end": 1400
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 583
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10103/11301.png"
+        },
+        {
+          "distance": 1600,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 267
+            },
+            "mid": {
+              "start": 267,
+              "end": 1067
+            },
+            "late": {
+              "start": 1067,
+              "end": 1333
+            },
+            "spurt": {
+              "start": 1333,
+              "end": 1600
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 500,
+              "end": 600
+            },
+            {
+              "number": 2,
+              "start": 600,
+              "end": 700
+            },
+            {
+              "number": 3,
+              "start": 1100,
+              "end": 1200
+            },
+            {
+              "number": 4,
+              "start": 1200,
+              "end": 1300
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 100,
+              "end": 500
+            },
+            {
+              "number": 2,
+              "start": 700,
+              "end": 1100
+            },
+            {
+              "number": 3,
+              "start": 1300,
+              "end": 1600
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 667
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10103/11302.png"
+        },
+        {
+          "distance": 2100,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 350
+            },
+            "mid": {
+              "start": 350,
+              "end": 1400
+            },
+            "late": {
+              "start": 1400,
+              "end": 1750
+            },
+            "spurt": {
+              "start": 1750,
+              "end": 2100
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 400,
+              "end": 500
+            },
+            {
+              "number": 4,
+              "start": 500,
+              "end": 600
+            },
+            {
+              "number": 1,
+              "start": 1000,
+              "end": 1100
+            },
+            {
+              "number": 2,
+              "start": 1100,
+              "end": 1200
+            },
+            {
+              "number": 3,
+              "start": 1600,
+              "end": 1700
+            },
+            {
+              "number": 4,
+              "start": 1700,
+              "end": 1800
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 400
+            },
+            {
+              "number": 2,
+              "start": 600,
+              "end": 1000
+            },
+            {
+              "number": 3,
+              "start": 1200,
+              "end": 1600
+            },
+            {
+              "number": 4,
+              "start": 1800,
+              "end": 2100
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 875
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10103/11303.png"
+        }
+      ]
+    },
+    {
+      "venue": "후나바시",
+      "venueId": "funabashi",
+      "courses": [
+        {
+          "distance": 1000,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 167
+            },
+            "mid": {
+              "start": 167,
+              "end": 667
+            },
+            "late": {
+              "start": 667,
+              "end": 833
+            },
+            "spurt": {
+              "start": 833,
+              "end": 1000
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 370,
+              "end": 540
+            },
+            {
+              "number": 4,
+              "start": 540,
+              "end": 692
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 370
+            },
+            {
+              "number": 2,
+              "start": 692,
+              "end": 1000
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 417
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10104/11401.png"
+        },
+        {
+          "distance": 1600,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 267
+            },
+            "mid": {
+              "start": 267,
+              "end": 1067
+            },
+            "late": {
+              "start": 1067,
+              "end": 1333
+            },
+            "spurt": {
+              "start": 1333,
+              "end": 1600
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 260,
+              "end": 440
+            },
+            {
+              "number": 2,
+              "start": 440,
+              "end": 600
+            },
+            {
+              "number": 3,
+              "start": 970,
+              "end": 1140
+            },
+            {
+              "number": 4,
+              "start": 1140,
+              "end": 1292
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 260
+            },
+            {
+              "number": 2,
+              "start": 600,
+              "end": 970
+            },
+            {
+              "number": 3,
+              "start": 1292,
+              "end": 1600
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 667
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10104/11402.png"
+        },
+        {
+          "distance": 1800,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 300
+            },
+            "mid": {
+              "start": 300,
+              "end": 1200
+            },
+            "late": {
+              "start": 1200,
+              "end": 1500
+            },
+            "spurt": {
+              "start": 1500,
+              "end": 1800
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 460,
+              "end": 640
+            },
+            {
+              "number": 2,
+              "start": 640,
+              "end": 800
+            },
+            {
+              "number": 3,
+              "start": 1170,
+              "end": 1340
+            },
+            {
+              "number": 4,
+              "start": 1340,
+              "end": 1492
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 90,
+              "end": 460
+            },
+            {
+              "number": 2,
+              "start": 800,
+              "end": 1170
+            },
+            {
+              "number": 3,
+              "start": 1492,
+              "end": 1800
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 750
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10104/11403.png"
+        },
+        {
+          "distance": 2400,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 400
+            },
+            "mid": {
+              "start": 400,
+              "end": 1600
+            },
+            "late": {
+              "start": 1600,
+              "end": 2000
+            },
+            "spurt": {
+              "start": 2000,
+              "end": 2400
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 370,
+              "end": 540
+            },
+            {
+              "number": 4,
+              "start": 540,
+              "end": 690
+            },
+            {
+              "number": 1,
+              "start": 1060,
+              "end": 1240
+            },
+            {
+              "number": 2,
+              "start": 1240,
+              "end": 1400
+            },
+            {
+              "number": 3,
+              "start": 1770,
+              "end": 1940
+            },
+            {
+              "number": 4,
+              "start": 1940,
+              "end": 2092
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 370
+            },
+            {
+              "number": 2,
+              "start": 690,
+              "end": 1060
+            },
+            {
+              "number": 3,
+              "start": 1400,
+              "end": 1770
+            },
+            {
+              "number": 4,
+              "start": 2092,
+              "end": 2400
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1000
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10104/11404.png"
+        }
+      ]
+    },
+    {
+      "venue": "모리오카",
+      "venueId": "morioka",
+      "courses": [
+        {
+          "distance": 1200,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 200
+            },
+            "mid": {
+              "start": 200,
+              "end": 800
+            },
+            "late": {
+              "start": 800,
+              "end": 1000
+            },
+            "spurt": {
+              "start": 1000,
+              "end": 1200
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 500,
+              "end": 700
+            },
+            {
+              "number": 4,
+              "start": 700,
+              "end": 900
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 100,
+              "end": 500
+            },
+            {
+              "number": 2,
+              "start": 900,
+              "end": 1200
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 500
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10105/11501.png"
+        },
+        {
+          "distance": 1600,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 267
+            },
+            "mid": {
+              "start": 267,
+              "end": 1067
+            },
+            "late": {
+              "start": 1067,
+              "end": 1333
+            },
+            "spurt": {
+              "start": 1333,
+              "end": 1600
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 900,
+              "end": 1100
+            },
+            {
+              "number": 4,
+              "start": 1100,
+              "end": 1300
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 500,
+              "end": 900
+            },
+            {
+              "number": 2,
+              "start": 1300,
+              "end": 1600
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 667
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10105/11502.png"
+        },
+        {
+          "distance": 1800,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 300
+            },
+            "mid": {
+              "start": 300,
+              "end": 1200
+            },
+            "late": {
+              "start": 1200,
+              "end": 1500
+            },
+            "spurt": {
+              "start": 1500,
+              "end": 1800
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 300,
+              "end": 500
+            },
+            {
+              "number": 2,
+              "start": 500,
+              "end": 700
+            },
+            {
+              "number": 3,
+              "start": 1100,
+              "end": 1300
+            },
+            {
+              "number": 4,
+              "start": 1300,
+              "end": 1500
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 300
+            },
+            {
+              "number": 2,
+              "start": 700,
+              "end": 1100
+            },
+            {
+              "number": 3,
+              "start": 1500,
+              "end": 1800
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 750
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10105/11503.png"
+        },
+        {
+          "distance": 2000,
+          "surface": "더트",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 333
+            },
+            "mid": {
+              "start": 333,
+              "end": 1333
+            },
+            "late": {
+              "start": 1333,
+              "end": 1667
+            },
+            "spurt": {
+              "start": 1667,
+              "end": 2000
+            }
+          },
+          "corners": [
+            {
+              "number": 1,
+              "start": 500,
+              "end": 700
+            },
+            {
+              "number": 2,
+              "start": 700,
+              "end": 900
+            },
+            {
+              "number": 3,
+              "start": 1300,
+              "end": 1500
+            },
+            {
+              "number": 4,
+              "start": 1500,
+              "end": 1700
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 100,
+              "end": 500
+            },
+            {
+              "number": 2,
+              "start": 900,
+              "end": 1300
+            },
+            {
+              "number": 3,
+              "start": 1700,
+              "end": 2000
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 833
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10105/11504.png"
+        }
+      ]
+    },
+    {
+      "venue": "롱샹",
+      "venueId": "longchamp",
+      "courses": [
+        {
+          "distance": 2400,
+          "surface": "잔디",
+          "phases": {
+            "early": {
+              "start": 0,
+              "end": 400
+            },
+            "mid": {
+              "start": 400,
+              "end": 1600
+            },
+            "late": {
+              "start": 1600,
+              "end": 2000
+            },
+            "spurt": {
+              "start": 2000,
+              "end": 2400
+            }
+          },
+          "corners": [
+            {
+              "number": 3,
+              "start": 1000,
+              "end": 1417
+            },
+            {
+              "number": 4,
+              "start": 1417,
+              "end": 1617
+            }
+          ],
+          "straights": [
+            {
+              "number": 1,
+              "start": 0,
+              "end": 1000
+            },
+            {
+              "number": 2,
+              "start": 1617,
+              "end": 1866
+            },
+            {
+              "number": 3,
+              "start": 1867,
+              "end": 2400
+            }
+          ],
+          "positionKeep": {
+            "start": 0,
+            "end": 1000
+          },
+          "spurtStart": null,
+          "statBonus": "없음",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10201/11203.png"
+        }
+      ]
+    }
+  ],
+  "crawledAt": "2026-02-11T07:59:08.582Z",
+  "errors": []
+}

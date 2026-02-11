@@ -387,6 +387,7 @@ td:first-child { text-align:left; }
     <div id="r-track-tab" class="r-sub">
       <div class="r-controls">
         <button class="r-btn r-btn-primary" onclick="generateTrackInfo()">🏁 마장정보 생성</button>
+        <button class="r-btn r-btn-success" onclick="copyTrackContent()">📋 마장 복사</button>
         <button class="r-btn r-btn-success" onclick="toggleTrackPool()">⚙️ 풀 설정</button>
         <button class="r-btn r-btn-secondary" onclick="resetTrackInfo()">🔄 초기화</button>
       </div>
@@ -1042,6 +1043,31 @@ function resetTrackInfo() {
   document.getElementById('track-info-text').textContent = '마장정보 생성 버튼을 눌러주세요';
 }
 
+// === 봇 API 연동 ===
+const BOT_API_URL = 'https://hugo-macminiui-mac-mini.tail02c3b1.ts.net:3939';
+
+function syncToBot(data) {
+  fetch(`${BOT_API_URL}/api/round`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  }).then(r => r.json()).then(d => {
+    if (d.ok) showRNotification('🤖 봇 연동 완료!');
+    else showRNotification('⚠️ 봇 연동 실패: ' + d.error);
+  }).catch(() => showRNotification('⚠️ 봇 서버 연결 실패 (로컬 전용)'));
+}
+
+function copyTrackContent() {
+  if (!currentTrackInfo) { showRNotification('먼저 마장정보를 생성해주세요!'); return; }
+  const t = currentTrackInfo;
+  let txt = `${t.trackType} ${t.trackName} ${t.distance}`;
+  if (t.position) txt += ` ${t.position}`;
+  txt += ` | ${t.season} ${t.weather} | 마장:${t.trackCondition} 컨디션:${t.horseCondition}`;
+  navigator.clipboard.writeText(txt).then(() => showRNotification('마장 정보가 복사되었습니다!'));
+  // 봇 연동
+  syncToBot({ course: `${t.trackType} ${t.trackName} ${t.distance}${t.position ? ' ' + t.position : ''} | ${t.season} ${t.weather} ${t.trackCondition} ${t.horseCondition}` });
+}
+
 function copySupportContent() {
   if(!currentSupportCards.filter(c=>c).length) { showRNotification('먼저 서포트카드 밴을 생성해주세요!'); return; }
   let result = '서포트카드밴\n';
@@ -1054,6 +1080,9 @@ function copySupportContent() {
     result += '\n';
   });
   navigator.clipboard.writeText(result).then(()=>showRNotification('서포트카드 내용이 복사되었습니다!')).catch(()=>showRNotification('복사에 실패했습니다.'));
+  // 봇 연동 — 서포트카드 밴
+  const supportNames = currentSupportCards.filter(c=>c).map(c=>c.name);
+  syncToBot({ bans: { characters: (currentCharacters||[]).filter(c=>c).map(c=>c.name), supports: supportNames } });
 }
 
 function copyCharacterContent() {
@@ -1064,6 +1093,9 @@ function copyCharacterContent() {
   if(r1.length) result += ' - '+r1.join(' / ')+'\n';
   if(r2.length) result += ' - '+r2.join(' / ');
   navigator.clipboard.writeText(result).then(()=>showRNotification('캐릭터 내용이 복사되었습니다!')).catch(()=>showRNotification('복사에 실패했습니다.'));
+  // 봇 연동 — 캐릭터 밴
+  const charNames = currentCharacters.filter(c=>c).map(c=>c.name);
+  syncToBot({ bans: { characters: charNames, supports: (currentSupportCards||[]).filter(c=>c).map(c=>c.name) } });
 }
 
 function copyRouletteContent() {

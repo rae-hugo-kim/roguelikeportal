@@ -585,6 +585,26 @@ td:first-child { text-align:left; }
           </div>
           
           <div style="margin-bottom:1rem;">
+            <label style="font-weight:bold;font-size:0.9rem;color:var(--text);">🏁 마장 정보</label>
+            <span style="color:var(--text2);font-size:0.75rem;margin-left:0.5rem;">(룰렛 사용 시 자동 반영)</span><br>
+            <input type="text" id="current-course" placeholder="도쿄 잔디 1600m 좌회전 봄 맑음 양호 최상" style="padding:0.6rem;border:1px solid var(--border);border-radius:8px;width:100%;margin-top:0.3rem;font-size:0.9rem;">
+          </div>
+
+          <div style="margin-bottom:1rem;">
+            <label style="font-weight:bold;font-size:0.9rem;color:var(--text);">🚫 캐릭터 밴</label>
+            <span style="color:var(--text2);font-size:0.75rem;margin-left:0.5rem;">(룰렛 사용 시 자동 반영)</span><br>
+            <input type="text" id="current-char-ban-input" placeholder="캐릭터1 / 캐릭터2 / ..." style="padding:0.6rem;border:1px solid var(--border);border-radius:8px;width:100%;margin-top:0.3rem;font-size:0.9rem;">
+          </div>
+
+          <div style="margin-bottom:1rem;">
+            <label style="font-weight:bold;font-size:0.9rem;color:var(--text);">🚫 서포트카드 밴</label>
+            <span style="color:var(--text2);font-size:0.75rem;margin-left:0.5rem;">(룰렛 사용 시 자동 반영)</span><br>
+            <textarea id="current-support-ban-input" placeholder="스탯 : 카드1, 카드2&#10;스탯 : 카드3" rows="2" style="padding:0.6rem;border:1px solid var(--border);border-radius:8px;width:100%;margin-top:0.3rem;font-size:0.9rem;resize:vertical;"></textarea>
+          </div>
+
+          <hr style="border:none;border-top:1px dashed var(--border);margin:1.2rem 0;">
+
+          <div style="margin-bottom:1rem;">
             <label style="font-weight:bold;font-size:0.9rem;color:var(--text);">참가자 리스트</label>
             <span style="color:var(--text2);font-size:0.75rem;margin-left:0.5rem;">(쉼표로 구분)</span><br>
             <textarea id="current-participants" placeholder="닉네임1, 닉네임2, ..." rows="2" style="padding:0.6rem;border:1px solid var(--border);border-radius:8px;width:100%;margin-top:0.3rem;font-size:0.9rem;resize:vertical;"></textarea>
@@ -1337,39 +1357,55 @@ function formatCurrentPublishMessage() {
   
   let msg = `${round}회 로그라이크\n하실 분들은 참가해주세요\n\n`;
   
-  // 마장 정보 (from currentTrackInfo if available)
-  if (currentTrackInfo) {
+  // 마장 정보: 입력칸 우선, 없으면 룰렛 데이터
+  const courseInput = document.getElementById('current-course').value.trim();
+  if (courseInput) {
+    msg += `${courseInput}\n\n`;
+  } else if (currentTrackInfo) {
     const t = currentTrackInfo;
     msg += `${t.trackName} ${t.trackType} ${t.distance}`;
     if (t.position) msg += ` ${t.position}`;
     msg += ` ${t.season} ${t.weather} ${t.trackCondition} ${t.horseCondition}\n\n`;
   }
   
-  // 밴 정보 (캐릭터)
-  const chars = (currentCharacters||[]).filter(c=>c).map(c=>c.name);
-  if (chars.length) {
-    msg += `캐릭터밴\n`;
-    const r1 = chars.slice(0,3).join(' / ');
-    const r2 = chars.slice(3).join(' / ');
-    if (r1) msg += ` - ${r1}\n`;
-    if (r2) msg += ` - ${r2}\n`;
+  // 캐릭터 밴: 입력칸 우선, 없으면 룰렛 데이터
+  const charBanInput = document.getElementById('current-char-ban-input').value.trim();
+  if (charBanInput) {
+    msg += `캐릭터밴\n - ${charBanInput}\n`;
+  } else {
+    const chars = (currentCharacters||[]).filter(c=>c).map(c=>c.name);
+    if (chars.length) {
+      msg += `캐릭터밴\n`;
+      const r1 = chars.slice(0,3).join(' / ');
+      const r2 = chars.slice(3).join(' / ');
+      if (r1) msg += ` - ${r1}\n`;
+      if (r2) msg += ` - ${r2}\n`;
+    }
   }
   
-  // 밴 정보 (서포트카드)
-  const supps = (currentSupportCards||[]).filter(c=>c).map(c=>c.name);
-  if (supps.length) {
+  // 서포트카드 밴: 입력칸 우선, 없으면 룰렛 데이터
+  const supportBanInput = document.getElementById('current-support-ban-input').value.trim();
+  if (supportBanInput) {
     msg += `서포트카드밴\n`;
-    const byType = {};
-    (currentSupportCards||[]).filter(c=>c).forEach(c => {
-      const stat = typeof getStat === 'function' ? getStat(c.file) : '기타';
-      if (!byType[stat]) byType[stat] = {normal:[], op:[]};
-      if (c.isOp) byType[stat].op.push(c.name); else byType[stat].normal.push(c.name);
+    supportBanInput.split('\n').filter(Boolean).forEach(line => {
+      msg += ` - ${line.trim()}\n`;
     });
-    for (const [stat, cards] of Object.entries(byType)) {
-      let line = ` - ${stat} : `;
-      if (cards.normal.length) line += cards.normal.join(', ');
-      if (cards.op.length) line += (cards.normal.length ? ' + ' : '') + cards.op.join(', ');
-      msg += line + '\n';
+  } else {
+    const supps = (currentSupportCards||[]).filter(c=>c).map(c=>c.name);
+    if (supps.length) {
+      msg += `서포트카드밴\n`;
+      const byType = {};
+      (currentSupportCards||[]).filter(c=>c).forEach(c => {
+        const stat = typeof getStat === 'function' ? getStat(c.file) : '기타';
+        if (!byType[stat]) byType[stat] = {normal:[], op:[]};
+        if (c.isOp) byType[stat].op.push(c.name); else byType[stat].normal.push(c.name);
+      });
+      for (const [stat, cards] of Object.entries(byType)) {
+        let line = ` - ${stat} : `;
+        if (cards.normal.length) line += cards.normal.join(', ');
+        if (cards.op.length) line += (cards.normal.length ? ' + ' : '') + cards.op.join(', ');
+        msg += line + '\n';
+      }
     }
   }
   
@@ -2030,11 +2066,52 @@ function navigateToTrackInfo(t) {
 }
 
 // Load track data when tab is shown
+// 룰렛 데이터 → 현재회차 폼 자동 반영
+function syncRouletteToForm() {
+  const courseEl = document.getElementById('current-course');
+  const charEl = document.getElementById('current-char-ban-input');
+  const suppEl = document.getElementById('current-support-ban-input');
+  if (!courseEl) return;
+  // 마장: 빈칸이면 룰렛 데이터로 채움
+  if (!courseEl.value && currentTrackInfo) {
+    const t = currentTrackInfo;
+    let c = `${t.trackName} ${t.trackType} ${t.distance}`;
+    if (t.position) c += ` ${t.position}`;
+    c += ` ${t.season} ${t.weather} ${t.trackCondition} ${t.horseCondition}`;
+    courseEl.value = c;
+  }
+  // 캐릭터밴
+  if (!charEl.value) {
+    const chars = (currentCharacters||[]).filter(c=>c).map(c=>c.name);
+    if (chars.length) charEl.value = chars.join(' / ');
+  }
+  // 서포트밴
+  if (!suppEl.value) {
+    const supps = (currentSupportCards||[]).filter(c=>c);
+    if (supps.length) {
+      const byType = {};
+      supps.forEach(c => {
+        const stat = typeof getStat === 'function' ? getStat(c.file) : '기타';
+        if (!byType[stat]) byType[stat] = {normal:[], op:[]};
+        if (c.isOp) byType[stat].op.push(c.name); else byType[stat].normal.push(c.name);
+      });
+      const lines = [];
+      for (const [stat, cards] of Object.entries(byType)) {
+        let line = `${stat} : `;
+        if (cards.normal.length) line += cards.normal.join(', ');
+        if (cards.op.length) line += (cards.normal.length ? ' + ' : '') + cards.op.join(', ');
+        lines.push(line);
+      }
+      suppEl.value = lines.join('\n');
+    }
+  }
+}
+
 const origShowTab = showTab;
 showTab = function(id, btn) {
   origShowTab(id, btn);
   if (id === 'tracks' && !TRACK_DATA) loadTrackData();
-  if (id === 'current') loadCurrentRound();
+  if (id === 'current') { loadCurrentRound(); syncRouletteToForm(); }
 };
 
 </script>

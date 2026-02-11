@@ -357,6 +357,7 @@ td:first-child { text-align:left; }
       <button onclick="switchRouletteTab('character',this)">🏇 캐릭터 밴</button>
       <button onclick="switchRouletteTab('charroulette',this)">🎰 캐릭터 룰렛</button>
       <button onclick="switchRouletteTab('track',this)">🏁 마장 룰렛</button>
+      <button onclick="switchRouletteTab('skills',this)">🎯 유효스킬</button>
       <button onclick="switchRouletteTab('publish',this)">📢 결과 발송</button>
     </div>
 
@@ -428,6 +429,28 @@ td:first-child { text-align:left; }
         </div>
       </div>
     </div>
+    <!-- 유효스킬 -->
+    <div id="r-skills-tab" class="r-sub" style="display:none;">
+      <div style="max-width:600px;margin:0 auto;padding:20px;">
+        <h3 id="skills-track-title" style="margin-bottom:12px;">🎯 마장을 먼저 생성해주세요</h3>
+        <div id="skills-content" style="display:none;">
+          <div style="margin-bottom:16px;">
+            <h4 style="color:var(--green);margin-bottom:8px;">✅ 유효 스킬</h4>
+            <div id="skills-effective" style="display:flex;flex-wrap:wrap;gap:6px;"></div>
+          </div>
+          <div style="margin-bottom:16px;" id="skills-semi-section">
+            <h4 style="color:#FF9800;margin-bottom:8px;">⚠️ 반유효 스킬</h4>
+            <div id="skills-semi" style="display:flex;flex-wrap:wrap;gap:6px;"></div>
+          </div>
+          <div id="skills-banned-section">
+            <h4 style="color:#e53935;margin-bottom:8px;">🚫 밴 스킬</h4>
+            <div id="skills-banned" style="display:flex;flex-wrap:wrap;gap:6px;"></div>
+          </div>
+          <p id="skills-match-info" style="color:#999;font-size:12px;margin-top:12px;"></p>
+        </div>
+      </div>
+    </div>
+
     <!-- 결과 발송 -->
     <div id="r-publish-tab" class="r-sub" style="display:none;">
       <div style="max-width:600px;margin:0 auto;padding:20px;">
@@ -1222,6 +1245,46 @@ function submitPublish() {
   }).catch(() => showRNotification('⚠️ 봇 서버 연결 실패'));
 }
 
+// === 유효스킬 로드 ===
+function loadSkillsForTrack(trackInfo) {
+  if (!trackInfo) return;
+  const t = trackInfo;
+  const venue = t.trackName.replace(/ 경마장$/, '');
+  const distance = t.distance.replace('m','');
+  const surface = t.trackType;
+  
+  document.getElementById('skills-track-title').textContent = `🎯 ${t.trackType} ${t.trackName} ${t.distance} — 유효스킬`;
+  
+  fetch(`${BOT_API_URL}/api/skills?venue=${encodeURIComponent(venue)}&distance=${distance}&surface=${encodeURIComponent(surface)}`)
+    .then(r => r.json())
+    .then(data => {
+      const makeTag = (name, count, color) => `<span style="display:inline-block;padding:4px 10px;border-radius:16px;background:${color};font-size:13px;">${name} <small style="opacity:0.7">(${count})</small></span>`;
+      
+      document.getElementById('skills-effective').innerHTML = 
+        data.effective.length ? data.effective.map(s => makeTag(s.name, s.count, 'var(--green-light)')).join('') : '<span style="color:#999">데이터 없음</span>';
+      
+      const semiEl = document.getElementById('skills-semi');
+      const semiSec = document.getElementById('skills-semi-section');
+      if (data.semiEffective.length) {
+        semiEl.innerHTML = data.semiEffective.map(s => makeTag(s.name, s.count, '#FFF3E0')).join('');
+        semiSec.style.display = 'block';
+      } else { semiSec.style.display = 'none'; }
+      
+      const bannedEl = document.getElementById('skills-banned');
+      const bannedSec = document.getElementById('skills-banned-section');
+      if (data.banned.length) {
+        bannedEl.innerHTML = data.banned.map(s => makeTag(s.name, s.count, '#FFEBEE')).join('');
+        bannedSec.style.display = 'block';
+      } else { bannedSec.style.display = 'none'; }
+      
+      document.getElementById('skills-match-info').textContent = `${data.matchCount}개 과거 대회 데이터 기반`;
+      document.getElementById('skills-content').style.display = 'block';
+    })
+    .catch(() => {
+      document.getElementById('skills-track-title').textContent = '🎯 스킬 데이터 로드 실패';
+    });
+}
+
 function copyTrackContent() {
   if (!currentTrackInfo) { showRNotification('먼저 마장정보를 생성해주세요!'); return; }
   const t = currentTrackInfo;
@@ -1231,6 +1294,8 @@ function copyTrackContent() {
   navigator.clipboard.writeText(txt).then(() => showRNotification('마장 정보가 복사되었습니다!'));
   // 봇 연동
   syncToBot({ course: `${t.trackType} ${t.trackName} ${t.distance}${t.position ? ' ' + t.position : ''} | ${t.season} ${t.weather} ${t.trackCondition} ${t.horseCondition}` });
+  // 유효스킬 자동 로드
+  loadSkillsForTrack(currentTrackInfo);
 }
 
 function copySupportContent() {

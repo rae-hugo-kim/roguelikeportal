@@ -361,7 +361,23 @@ td:first-child { text-align:left; }
 .track-section ul { list-style:none; font-size:0.8rem; color:var(--text); }
 .track-section li { padding:2px 0; }
 .track-section li::before { content:'▸ '; color:var(--green); }
-.track-img { max-width:100%; border-radius:8px; margin-top:0.8rem; border:1px solid var(--border); }
+.track-viz { position:relative; height:60px; border-radius:8px; overflow:hidden; margin-top:0.8rem; border:1px solid var(--border); background:#f9f9f3; }
+.track-viz-bar { position:absolute; top:0; height:30px; opacity:0.7; }
+.track-viz-bar.early { background:#66bb6a; }
+.track-viz-bar.mid { background:#ffa726; }
+.track-viz-bar.late { background:#ef5350; }
+.track-viz-bar.spurt { background:#ab47bc; }
+.track-viz-marker { position:absolute; top:0; height:60px; border-left:2px dashed; font-size:9px; padding-left:2px; white-space:nowrap; }
+.track-viz-marker.corner { border-color:rgba(33,150,243,0.5); color:#1976d2; }
+.track-viz-marker.straight { border-color:rgba(76,175,80,0.4); color:#388e3c; }
+.track-viz-legend { display:flex; gap:12px; margin-top:4px; font-size:0.75rem; color:var(--text2); flex-wrap:wrap; }
+.track-viz-legend span::before { content:''; display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:3px; vertical-align:middle; }
+.track-viz-legend .l-early::before { background:#66bb6a; }
+.track-viz-legend .l-mid::before { background:#ffa726; }
+.track-viz-legend .l-late::before { background:#ef5350; }
+.track-viz-legend .l-spurt::before { background:#ab47bc; }
+.track-viz-legend .l-corner::before { background:#2196f3; opacity:0.5; }
+.track-viz-legend .l-straight::before { background:#4caf50; opacity:0.4; }
 @media(max-width:600px) {
   .track-sections { grid-template-columns:1fr; }
 }
@@ -1669,14 +1685,52 @@ function createTrackCard(venue, course) {
   if (course.phases?.spurt) html += `<span>🚀 스퍼트: ${course.phases.spurt.start}m~</span>`;
   html += `</div>`;
 
-  // Image
-  if (course.imageUrl) {
-    html += `<img class="track-img" src="${course.imageUrl}" alt="${venue.venue} ${course.distance}m ${course.surface}" loading="lazy">`;
-  }
+  // Course visualization bar
+  html += buildTrackViz(course);
 
   html += `</div>`;
   card.innerHTML = html;
   return card;
+}
+
+function buildTrackViz(course) {
+  const dist = course.distance;
+  const pct = (m) => (m / dist * 100).toFixed(2);
+  let html = `<div class="track-viz">`;
+
+  // Phase bars (top half)
+  const phases = course.phases || {};
+  for (const [key, cls] of [['early','early'],['mid','mid'],['late','late'],['spurt','spurt']]) {
+    const p = phases[key];
+    if (p) html += `<div class="track-viz-bar ${cls}" style="left:${pct(p.start)}%;width:${pct(p.end - p.start)}%;"></div>`;
+  }
+
+  // Corner markers (bottom half, blue dashed)
+  if (course.corners) {
+    course.corners.forEach(c => {
+      html += `<div class="track-viz-marker corner" style="left:${pct(c.start)}%;top:30px;height:30px;"><span style="position:absolute;top:0;font-size:8px;">C${c.number}</span></div>`;
+    });
+  }
+
+  // Straight markers (bottom half, green dashed)
+  if (course.straights) {
+    course.straights.forEach(s => {
+      html += `<div class="track-viz-marker straight" style="left:${pct(s.start)}%;top:30px;height:30px;"><span style="position:absolute;bottom:0;font-size:8px;">S${s.number}</span></div>`;
+    });
+  }
+
+  // Distance labels at 0, 25%, 50%, 75%, 100%
+  for (let i = 0; i <= 4; i++) {
+    const m = Math.round(dist * i / 4);
+    html += `<div style="position:absolute;bottom:0;left:${i*25}%;transform:translateX(-50%);font-size:8px;color:#999;">${m}m</div>`;
+  }
+
+  html += `</div>`;
+  html += `<div class="track-viz-legend">
+    <span class="l-early">초반</span><span class="l-mid">중반</span><span class="l-late">종반</span><span class="l-spurt">스퍼트</span>
+    <span class="l-corner">C=코너</span><span class="l-straight">S=직선</span>
+  </div>`;
+  return html;
 }
 
 // Load track data when tab is shown

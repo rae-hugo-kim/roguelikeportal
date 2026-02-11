@@ -424,7 +424,6 @@ td:first-child { text-align:left; }
       <button onclick="switchRouletteTab('charroulette',this)">🎰 캐릭터 룰렛</button>
       <button onclick="switchRouletteTab('track',this)">🏁 마장 룰렛</button>
       <button onclick="switchRouletteTab('skills',this)">🎯 유효스킬</button>
-      <button onclick="switchRouletteTab('publish',this)">📢 결과 발송</button>
     </div>
 
     <!-- 서포트카드 밴 -->
@@ -534,40 +533,6 @@ td:first-child { text-align:left; }
       </div>
     </div>
 
-    <!-- 결과 발송 -->
-    <div id="r-publish-tab" class="r-sub">
-      <div style="max-width:600px;margin:0 auto;padding:20px;">
-        <h3 style="margin-bottom:12px;">📢 대회 결과 발송</h3>
-        <p style="color:#666;font-size:13px;margin-bottom:16px;">결과를 정리하여 Discord 스레드에 발송합니다. 마장/밴 정보는 룰렛에서 설정한 값이 자동 반영됩니다.</p>
-        <div style="margin-bottom:12px;">
-          <label style="font-weight:bold;font-size:14px;">회차 번호</label><br>
-          <input type="number" id="publish-round" placeholder="382" style="padding:8px;border:1px solid #ccc;border-radius:4px;width:100px;margin-top:4px;">
-        </div>
-        <div style="margin-bottom:12px;">
-          <label style="font-weight:bold;font-size:14px;">1경기 (닉네임 말이름 / 구분)</label><br>
-          <input type="text" id="publish-race1" placeholder="쿠다 카렌짱 / 초보팬 골드쉽 / 토미 키타산블랙" style="padding:8px;border:1px solid #ccc;border-radius:4px;width:100%;margin-top:4px;">
-        </div>
-        <div style="margin-bottom:12px;">
-          <label style="font-weight:bold;font-size:14px;">2경기</label><br>
-          <input type="text" id="publish-race2" placeholder="닉네임 말이름 / ..." style="padding:8px;border:1px solid #ccc;border-radius:4px;width:100%;margin-top:4px;">
-        </div>
-        <div style="margin-bottom:12px;">
-          <label style="font-weight:bold;font-size:14px;">3경기</label><br>
-          <input type="text" id="publish-race3" placeholder="닉네임 말이름 / ..." style="padding:8px;border:1px solid #ccc;border-radius:4px;width:100%;margin-top:4px;">
-        </div>
-        <div style="margin-bottom:12px;">
-          <label style="font-weight:bold;font-size:14px;">결승 (순서대로 = 순위)</label><br>
-          <input type="text" id="publish-finals" placeholder="쿠다 카렌짱 / 초보팬 골드쉽 / 토미 키타산블랙" style="padding:8px;border:1px solid #ccc;border-radius:4px;width:100%;margin-top:4px;">
-        </div>
-        <div style="margin-bottom:12px;">
-          <label style="font-weight:bold;font-size:14px;">우승 소감 (선택)</label><br>
-          <input type="text" id="publish-comment" placeholder="우승 소감..." style="padding:8px;border:1px solid #ccc;border-radius:4px;width:100%;margin-top:4px;">
-        </div>
-        <div id="publish-preview" style="background:#f5f5f0;border:1px solid #ddd;border-radius:8px;padding:16px;margin-bottom:16px;font-size:13px;white-space:pre-line;display:none;"></div>
-        <button class="r-btn r-btn-primary" onclick="previewPublish()">👁️ 미리보기</button>
-        <button class="r-btn r-btn-success" onclick="submitPublish()">📢 발송</button>
-      </div>
-    </div>
 
   </div>
   <div id="tab-current" class="tab">
@@ -607,6 +572,56 @@ td:first-child { text-align:left; }
       <div id="current-round-empty" style="display:none;text-align:center;padding:2rem;color:var(--text2);">
         <p style="font-size:1.2rem;">📭 아직 설정된 회차 정보가 없습니다</p>
         <p style="font-size:0.85rem;margin-top:0.5rem;">대회 진행 탭에서 마장/밴을 생성하고 복사하면 자동으로 반영됩니다</p>
+      </div>
+      
+      <!-- 관리자 전용: 대회 기록 입력 폼 -->
+      <div id="current-admin-form" style="display:none;margin-top:2rem;">
+        <div style="background:linear-gradient(135deg,var(--green-pale),var(--orange-pale));border:2px solid var(--green-soft);border-radius:16px;padding:1.5rem;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+          <h3 style="color:var(--heading);margin-bottom:1rem;text-align:center;">📝 대회 기록 입력</h3>
+          
+          <div style="margin-bottom:1rem;">
+            <label style="font-weight:bold;font-size:0.9rem;color:var(--text);">회차 번호</label><br>
+            <input type="number" id="current-publish-round" placeholder="382" style="padding:0.6rem;border:1px solid var(--border);border-radius:8px;width:120px;margin-top:0.3rem;font-size:0.9rem;">
+          </div>
+          
+          <div style="margin-bottom:1rem;">
+            <label style="font-weight:bold;font-size:0.9rem;color:var(--text);">참가자 리스트</label>
+            <span style="color:var(--text2);font-size:0.75rem;margin-left:0.5rem;">(쉼표로 구분)</span><br>
+            <textarea id="current-participants" placeholder="닉네임1, 닉네임2, ..." rows="2" style="padding:0.6rem;border:1px solid var(--border);border-radius:8px;width:100%;margin-top:0.3rem;font-size:0.9rem;resize:vertical;"></textarea>
+          </div>
+          
+          <div style="margin-bottom:1rem;">
+            <label style="font-weight:bold;font-size:0.9rem;color:var(--text);">1경기</label><br>
+            <input type="text" id="current-race1" placeholder="닉네임 말이름 / 닉네임 말이름 / ..." style="padding:0.6rem;border:1px solid var(--border);border-radius:8px;width:100%;margin-top:0.3rem;font-size:0.9rem;">
+          </div>
+          
+          <div style="margin-bottom:1rem;">
+            <label style="font-weight:bold;font-size:0.9rem;color:var(--text);">2경기</label><br>
+            <input type="text" id="current-race2" placeholder="닉네임 말이름 / ..." style="padding:0.6rem;border:1px solid var(--border);border-radius:8px;width:100%;margin-top:0.3rem;font-size:0.9rem;">
+          </div>
+          
+          <div style="margin-bottom:1rem;">
+            <label style="font-weight:bold;font-size:0.9rem;color:var(--text);">3경기</label><br>
+            <input type="text" id="current-race3" placeholder="닉네임 말이름 / ..." style="padding:0.6rem;border:1px solid var(--border);border-radius:8px;width:100%;margin-top:0.3rem;font-size:0.9rem;">
+          </div>
+          
+          <div style="margin-bottom:1rem;">
+            <label style="font-weight:bold;font-size:0.9rem;color:var(--text);">결승 (순서 = 순위)</label><br>
+            <input type="text" id="current-finals" placeholder="1위 말이름 / 2위 말이름 / 3위 말이름" style="padding:0.6rem;border:1px solid var(--border);border-radius:8px;width:100%;margin-top:0.3rem;font-size:0.9rem;">
+          </div>
+          
+          <div style="margin-bottom:1.2rem;">
+            <label style="font-weight:bold;font-size:0.9rem;color:var(--text);">우승 소감 (선택)</label><br>
+            <input type="text" id="current-comment" placeholder="우승 소감..." style="padding:0.6rem;border:1px solid var(--border);border-radius:8px;width:100%;margin-top:0.3rem;font-size:0.9rem;">
+          </div>
+          
+          <div id="current-publish-preview" style="display:none;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1rem;margin-bottom:1rem;font-size:0.85rem;white-space:pre-line;max-height:300px;overflow-y:auto;"></div>
+          
+          <div style="display:flex;gap:0.8rem;justify-content:center;">
+            <button class="r-btn r-btn-primary" onclick="previewCurrentPublish()">👁️ 미리보기</button>
+            <button class="r-btn r-btn-success" onclick="submitCurrentPublish()">📢 결과 발송</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1281,6 +1296,8 @@ function adminGoogleLogin() {
         document.getElementById('admin-user').style.display = 'inline';
         document.getElementById('admin-email').textContent = info.email;
         document.getElementById('admin-logout-btn').style.display = 'inline';
+        const adminForm = document.getElementById('current-admin-form');
+        if (adminForm) adminForm.style.display = 'block';
         showRNotification(`✅ ${info.email} 로그인 완료!`);
       });
     }
@@ -1294,6 +1311,8 @@ function adminLogout() {
   document.getElementById('admin-login-btn').style.display = 'inline';
   document.getElementById('admin-user').style.display = 'none';
   document.getElementById('admin-logout-btn').style.display = 'none';
+  const adminForm = document.getElementById('current-admin-form');
+  if (adminForm) adminForm.style.display = 'none';
   showRNotification('로그아웃 완료');
 }
 
@@ -1309,17 +1328,16 @@ function syncToBot(data) {
   }).catch(() => {}); // 서버 연결 실패시 조용히 무시
 }
 
-// === 결과 발송 ===
-function formatPublishMessage() {
-  const round = document.getElementById('publish-round').value;
-  const finals = document.getElementById('publish-finals').value.trim();
-  const comment = document.getElementById('publish-comment').value.trim();
+// === 현재 회차 결과 발송 ===
+function formatCurrentPublishMessage() {
+  const round = document.getElementById('current-publish-round').value;
+  const finals = document.getElementById('current-finals').value.trim();
+  const comment = document.getElementById('current-comment').value.trim();
   if (!round || !finals) return null;
   
-  // 파서 호환 포맷 생성
   let msg = `${round}회 로그라이크\n하실 분들은 참가해주세요\n\n`;
   
-  // 마장 정보
+  // 마장 정보 (from currentTrackInfo if available)
   if (currentTrackInfo) {
     const t = currentTrackInfo;
     msg += `${t.trackName} ${t.trackType} ${t.distance}`;
@@ -1357,10 +1375,16 @@ function formatPublishMessage() {
   
   msg += '\n';
   
+  // 참가자
+  const participants = document.getElementById('current-participants').value.trim();
+  if (participants) {
+    msg += `참가자\n- ${participants.split(',').map(s=>s.trim()).filter(Boolean).join(' / ')}\n\n`;
+  }
+  
   // 경기 결과
-  const race1 = document.getElementById('publish-race1').value.trim();
-  const race2 = document.getElementById('publish-race2').value.trim();
-  const race3 = document.getElementById('publish-race3').value.trim();
+  const race1 = document.getElementById('current-race1').value.trim();
+  const race2 = document.getElementById('current-race2').value.trim();
+  const race3 = document.getElementById('current-race3').value.trim();
   if (race1) msg += `1경기: ${race1}\n`;
   if (race2) msg += `2경기: ${race2}\n`;
   if (race3) msg += `3경기: ${race3}\n`;
@@ -1371,18 +1395,18 @@ function formatPublishMessage() {
   return { round: parseInt(round), message: msg };
 }
 
-function previewPublish() {
-  const result = formatPublishMessage();
-  if (!result) { showRNotification('회차와 결과를 입력해주세요!'); return; }
-  const el = document.getElementById('publish-preview');
+function previewCurrentPublish() {
+  const result = formatCurrentPublishMessage();
+  if (!result) { showRNotification('회차와 결승 결과를 입력해주세요!'); return; }
+  const el = document.getElementById('current-publish-preview');
   el.textContent = result.message;
   el.style.display = 'block';
 }
 
-function submitPublish() {
-  if (!adminIdToken) { showRNotification('먼저 Google 로그인해주세요!'); return; }
-  const result = formatPublishMessage();
-  if (!result) { showRNotification('회차와 결과를 입력해주세요!'); return; }
+function submitCurrentPublish() {
+  if (!adminIdToken) { showRNotification('먼저 대회 진행 탭에서 Google 로그인해주세요!'); return; }
+  const result = formatCurrentPublishMessage();
+  if (!result) { showRNotification('회차와 결승 결과를 입력해주세요!'); return; }
   
   fetch(`${BOT_API_URL}/api/publish`, {
     method: 'POST',

@@ -498,22 +498,19 @@ td:first-child { text-align:left; }
       <div style="max-width:600px;margin:0 auto;padding:20px;">
         <h3 id="skills-track-title" style="margin-bottom:12px;">🎯 유효스킬 조회</h3>
         <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;align-items:center;">
-          <select id="skill-venue" style="padding:6px 10px;border:1px solid #ccc;border-radius:4px;">
+          <select id="skill-venue" onchange="updateSkillFilters()" style="padding:6px 10px;border:1px solid #ccc;border-radius:4px;">
             <option value="">경마장 전체</option>
-            <option>삿포로</option><option>하코다테</option><option>니가타</option><option>니이가타</option>
-            <option>후쿠시마</option><option>나카야마</option><option>도쿄</option><option>추쿄</option>
-            <option>교토</option><option>한신</option><option>코쿠라</option><option>오이</option>
+            <option value="삿포로">삿포로</option><option value="하코다테">하코다테</option><option value="니가타">니가타</option>
+            <option value="후쿠시마">후쿠시마</option><option value="나카야마">나카야마</option><option value="도쿄">도쿄</option><option value="추쿄">추쿄</option>
+            <option value="교토">교토</option><option value="한신">한신</option><option value="코쿠라">코쿠라</option><option value="오이">오이</option>
+            <option value="가와사키">가와사키</option><option value="후나바시">후나바시</option><option value="모리오카">모리오카</option><option value="롱샹">롱샹</option>
           </select>
-          <select id="skill-surface" style="padding:6px 10px;border:1px solid #ccc;border-radius:4px;">
+          <select id="skill-surface" onchange="updateSkillFilters()" style="padding:6px 10px;border:1px solid #ccc;border-radius:4px;">
             <option value="">잔디/더트</option>
             <option>잔디</option><option>더트</option>
           </select>
           <select id="skill-distance" style="padding:6px 10px;border:1px solid #ccc;border-radius:4px;">
             <option value="">거리 전체</option>
-            <option value="1000">1000m</option><option value="1200">1200m</option><option value="1400">1400m</option>
-            <option value="1500">1500m</option><option value="1600">1600m</option><option value="1800">1800m</option>
-            <option value="2000">2000m</option><option value="2200">2200m</option><option value="2400">2400m</option>
-            <option value="2500">2500m</option><option value="2600">2600m</option><option value="3000">3000m</option>
           </select>
           <button class="r-btn r-btn-primary" onclick="searchSkills()" style="padding:6px 14px;">🔍 조회</button>
         </div>
@@ -1382,6 +1379,60 @@ function querySkillsLocal(trackData, venue, distance, surface) {
   }
   const sort = obj => Object.entries(obj).sort((a,b) => b[1] - a[1]).map(([name, count]) => ({name, count}));
   return { matchCount, effective: sort(effective), banned: sort(banned), semiEffective: sort(semiEffective) };
+}
+
+function updateSkillFilters() {
+  // Use racetrack data to filter surface and distance based on venue selection
+  const venue = document.getElementById('skill-venue').value;
+  const surface = document.getElementById('skill-surface').value;
+  const distSel = document.getElementById('skill-distance');
+  const prevDist = distSel.value;
+
+  if (!TRACK_DATA) {
+    // Fallback: load track data then retry
+    loadTrackData().then(() => updateSkillFilters());
+    return;
+  }
+
+  // Filter surfaces available for this venue
+  const surfSel = document.getElementById('skill-surface');
+  if (venue) {
+    const v = TRACK_DATA.venues.find(v => v.venue === venue);
+    if (v) {
+      const surfaces = [...new Set(v.courses.map(c => c.surface))];
+      // Update surface options
+      const opts = [{v:'', t:'잔디/더트'}];
+      if (surfaces.includes('잔디')) opts.push({v:'잔디', t:'잔디'});
+      if (surfaces.includes('더트')) opts.push({v:'더트', t:'더트'});
+      surfSel.innerHTML = opts.map(o => `<option value="${o.v}"${o.v===surface?' selected':''}>${o.t}</option>`).join('');
+      // If previous surface not available, reset
+      if (surface && !surfaces.includes(surface)) surfSel.value = '';
+    }
+  } else {
+    surfSel.innerHTML = '<option value="">잔디/더트</option><option>잔디</option><option>더트</option>';
+    if (surface) surfSel.value = surface;
+  }
+
+  // Filter distances
+  const activeSurface = surfSel.value;
+  let distances = new Set();
+  if (venue) {
+    const v = TRACK_DATA.venues.find(v => v.venue === venue);
+    if (v) {
+      v.courses.forEach(c => {
+        if (!activeSurface || c.surface === activeSurface) distances.add(c.distance);
+      });
+    }
+  } else {
+    // All distances from all venues filtered by surface
+    TRACK_DATA.venues.forEach(v => v.courses.forEach(c => {
+      if (!activeSurface || c.surface === activeSurface) distances.add(c.distance);
+    }));
+  }
+
+  const sortedDist = [...distances].sort((a, b) => a - b);
+  distSel.innerHTML = '<option value="">거리 전체</option>' +
+    sortedDist.map(d => `<option value="${d}"${String(d)===prevDist?' selected':''}>${d}m</option>`).join('');
 }
 
 function searchSkills() {

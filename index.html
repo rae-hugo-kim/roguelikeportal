@@ -1823,9 +1823,9 @@ function navigateToTrackInfo(t) {
     const dist = parseInt(t.distance);
     const surface = t.trackType;
 
-    // Set filters
+    // Set filters — venue only, so all surfaces/distances visible
     document.getElementById('track-venue-select').value = venueId;
-    document.getElementById('track-surface-select').value = surface;
+    document.getElementById('track-surface-select').value = '';
     document.getElementById('track-dist-select').value = '';
     filterTracks();
 
@@ -1835,18 +1835,23 @@ function navigateToTrackInfo(t) {
 
     // Find and expand matching card, scroll to it
     setTimeout(() => {
-      const cards = document.querySelectorAll('.track-card');
+      const cards = document.querySelectorAll('#track-list .track-card');
       for (const card of cards) {
         const h3 = card.querySelector('h3');
-        if (h3 && h3.textContent.includes(venueShort) && h3.textContent.includes(dist + 'm')) {
+        if (!h3) continue;
+        const txt = h3.textContent;
+        // Match venue name + distance + surface via badges
+        const badges = card.textContent;
+        if (txt.includes(dist + 'm') && badges.includes(surface)) {
           card.classList.add('expanded');
           card.scrollIntoView({behavior:'smooth', block:'center'});
-          card.style.boxShadow = '0 0 0 3px var(--green)';
-          setTimeout(() => { card.style.boxShadow = ''; }, 3000);
+          card.style.outline = '3px solid var(--green)';
+          card.style.outlineOffset = '2px';
+          setTimeout(() => { card.style.outline = ''; card.style.outlineOffset = ''; }, 4000);
           break;
         }
       }
-    }, 100);
+    }, 300);
   };
 
   if (TRACK_DATA) doNav();

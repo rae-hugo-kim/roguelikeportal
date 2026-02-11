@@ -357,6 +357,7 @@ td:first-child { text-align:left; }
       <button onclick="switchRouletteTab('character',this)">🏇 캐릭터 밴</button>
       <button onclick="switchRouletteTab('charroulette',this)">🎰 캐릭터 룰렛</button>
       <button onclick="switchRouletteTab('track',this)">🏁 마장 룰렛</button>
+      <button onclick="switchRouletteTab('publish',this)">📢 결과 발송</button>
     </div>
 
     <!-- 서포트카드 밴 -->
@@ -427,6 +428,29 @@ td:first-child { text-align:left; }
         </div>
       </div>
     </div>
+    <!-- 결과 발송 -->
+    <div id="r-publish-tab" class="r-sub" style="display:none;">
+      <div style="max-width:600px;margin:0 auto;padding:20px;">
+        <h3 style="margin-bottom:12px;">📢 대회 결과 발송</h3>
+        <p style="color:#666;font-size:13px;margin-bottom:16px;">결과를 정리하여 Discord 스레드에 발송합니다. 마장/밴 정보는 룰렛에서 설정한 값이 자동 반영됩니다.</p>
+        <div style="margin-bottom:12px;">
+          <label style="font-weight:bold;font-size:14px;">회차 번호</label><br>
+          <input type="number" id="publish-round" placeholder="382" style="padding:8px;border:1px solid #ccc;border-radius:4px;width:100px;margin-top:4px;">
+        </div>
+        <div style="margin-bottom:12px;">
+          <label style="font-weight:bold;font-size:14px;">결승 결과 (1줄 1명, 순위 닉네임 말이름)</label><br>
+          <textarea id="publish-results" rows="6" placeholder="1 쿠다 카렌짱&#10;2 초보팬 골드쉽&#10;3 토미 키타산블랙" style="padding:8px;border:1px solid #ccc;border-radius:4px;width:100%;margin-top:4px;font-family:monospace;"></textarea>
+        </div>
+        <div style="margin-bottom:12px;">
+          <label style="font-weight:bold;font-size:14px;">우승 소감 (선택)</label><br>
+          <input type="text" id="publish-comment" placeholder="우승 소감..." style="padding:8px;border:1px solid #ccc;border-radius:4px;width:100%;margin-top:4px;">
+        </div>
+        <div id="publish-preview" style="background:#f5f5f0;border:1px solid #ddd;border-radius:8px;padding:16px;margin-bottom:16px;font-size:13px;white-space:pre-line;display:none;"></div>
+        <button class="r-btn r-btn-primary" onclick="previewPublish()">👁️ 미리보기</button>
+        <button class="r-btn r-btn-success" onclick="submitPublish()">📢 발송</button>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -1099,6 +1123,71 @@ function syncToBot(data) {
     if (d.ok) showRNotification('🤖 봇 연동 완료!');
     else showRNotification('⚠️ 봇 연동 실패: ' + d.error);
   }).catch(() => {}); // 서버 연결 실패시 조용히 무시
+}
+
+// === 결과 발송 ===
+function formatPublishMessage() {
+  const round = document.getElementById('publish-round').value;
+  const resultsText = document.getElementById('publish-results').value.trim();
+  const comment = document.getElementById('publish-comment').value.trim();
+  if (!round || !resultsText) return null;
+  
+  const medals = ['🥇','🥈','🥉'];
+  const lines = resultsText.split('\n').filter(l=>l.trim());
+  let msg = `**${round}회 로그라이크**\n\n`;
+  
+  // 마장 정보 (봇에 저장된 값)
+  if (currentTrackInfo) {
+    const t = currentTrackInfo;
+    msg += `🏇 마장: ${t.trackType} ${t.trackName} ${t.distance}`;
+    if (t.position) msg += ` ${t.position}`;
+    msg += ` | ${t.season} ${t.weather} ${t.trackCondition} ${t.horseCondition}\n`;
+  }
+  
+  // 밴 정보
+  const chars = (currentCharacters||[]).filter(c=>c).map(c=>c.name);
+  const supps = (currentSupportCards||[]).filter(c=>c).map(c=>c.name);
+  if (chars.length) msg += `🚫 캐릭터 밴: ${chars.join(', ')}\n`;
+  if (supps.length) msg += `🚫 서포트 밴: ${supps.join(', ')}\n`;
+  
+  msg += '\n';
+  
+  // 결과
+  lines.forEach((line, i) => {
+    const parts = line.trim().split(/\s+/);
+    const rank = parseInt(parts[0]) || (i+1);
+    const player = parts[1] || '';
+    const uma = parts.slice(2).join(' ') || '';
+    const medal = rank <= 3 ? medals[rank-1] : `${rank}.`;
+    msg += `${medal} ${player}${uma ? ' (' + uma + ')' : ''}\n`;
+  });
+  
+  if (comment) msg += `\n💬 "${comment}"`;
+  
+  return { round: parseInt(round), message: msg };
+}
+
+function previewPublish() {
+  const result = formatPublishMessage();
+  if (!result) { showRNotification('회차와 결과를 입력해주세요!'); return; }
+  const el = document.getElementById('publish-preview');
+  el.textContent = result.message;
+  el.style.display = 'block';
+}
+
+function submitPublish() {
+  if (!adminIdToken) { showRNotification('먼저 Google 로그인해주세요!'); return; }
+  const result = formatPublishMessage();
+  if (!result) { showRNotification('회차와 결과를 입력해주세요!'); return; }
+  
+  fetch(`${BOT_API_URL}/api/publish`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${adminIdToken}` },
+    body: JSON.stringify(result)
+  }).then(r => r.json()).then(d => {
+    if (d.ok) showRNotification(d.skipped ? `⏭️ ${d.message}` : `📢 ${d.message}`);
+    else showRNotification('⚠️ ' + d.error);
+  }).catch(() => showRNotification('⚠️ 봇 서버 연결 실패'));
 }
 
 function copyTrackContent() {

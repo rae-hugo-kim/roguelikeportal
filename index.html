@@ -1265,7 +1265,35 @@ function submitPublish() {
   }).catch(() => showRNotification('⚠️ 봇 서버 연결 실패'));
 }
 
-// === 유효스킬 ===
+// === 유효스킬 데이터 (인라인) ===
+let SKILL_TRACK_DATA = null;
+function getSkillData() {
+  if (SKILL_TRACK_DATA) return Promise.resolve(SKILL_TRACK_DATA);
+  // 먼저 로컬 봇 API 시도, 실패하면 인라인 데이터 사용
+  return fetch(`${BOT_API_URL}/api/skills?_meta=1`).then(r => { throw new Error('use inline'); }).catch(() => {
+    // 인라인 데이터 로드 (deploy.sh에서 data.json과 함께 빌드)
+    return fetch('skill-by-track.json').then(r => r.json()).then(d => { SKILL_TRACK_DATA = d; return d; });
+  });
+}
+
+function querySkillsLocal(trackData, venue, distance, surface) {
+  const effective = {}, banned = {}, semiEffective = {};
+  let matchCount = 0;
+  for (const [trackKey, data] of Object.entries(trackData)) {
+    const matchVenue = !venue || trackKey.includes(venue);
+    const matchDist = !distance || trackKey.includes(distance + 'm');
+    const matchSurface = !surface || trackKey.includes(surface);
+    if (matchVenue && matchDist && matchSurface) {
+      matchCount += data.count || 1;
+      for (const [s, c] of Object.entries(data.effective || {})) effective[s] = (effective[s]||0) + c;
+      for (const [s, c] of Object.entries(data.banned || {})) banned[s] = (banned[s]||0) + c;
+      for (const [s, c] of Object.entries(data.semiEffective || {})) semiEffective[s] = (semiEffective[s]||0) + c;
+    }
+  }
+  const sort = obj => Object.entries(obj).sort((a,b) => b[1] - a[1]).map(([name, count]) => ({name, count}));
+  return { matchCount, effective: sort(effective), banned: sort(banned), semiEffective: sort(semiEffective) };
+}
+
 function searchSkills() {
   const venue = document.getElementById('skill-venue').value;
   const surface = document.getElementById('skill-surface').value;
@@ -1278,10 +1306,15 @@ function searchSkills() {
   title += '— 유효스킬';
   document.getElementById('skills-track-title').textContent = title;
   
-  fetch(`${BOT_API_URL}/api/skills?venue=${encodeURIComponent(venue)}&distance=${distance}&surface=${encodeURIComponent(surface)}`)
-    .then(r => r.json())
-    .then(data => renderSkillResults(data))
-    .catch(() => { document.getElementById('skills-track-title').textContent = '🎯 스킬 데이터 로드 실패'; });
+  getSkillData().then(trackData => {
+    const data = querySkillsLocal(trackData, venue, distance, surface);
+    renderSkillResults(data);
+  }).catch(() => {
+    // 로컬 데이터도 실패하면 봇 API 시도
+    fetch(`${BOT_API_URL}/api/skills?venue=${encodeURIComponent(venue)}&distance=${distance}&surface=${encodeURIComponent(surface)}`)
+      .then(r => r.json()).then(data => renderSkillResults(data))
+      .catch(() => { document.getElementById('skills-track-title').textContent = '🎯 스킬 데이터 로드 실패'; });
+  });
 }
 
 function renderSkillResults(data) {
@@ -1318,10 +1351,13 @@ function loadSkillsForTrack(trackInfo) {
   
   document.getElementById('skills-track-title').textContent = `🎯 ${t.trackType} ${t.trackName} ${t.distance} — 유효스킬`;
   
-  fetch(`${BOT_API_URL}/api/skills?venue=${encodeURIComponent(venue)}&distance=${distance}&surface=${encodeURIComponent(surface)}`)
-    .then(r => r.json())
-    .then(data => renderSkillResults(data))
-    .catch(() => { document.getElementById('skills-track-title').textContent = '🎯 스킬 데이터 로드 실패'; });
+  getSkillData().then(trackData => {
+    renderSkillResults(querySkillsLocal(trackData, venue, distance, surface));
+  }).catch(() => {
+    fetch(`${BOT_API_URL}/api/skills?venue=${encodeURIComponent(venue)}&distance=${distance}&surface=${encodeURIComponent(surface)}`)
+      .then(r => r.json()).then(data => renderSkillResults(data))
+      .catch(() => { document.getElementById('skills-track-title').textContent = '🎯 스킬 데이터 로드 실패'; });
+  });
 }
 
 function copyTrackContent() {

@@ -55,7 +55,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10101.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10101.png",
+          "slopes": []
         },
         {
           "distance": 1500,
@@ -113,7 +114,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10102.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10102.png",
+          "slopes": []
         },
         {
           "distance": 1800,
@@ -181,7 +183,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10103.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10103.png",
+          "slopes": []
         },
         {
           "distance": 2000,
@@ -249,7 +252,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10104.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10104.png",
+          "slopes": []
         },
         {
           "distance": 2600,
@@ -332,7 +336,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10105.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10105.png",
+          "slopes": []
         },
         {
           "distance": 1000,
@@ -385,7 +390,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10106.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10106.png",
+          "slopes": []
         },
         {
           "distance": 1700,
@@ -453,7 +459,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10107.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10107.png",
+          "slopes": []
         },
         {
           "distance": 2400,
@@ -536,7 +543,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10108.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10108.png",
+          "slopes": []
         }
       ]
     },
@@ -595,7 +603,15 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10201.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10201.png",
+          "slopes": [
+            {
+              "start": 0,
+              "length": 555,
+              "end": 555,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1200,
@@ -648,7 +664,15 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10202.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10202.png",
+          "slopes": [
+            {
+              "start": 0,
+              "length": 755,
+              "end": 755,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1800,
@@ -716,7 +740,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10203.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10203.png",
+          "slopes": [
+            {
+              "start": 220,
+              "length": 200,
+              "end": 420,
+              "type": "downhill"
+            },
+            {
+              "start": 665,
+              "length": 720,
+              "end": 1385,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2000,
@@ -784,7 +822,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10204.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10204.png",
+          "slopes": [
+            {
+              "start": 420,
+              "length": 200,
+              "end": 620,
+              "type": "downhill"
+            },
+            {
+              "start": 865,
+              "length": 720,
+              "end": 1585,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2600,
@@ -867,7 +919,27 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10205.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10205.png",
+          "slopes": [
+            {
+              "start": 0,
+              "length": 495,
+              "end": 495,
+              "type": "uphill"
+            },
+            {
+              "start": 970,
+              "length": 200,
+              "end": 1170,
+              "type": "downhill"
+            },
+            {
+              "start": 1425,
+              "length": 720,
+              "end": 2145,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1000,
@@ -920,7 +992,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10206.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10206.png",
+          "slopes": []
         },
         {
           "distance": 1700,
@@ -988,7 +1061,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10207.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10207.png",
+          "slopes": [
+            {
+              "start": 275,
+              "length": 340,
+              "end": 615,
+              "type": "downhill"
+            },
+            {
+              "start": 615,
+              "length": 670,
+              "end": 1285,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2400,
@@ -1071,7 +1158,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10208.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10208.png",
+          "slopes": []
         }
       ]
     },
@@ -1114,7 +1202,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10301.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10301.png",
+          "slopes": [
+            {
+              "start": 0,
+              "length": 240,
+              "end": 240,
+              "type": "uphill"
+            },
+            {
+              "start": 240,
+              "length": 60,
+              "end": 300,
+              "type": "downhill"
+            }
+          ]
         },
         {
           "distance": 1200,
@@ -1167,7 +1269,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10302.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10302.png",
+          "slopes": []
         },
         {
           "distance": 1400,
@@ -1220,7 +1323,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10303.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10303.png",
+          "slopes": []
         },
         {
           "distance": 1600,
@@ -1273,7 +1377,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10304.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10304.png",
+          "slopes": [
+            {
+              "start": 250,
+              "length": 350,
+              "end": 600,
+              "type": "uphill"
+            },
+            {
+              "start": 600,
+              "length": 300,
+              "end": 900,
+              "type": "downhill"
+            }
+          ]
         },
         {
           "distance": 1800,
@@ -1326,7 +1444,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10305.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10305.png",
+          "slopes": [
+            {
+              "start": 450,
+              "length": 350,
+              "end": 800,
+              "type": "uphill"
+            },
+            {
+              "start": 800,
+              "length": 300,
+              "end": 1100,
+              "type": "downhill"
+            }
+          ]
         },
         {
           "distance": 2000,
@@ -1394,7 +1526,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10306.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10306.png",
+          "slopes": []
         },
         {
           "distance": 2000,
@@ -1447,7 +1580,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10307.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10307.png",
+          "slopes": []
         },
         {
           "distance": 2200,
@@ -1515,7 +1649,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10308.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10308.png",
+          "slopes": []
         },
         {
           "distance": 2400,
@@ -1583,7 +1718,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10309.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10309.png",
+          "slopes": []
         },
         {
           "distance": 1200,
@@ -1636,7 +1772,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10310.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10310.png",
+          "slopes": []
         },
         {
           "distance": 1800,
@@ -1704,7 +1841,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10311.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10311.png",
+          "slopes": []
         },
         {
           "distance": 2500,
@@ -1787,7 +1925,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10312.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10312.png",
+          "slopes": []
         }
       ]
     },
@@ -1846,7 +1985,15 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10401.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10401.png",
+          "slopes": [
+            {
+              "start": 180,
+              "length": 100,
+              "end": 280,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1800,
@@ -1914,7 +2061,15 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10402.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10402.png",
+          "slopes": [
+            {
+              "start": 780,
+              "length": 100,
+              "end": 880,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2000,
@@ -1982,7 +2137,15 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10403.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10403.png",
+          "slopes": [
+            {
+              "start": 980,
+              "length": 100,
+              "end": 1080,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2600,
@@ -2065,7 +2228,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10404.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10404.png",
+          "slopes": [
+            {
+              "start": 0,
+              "length": 80,
+              "end": 80,
+              "type": "uphill"
+            },
+            {
+              "start": 1580,
+              "length": 100,
+              "end": 1680,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1150,
@@ -2118,7 +2295,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10405.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10405.png",
+          "slopes": []
         },
         {
           "distance": 1700,
@@ -2186,7 +2364,15 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10406.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10406.png",
+          "slopes": [
+            {
+              "start": 285,
+              "length": 320,
+              "end": 605,
+              "type": "downhill"
+            }
+          ]
         },
         {
           "distance": 2400,
@@ -2269,7 +2455,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10407.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10407.png",
+          "slopes": []
         }
       ]
     },
@@ -2323,7 +2510,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10501.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10501.png",
+          "slopes": [
+            {
+              "start": 0,
+              "length": 200,
+              "end": 200,
+              "type": "downhill"
+            },
+            {
+              "start": 1025,
+              "length": 110,
+              "end": 1135,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1600,
@@ -2376,7 +2577,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10502.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10502.png",
+          "slopes": [
+            {
+              "start": 300,
+              "length": 300,
+              "end": 600,
+              "type": "downhill"
+            },
+            {
+              "start": 1425,
+              "length": 110,
+              "end": 1535,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1800,
@@ -2444,7 +2659,33 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10503.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10503.png",
+          "slopes": [
+            {
+              "start": 1,
+              "length": 35,
+              "end": 36,
+              "type": "uphill"
+            },
+            {
+              "start": 125,
+              "length": 200,
+              "end": 325,
+              "type": "uphill"
+            },
+            {
+              "start": 425,
+              "length": 400,
+              "end": 825,
+              "type": "downhill"
+            },
+            {
+              "start": 1625,
+              "length": 110,
+              "end": 1735,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2000,
@@ -2512,7 +2753,33 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10504.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10504.png",
+          "slopes": [
+            {
+              "start": 125,
+              "length": 110,
+              "end": 235,
+              "type": "uphill"
+            },
+            {
+              "start": 325,
+              "length": 200,
+              "end": 525,
+              "type": "uphill"
+            },
+            {
+              "start": 625,
+              "length": 400,
+              "end": 1025,
+              "type": "downhill"
+            },
+            {
+              "start": 1825,
+              "length": 110,
+              "end": 1935,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2200,
@@ -2575,7 +2842,33 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10505.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10505.png",
+          "slopes": [
+            {
+              "start": 153,
+              "length": 110,
+              "end": 263,
+              "type": "uphill"
+            },
+            {
+              "start": 353,
+              "length": 200,
+              "end": 553,
+              "type": "uphill"
+            },
+            {
+              "start": 900,
+              "length": 300,
+              "end": 1200,
+              "type": "downhill"
+            },
+            {
+              "start": 2025,
+              "length": 110,
+              "end": 2135,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2500,
@@ -2653,7 +2946,33 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10506.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10506.png",
+          "slopes": [
+            {
+              "start": 621,
+              "length": 110,
+              "end": 731,
+              "type": "uphill"
+            },
+            {
+              "start": 825,
+              "length": 200,
+              "end": 1025,
+              "type": "uphill"
+            },
+            {
+              "start": 1125,
+              "length": 400,
+              "end": 1525,
+              "type": "downhill"
+            },
+            {
+              "start": 2325,
+              "length": 110,
+              "end": 2435,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 3600,
@@ -2751,7 +3070,51 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10507.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10507.png",
+          "slopes": [
+            {
+              "start": 40,
+              "length": 110,
+              "end": 150,
+              "type": "uphill"
+            },
+            {
+              "start": 240,
+              "length": 200,
+              "end": 440,
+              "type": "uphill"
+            },
+            {
+              "start": 540,
+              "length": 400,
+              "end": 940,
+              "type": "downhill"
+            },
+            {
+              "start": 1740,
+              "length": 110,
+              "end": 1850,
+              "type": "uphill"
+            },
+            {
+              "start": 1925,
+              "length": 200,
+              "end": 2125,
+              "type": "uphill"
+            },
+            {
+              "start": 2225,
+              "length": 400,
+              "end": 2625,
+              "type": "downhill"
+            },
+            {
+              "start": 3425,
+              "length": 110,
+              "end": 3535,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1200,
@@ -2804,7 +3167,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10508.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10508.png",
+          "slopes": [
+            {
+              "start": 175,
+              "length": 175,
+              "end": 350,
+              "type": "downhill"
+            },
+            {
+              "start": 1000,
+              "length": 175,
+              "end": 1175,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1800,
@@ -2872,7 +3249,33 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10509.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10509.png",
+          "slopes": [
+            {
+              "start": 100,
+              "length": 175,
+              "end": 275,
+              "type": "uphill"
+            },
+            {
+              "start": 350,
+              "length": 175,
+              "end": 525,
+              "type": "uphill"
+            },
+            {
+              "start": 775,
+              "length": 175,
+              "end": 950,
+              "type": "downhill"
+            },
+            {
+              "start": 1600,
+              "length": 175,
+              "end": 1775,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2400,
@@ -2955,7 +3358,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10510.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10510.png",
+          "slopes": []
         },
         {
           "distance": 2500,
@@ -3038,7 +3442,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10511.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10511.png",
+          "slopes": []
         }
       ]
     },
@@ -3097,7 +3502,27 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10601.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10601.png",
+          "slopes": [
+            {
+              "start": 125,
+              "length": 75,
+              "end": 200,
+              "type": "uphill"
+            },
+            {
+              "start": 250,
+              "length": 250,
+              "end": 500,
+              "type": "downhill"
+            },
+            {
+              "start": 950,
+              "length": 150,
+              "end": 1100,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1600,
@@ -3150,7 +3575,27 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10602.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10602.png",
+          "slopes": [
+            {
+              "start": 325,
+              "length": 75,
+              "end": 400,
+              "type": "uphill"
+            },
+            {
+              "start": 450,
+              "length": 250,
+              "end": 700,
+              "type": "downhill"
+            },
+            {
+              "start": 1150,
+              "length": 150,
+              "end": 1300,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1800,
@@ -3208,7 +3653,27 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10603.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10603.png",
+          "slopes": [
+            {
+              "start": 525,
+              "length": 75,
+              "end": 600,
+              "type": "uphill"
+            },
+            {
+              "start": 650,
+              "length": 250,
+              "end": 900,
+              "type": "downhill"
+            },
+            {
+              "start": 1350,
+              "length": 150,
+              "end": 1500,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2000,
@@ -3266,7 +3731,27 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10604.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10604.png",
+          "slopes": [
+            {
+              "start": 725,
+              "length": 75,
+              "end": 800,
+              "type": "uphill"
+            },
+            {
+              "start": 850,
+              "length": 250,
+              "end": 1100,
+              "type": "downhill"
+            },
+            {
+              "start": 1550,
+              "length": 150,
+              "end": 1700,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2300,
@@ -3334,7 +3819,27 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10605.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10605.png",
+          "slopes": [
+            {
+              "start": 1025,
+              "length": 75,
+              "end": 1100,
+              "type": "uphill"
+            },
+            {
+              "start": 1150,
+              "length": 250,
+              "end": 1400,
+              "type": "downhill"
+            },
+            {
+              "start": 1850,
+              "length": 150,
+              "end": 2000,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2400,
@@ -3402,7 +3907,33 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10606.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10606.png",
+          "slopes": [
+            {
+              "start": 0,
+              "length": 40,
+              "end": 40,
+              "type": "uphill"
+            },
+            {
+              "start": 1125,
+              "length": 75,
+              "end": 1200,
+              "type": "uphill"
+            },
+            {
+              "start": 1250,
+              "length": 250,
+              "end": 1500,
+              "type": "downhill"
+            },
+            {
+              "start": 1950,
+              "length": 150,
+              "end": 2100,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2500,
@@ -3470,7 +4001,33 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10607.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10607.png",
+          "slopes": [
+            {
+              "start": 0,
+              "length": 140,
+              "end": 140,
+              "type": "uphill"
+            },
+            {
+              "start": 1225,
+              "length": 75,
+              "end": 1300,
+              "type": "uphill"
+            },
+            {
+              "start": 1350,
+              "length": 250,
+              "end": 1600,
+              "type": "downhill"
+            },
+            {
+              "start": 2050,
+              "length": 150,
+              "end": 2200,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 3400,
@@ -3553,7 +4110,45 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10608.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10608.png",
+          "slopes": [
+            {
+              "start": 67,
+              "length": 75,
+              "end": 142,
+              "type": "uphill"
+            },
+            {
+              "start": 192,
+              "length": 250,
+              "end": 442,
+              "type": "downhill"
+            },
+            {
+              "start": 892,
+              "length": 150,
+              "end": 1042,
+              "type": "uphill"
+            },
+            {
+              "start": 2125,
+              "length": 75,
+              "end": 2200,
+              "type": "uphill"
+            },
+            {
+              "start": 2250,
+              "length": 250,
+              "end": 2500,
+              "type": "downhill"
+            },
+            {
+              "start": 2950,
+              "length": 150,
+              "end": 3100,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1300,
@@ -3606,7 +4201,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10609.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10609.png",
+          "slopes": [
+            {
+              "start": 275,
+              "length": 200,
+              "end": 475,
+              "type": "downhill"
+            },
+            {
+              "start": 800,
+              "length": 250,
+              "end": 1050,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1400,
@@ -3659,7 +4268,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10610.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10610.png",
+          "slopes": [
+            {
+              "start": 375,
+              "length": 200,
+              "end": 575,
+              "type": "downhill"
+            },
+            {
+              "start": 900,
+              "length": 250,
+              "end": 1150,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1600,
@@ -3712,7 +4335,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10611.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10611.png",
+          "slopes": [
+            {
+              "start": 575,
+              "length": 200,
+              "end": 775,
+              "type": "downhill"
+            },
+            {
+              "start": 1100,
+              "length": 250,
+              "end": 1350,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2100,
@@ -3780,7 +4417,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10612.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10612.png",
+          "slopes": [
+            {
+              "start": 1075,
+              "length": 200,
+              "end": 1275,
+              "type": "downhill"
+            },
+            {
+              "start": 1600,
+              "length": 250,
+              "end": 1850,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2400,
@@ -3848,7 +4499,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10613.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10613.png",
+          "slopes": []
         }
       ]
     },
@@ -3907,7 +4559,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10701.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10701.png",
+          "slopes": [
+            {
+              "start": 100,
+              "length": 775,
+              "end": 875,
+              "type": "downhill"
+            },
+            {
+              "start": 875,
+              "length": 100,
+              "end": 975,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1400,
@@ -3960,7 +4626,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10702.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10702.png",
+          "slopes": [
+            {
+              "start": 300,
+              "length": 775,
+              "end": 1075,
+              "type": "downhill"
+            },
+            {
+              "start": 1075,
+              "length": 100,
+              "end": 1175,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1600,
@@ -4018,7 +4698,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10703.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10703.png",
+          "slopes": [
+            {
+              "start": 500,
+              "length": 775,
+              "end": 1275,
+              "type": "downhill"
+            },
+            {
+              "start": 1275,
+              "length": 100,
+              "end": 1375,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2000,
@@ -4086,7 +4780,27 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10704.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10704.png",
+          "slopes": [
+            {
+              "start": 0,
+              "length": 50,
+              "end": 50,
+              "type": "uphill"
+            },
+            {
+              "start": 900,
+              "length": 775,
+              "end": 1675,
+              "type": "downhill"
+            },
+            {
+              "start": 1675,
+              "length": 100,
+              "end": 1775,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2200,
@@ -4154,7 +4868,33 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10705.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10705.png",
+          "slopes": [
+            {
+              "start": 0,
+              "length": 150,
+              "end": 150,
+              "type": "downhill"
+            },
+            {
+              "start": 150,
+              "length": 100,
+              "end": 250,
+              "type": "uphill"
+            },
+            {
+              "start": 1100,
+              "length": 775,
+              "end": 1875,
+              "type": "downhill"
+            },
+            {
+              "start": 1875,
+              "length": 100,
+              "end": 1975,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1200,
@@ -4207,7 +4947,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10706.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10706.png",
+          "slopes": []
         },
         {
           "distance": 1400,
@@ -4260,7 +5001,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10707.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10707.png",
+          "slopes": [
+            {
+              "start": 425,
+              "length": 600,
+              "end": 1025,
+              "type": "downhill"
+            },
+            {
+              "start": 1025,
+              "length": 150,
+              "end": 1175,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1800,
@@ -4328,7 +5083,27 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10708.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10708.png",
+          "slopes": [
+            {
+              "start": 0,
+              "length": 50,
+              "end": 50,
+              "type": "uphill"
+            },
+            {
+              "start": 825,
+              "length": 600,
+              "end": 1425,
+              "type": "downhill"
+            },
+            {
+              "start": 1425,
+              "length": 150,
+              "end": 1575,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1900,
@@ -4396,7 +5171,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10709.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10709.png",
+          "slopes": []
         }
       ]
     },
@@ -4455,7 +5231,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10801.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10801.png",
+          "slopes": [
+            {
+              "start": 120,
+              "length": 175,
+              "end": 295,
+              "type": "uphill"
+            },
+            {
+              "start": 420,
+              "length": 150,
+              "end": 570,
+              "type": "downhill"
+            }
+          ]
         },
         {
           "distance": 1400,
@@ -4508,7 +5298,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10802.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10802.png",
+          "slopes": [
+            {
+              "start": 320,
+              "length": 175,
+              "end": 495,
+              "type": "uphill"
+            },
+            {
+              "start": 620,
+              "length": 150,
+              "end": 770,
+              "type": "downhill"
+            }
+          ]
         },
         {
           "distance": 1400,
@@ -4561,7 +5365,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10803.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10803.png",
+          "slopes": [
+            {
+              "start": 320,
+              "length": 175,
+              "end": 495,
+              "type": "uphill"
+            },
+            {
+              "start": 620,
+              "length": 150,
+              "end": 770,
+              "type": "downhill"
+            }
+          ]
         },
         {
           "distance": 1600,
@@ -4614,7 +5432,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10804.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10804.png",
+          "slopes": [
+            {
+              "start": 520,
+              "length": 175,
+              "end": 695,
+              "type": "uphill"
+            },
+            {
+              "start": 820,
+              "length": 150,
+              "end": 970,
+              "type": "downhill"
+            }
+          ]
         },
         {
           "distance": 1600,
@@ -4667,7 +5499,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10805.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10805.png",
+          "slopes": [
+            {
+              "start": 520,
+              "length": 175,
+              "end": 695,
+              "type": "uphill"
+            },
+            {
+              "start": 820,
+              "length": 150,
+              "end": 970,
+              "type": "downhill"
+            }
+          ]
         },
         {
           "distance": 1800,
@@ -4720,7 +5566,27 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10806.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10806.png",
+          "slopes": [
+            {
+              "start": 650,
+              "length": 100,
+              "end": 750,
+              "type": "uphill"
+            },
+            {
+              "start": 750,
+              "length": 225,
+              "end": 975,
+              "type": "uphill"
+            },
+            {
+              "start": 975,
+              "length": 150,
+              "end": 1125,
+              "type": "downhill"
+            }
+          ]
         },
         {
           "distance": 2000,
@@ -4788,7 +5654,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10807.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10807.png",
+          "slopes": [
+            {
+              "start": 970,
+              "length": 175,
+              "end": 1145,
+              "type": "uphill"
+            },
+            {
+              "start": 1270,
+              "length": 150,
+              "end": 1420,
+              "type": "downhill"
+            }
+          ]
         },
         {
           "distance": 2200,
@@ -4856,7 +5736,27 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10808.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10808.png",
+          "slopes": [
+            {
+              "start": 1050,
+              "length": 100,
+              "end": 1150,
+              "type": "uphill"
+            },
+            {
+              "start": 1150,
+              "length": 225,
+              "end": 1375,
+              "type": "uphill"
+            },
+            {
+              "start": 1375,
+              "length": 150,
+              "end": 1525,
+              "type": "downhill"
+            }
+          ]
         },
         {
           "distance": 2400,
@@ -4924,7 +5824,27 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10809.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10809.png",
+          "slopes": [
+            {
+              "start": 1250,
+              "length": 100,
+              "end": 1350,
+              "type": "uphill"
+            },
+            {
+              "start": 1350,
+              "length": 225,
+              "end": 1575,
+              "type": "uphill"
+            },
+            {
+              "start": 1575,
+              "length": 150,
+              "end": 1725,
+              "type": "downhill"
+            }
+          ]
         },
         {
           "distance": 3000,
@@ -5007,7 +5927,45 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10810.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10810.png",
+          "slopes": [
+            {
+              "start": 11,
+              "length": 100,
+              "end": 111,
+              "type": "uphill"
+            },
+            {
+              "start": 111,
+              "length": 225,
+              "end": 336,
+              "type": "uphill"
+            },
+            {
+              "start": 336,
+              "length": 150,
+              "end": 486,
+              "type": "downhill"
+            },
+            {
+              "start": 1850,
+              "length": 100,
+              "end": 1950,
+              "type": "uphill"
+            },
+            {
+              "start": 1950,
+              "length": 225,
+              "end": 2175,
+              "type": "uphill"
+            },
+            {
+              "start": 2175,
+              "length": 150,
+              "end": 2325,
+              "type": "downhill"
+            }
+          ]
         },
         {
           "distance": 3200,
@@ -5090,7 +6048,45 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10811.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10811.png",
+          "slopes": [
+            {
+              "start": 208,
+              "length": 100,
+              "end": 308,
+              "type": "uphill"
+            },
+            {
+              "start": 308,
+              "length": 225,
+              "end": 533,
+              "type": "uphill"
+            },
+            {
+              "start": 533,
+              "length": 150,
+              "end": 683,
+              "type": "downhill"
+            },
+            {
+              "start": 2050,
+              "length": 100,
+              "end": 2150,
+              "type": "uphill"
+            },
+            {
+              "start": 2150,
+              "length": 225,
+              "end": 2375,
+              "type": "uphill"
+            },
+            {
+              "start": 2375,
+              "length": 150,
+              "end": 2525,
+              "type": "downhill"
+            }
+          ]
         },
         {
           "distance": 1200,
@@ -5143,7 +6139,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10812.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10812.png",
+          "slopes": [
+            {
+              "start": 175,
+              "length": 200,
+              "end": 375,
+              "type": "uphill"
+            },
+            {
+              "start": 475,
+              "length": 200,
+              "end": 675,
+              "type": "downhill"
+            }
+          ]
         },
         {
           "distance": 1400,
@@ -5196,7 +6206,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10813.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10813.png",
+          "slopes": [
+            {
+              "start": 375,
+              "length": 200,
+              "end": 575,
+              "type": "uphill"
+            },
+            {
+              "start": 675,
+              "length": 200,
+              "end": 875,
+              "type": "downhill"
+            }
+          ]
         },
         {
           "distance": 1800,
@@ -5264,7 +6288,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10814.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10814.png",
+          "slopes": [
+            {
+              "start": 775,
+              "length": 200,
+              "end": 975,
+              "type": "uphill"
+            },
+            {
+              "start": 1075,
+              "length": 200,
+              "end": 1275,
+              "type": "downhill"
+            }
+          ]
         },
         {
           "distance": 1900,
@@ -5332,7 +6370,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10815.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10815.png",
+          "slopes": [
+            {
+              "start": 875,
+              "length": 200,
+              "end": 1075,
+              "type": "uphill"
+            },
+            {
+              "start": 1175,
+              "length": 200,
+              "end": 1375,
+              "type": "downhill"
+            }
+          ]
         }
       ]
     },
@@ -5391,7 +6443,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10901.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10901.png",
+          "slopes": [
+            {
+              "start": 400,
+              "length": 595,
+              "end": 995,
+              "type": "downhill"
+            },
+            {
+              "start": 1000,
+              "length": 125,
+              "end": 1125,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1400,
@@ -5444,7 +6510,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10902.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10902.png",
+          "slopes": [
+            {
+              "start": 600,
+              "length": 595,
+              "end": 1195,
+              "type": "downhill"
+            },
+            {
+              "start": 1200,
+              "length": 125,
+              "end": 1325,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1600,
@@ -5497,7 +6577,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10903.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10903.png",
+          "slopes": [
+            {
+              "start": 950,
+              "length": 400,
+              "end": 1350,
+              "type": "downhill"
+            },
+            {
+              "start": 1405,
+              "length": 120,
+              "end": 1525,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1800,
@@ -5550,7 +6644,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10904.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10904.png",
+          "slopes": [
+            {
+              "start": 1150,
+              "length": 400,
+              "end": 1550,
+              "type": "downhill"
+            },
+            {
+              "start": 1605,
+              "length": 120,
+              "end": 1725,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2000,
@@ -5618,7 +6726,33 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10905.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10905.png",
+          "slopes": [
+            {
+              "start": 0,
+              "length": 90,
+              "end": 90,
+              "type": "downhill"
+            },
+            {
+              "start": 95,
+              "length": 125,
+              "end": 220,
+              "type": "uphill"
+            },
+            {
+              "start": 1200,
+              "length": 595,
+              "end": 1795,
+              "type": "downhill"
+            },
+            {
+              "start": 1800,
+              "length": 125,
+              "end": 1925,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2200,
@@ -5686,7 +6820,33 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10906.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10906.png",
+          "slopes": [
+            {
+              "start": 0,
+              "length": 290,
+              "end": 290,
+              "type": "downhill"
+            },
+            {
+              "start": 295,
+              "length": 125,
+              "end": 420,
+              "type": "uphill"
+            },
+            {
+              "start": 1400,
+              "length": 595,
+              "end": 1995,
+              "type": "downhill"
+            },
+            {
+              "start": 2000,
+              "length": 125,
+              "end": 2125,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2400,
@@ -5749,7 +6909,33 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10907.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10907.png",
+          "slopes": [
+            {
+              "start": 0,
+              "length": 115,
+              "end": 115,
+              "type": "downhill"
+            },
+            {
+              "start": 170,
+              "length": 120,
+              "end": 290,
+              "type": "uphill"
+            },
+            {
+              "start": 1750,
+              "length": 400,
+              "end": 2150,
+              "type": "downhill"
+            },
+            {
+              "start": 2205,
+              "length": 120,
+              "end": 2325,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2600,
@@ -5817,7 +7003,33 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10908.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10908.png",
+          "slopes": [
+            {
+              "start": 0,
+              "length": 315,
+              "end": 315,
+              "type": "downhill"
+            },
+            {
+              "start": 370,
+              "length": 120,
+              "end": 490,
+              "type": "uphill"
+            },
+            {
+              "start": 1950,
+              "length": 400,
+              "end": 2350,
+              "type": "downhill"
+            },
+            {
+              "start": 2405,
+              "length": 120,
+              "end": 2525,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 3000,
@@ -5900,7 +7112,33 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10909.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10909.png",
+          "slopes": [
+            {
+              "start": 495,
+              "length": 595,
+              "end": 1090,
+              "type": "downhill"
+            },
+            {
+              "start": 1095,
+              "length": 125,
+              "end": 1220,
+              "type": "uphill"
+            },
+            {
+              "start": 2200,
+              "length": 595,
+              "end": 2795,
+              "type": "downhill"
+            },
+            {
+              "start": 2800,
+              "length": 125,
+              "end": 2925,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1200,
@@ -5953,7 +7191,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10910.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10910.png",
+          "slopes": [
+            {
+              "start": 200,
+              "length": 800,
+              "end": 1000,
+              "type": "downhill"
+            },
+            {
+              "start": 1000,
+              "length": 125,
+              "end": 1125,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1400,
@@ -6006,7 +7258,21 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10911.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10911.png",
+          "slopes": [
+            {
+              "start": 400,
+              "length": 800,
+              "end": 1200,
+              "type": "downhill"
+            },
+            {
+              "start": 1200,
+              "length": 125,
+              "end": 1325,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1800,
@@ -6074,7 +7340,27 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10912.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10912.png",
+          "slopes": [
+            {
+              "start": 75,
+              "length": 125,
+              "end": 200,
+              "type": "uphill"
+            },
+            {
+              "start": 800,
+              "length": 800,
+              "end": 1600,
+              "type": "downhill"
+            },
+            {
+              "start": 1600,
+              "length": 125,
+              "end": 1725,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2000,
@@ -6142,7 +7428,33 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10913.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10913.png",
+          "slopes": [
+            {
+              "start": 0,
+              "length": 275,
+              "end": 275,
+              "type": "downhill"
+            },
+            {
+              "start": 275,
+              "length": 125,
+              "end": 400,
+              "type": "uphill"
+            },
+            {
+              "start": 1000,
+              "length": 800,
+              "end": 1800,
+              "type": "downhill"
+            },
+            {
+              "start": 1800,
+              "length": 125,
+              "end": 1925,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 3200,
@@ -6225,7 +7537,33 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10914.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10914.png",
+          "slopes": [
+            {
+              "start": 870,
+              "length": 400,
+              "end": 1270,
+              "type": "downhill"
+            },
+            {
+              "start": 1325,
+              "length": 120,
+              "end": 1445,
+              "type": "uphill"
+            },
+            {
+              "start": 2400,
+              "length": 595,
+              "end": 2995,
+              "type": "downhill"
+            },
+            {
+              "start": 3000,
+              "length": 125,
+              "end": 3125,
+              "type": "uphill"
+            }
+          ]
         }
       ]
     },
@@ -6284,7 +7622,15 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11001.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11001.png",
+          "slopes": [
+            {
+              "start": 0,
+              "length": 60,
+              "end": 60,
+              "type": "downhill"
+            }
+          ]
         },
         {
           "distance": 1800,
@@ -6352,7 +7698,15 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11002.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11002.png",
+          "slopes": [
+            {
+              "start": 280,
+              "length": 255,
+              "end": 535,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2000,
@@ -6420,7 +7774,15 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11003.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11003.png",
+          "slopes": [
+            {
+              "start": 480,
+              "length": 255,
+              "end": 735,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2600,
@@ -6503,7 +7865,15 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11004.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11004.png",
+          "slopes": [
+            {
+              "start": 1100,
+              "length": 255,
+              "end": 1355,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1000,
@@ -6556,7 +7926,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11005.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11005.png",
+          "slopes": []
         },
         {
           "distance": 1700,
@@ -6624,7 +7995,15 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11006.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11006.png",
+          "slopes": [
+            {
+              "start": 370,
+              "length": 150,
+              "end": 520,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2400,
@@ -6707,7 +8086,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11007.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11007.png",
+          "slopes": []
         }
       ]
     },
@@ -6766,7 +8146,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10101/11101.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10101/11101.png",
+          "slopes": []
         },
         {
           "distance": 1800,
@@ -6829,7 +8210,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10101/11102.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10101/11102.png",
+          "slopes": []
         },
         {
           "distance": 2000,
@@ -6897,7 +8279,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10101/11103.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10101/11103.png",
+          "slopes": []
         }
       ]
     },
@@ -6971,7 +8354,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10103/11301.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10103/11301.png",
+          "slopes": []
         },
         {
           "distance": 1600,
@@ -7039,7 +8423,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10103/11302.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10103/11302.png",
+          "slopes": []
         },
         {
           "distance": 2100,
@@ -7122,7 +8507,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10103/11303.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10103/11303.png",
+          "slopes": []
         }
       ]
     },
@@ -7181,7 +8567,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10104/11401.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10104/11401.png",
+          "slopes": []
         },
         {
           "distance": 1600,
@@ -7249,7 +8636,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10104/11402.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10104/11402.png",
+          "slopes": []
         },
         {
           "distance": 1800,
@@ -7317,7 +8705,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10104/11403.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10104/11403.png",
+          "slopes": []
         },
         {
           "distance": 2400,
@@ -7400,7 +8789,8 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10104/11404.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10104/11404.png",
+          "slopes": []
         }
       ]
     },
@@ -7459,7 +8849,27 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10105/11501.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10105/11501.png",
+          "slopes": [
+            {
+              "start": 100,
+              "length": 375,
+              "end": 475,
+              "type": "uphill"
+            },
+            {
+              "start": 475,
+              "length": 450,
+              "end": 925,
+              "type": "downhill"
+            },
+            {
+              "start": 975,
+              "length": 175,
+              "end": 1150,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1600,
@@ -7512,7 +8922,27 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10105/11502.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10105/11502.png",
+          "slopes": [
+            {
+              "start": 500,
+              "length": 375,
+              "end": 875,
+              "type": "uphill"
+            },
+            {
+              "start": 875,
+              "length": 450,
+              "end": 1325,
+              "type": "downhill"
+            },
+            {
+              "start": 1375,
+              "length": 175,
+              "end": 1550,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 1800,
@@ -7580,7 +9010,27 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10105/11503.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10105/11503.png",
+          "slopes": [
+            {
+              "start": 0,
+              "length": 150,
+              "end": 150,
+              "type": "uphill"
+            },
+            {
+              "start": 700,
+              "length": 450,
+              "end": 1150,
+              "type": "downhill"
+            },
+            {
+              "start": 1575,
+              "length": 175,
+              "end": 1750,
+              "type": "uphill"
+            }
+          ]
         },
         {
           "distance": 2000,
@@ -7648,7 +9098,33 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10105/11504.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10105/11504.png",
+          "slopes": [
+            {
+              "start": 175,
+              "length": 175,
+              "end": 350,
+              "type": "uphill"
+            },
+            {
+              "start": 900,
+              "length": 375,
+              "end": 1275,
+              "type": "uphill"
+            },
+            {
+              "start": 1275,
+              "length": 450,
+              "end": 1725,
+              "type": "downhill"
+            },
+            {
+              "start": 1775,
+              "length": 175,
+              "end": 1950,
+              "type": "uphill"
+            }
+          ]
         }
       ]
     },
@@ -7712,7 +9188,27 @@
           },
           "spurtStart": null,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10201/11203.png"
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10201/11203.png",
+          "slopes": [
+            {
+              "start": 400,
+              "length": 600,
+              "end": 1000,
+              "type": "uphill"
+            },
+            {
+              "start": 1017,
+              "length": 383,
+              "end": 1400,
+              "type": "downhill"
+            },
+            {
+              "start": 1400,
+              "length": 217,
+              "end": 1617,
+              "type": "downhill"
+            }
+          ]
         }
       ]
     }

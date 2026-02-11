@@ -378,6 +378,12 @@ td:first-child { text-align:left; }
 .track-viz-legend .l-spurt::before { background:#ab47bc; }
 .track-viz-legend .l-corner::before { background:#2196f3; opacity:0.5; }
 .track-viz-legend .l-straight::before { background:#4caf50; opacity:0.4; }
+.track-viz-legend .l-uphill::before { background:#e65100; }
+.track-viz-legend .l-downhill::before { background:#1565c0; }
+.track-viz-slope { position:absolute; top:0; height:30px; opacity:0.25; pointer-events:none; }
+.track-viz-slope.uphill { background:repeating-linear-gradient(45deg, #e65100 0, #e65100 2px, transparent 2px, transparent 6px); }
+.track-viz-slope.downhill { background:repeating-linear-gradient(-45deg, #1565c0 0, #1565c0 2px, transparent 2px, transparent 6px); }
+.track-viz-slope-label { position:absolute; top:2px; font-size:8px; font-weight:bold; pointer-events:none; z-index:2; }
 @media(max-width:600px) {
   .track-sections { grid-template-columns:1fr; }
 }
@@ -1683,6 +1689,13 @@ function createTrackCard(venue, course) {
   html += `<div style="font-size:0.8rem;color:var(--text2);display:flex;gap:1rem;flex-wrap:wrap;">`;
   if (course.positionKeep) html += `<span>📍 포지션킵: ${course.positionKeep.start}~${course.positionKeep.end}m</span>`;
   if (course.phases?.spurt) html += `<span>🚀 스퍼트: ${course.phases.spurt.start}m~</span>`;
+  if (course.slopes?.length) {
+    course.slopes.forEach(s => {
+      const icon = s.type === 'uphill' ? '⬆️' : '⬇️';
+      const label = s.type === 'uphill' ? '오르막' : '내리막';
+      html += `<span>${icon} ${label}: ${s.start}~${s.end}m (${s.length}m)</span>`;
+    });
+  }
   html += `</div>`;
 
   // Course visualization bar
@@ -1703,6 +1716,16 @@ function buildTrackViz(course) {
   for (const [key, cls] of [['early','early'],['mid','mid'],['late','late'],['spurt','spurt']]) {
     const p = phases[key];
     if (p) html += `<div class="track-viz-bar ${cls}" style="left:${pct(p.start)}%;width:${pct(p.end - p.start)}%;"></div>`;
+  }
+
+  // Slope overlays (top half, hatched)
+  if (course.slopes) {
+    course.slopes.forEach(s => {
+      const cls = s.type === 'uphill' ? 'uphill' : 'downhill';
+      const icon = s.type === 'uphill' ? '⬆' : '⬇';
+      html += `<div class="track-viz-slope ${cls}" style="left:${pct(s.start)}%;width:${pct(s.length)}%;"></div>`;
+      html += `<div class="track-viz-slope-label" style="left:${pct(s.start)}%;color:${s.type==='uphill'?'#e65100':'#1565c0'};">${icon}</div>`;
+    });
   }
 
   // Corner markers (bottom half, blue dashed)
@@ -1729,6 +1752,7 @@ function buildTrackViz(course) {
   html += `<div class="track-viz-legend">
     <span class="l-early">초반</span><span class="l-mid">중반</span><span class="l-late">종반</span><span class="l-spurt">스퍼트</span>
     <span class="l-corner">C=코너</span><span class="l-straight">S=직선</span>
+    <span class="l-uphill">⬆오르막</span><span class="l-downhill">⬇내리막</span>
   </div>`;
   return html;
 }

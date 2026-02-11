@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🏇 로그라이크 명예의 전당</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
 <style>
 :root {
   --bg: #fafaf7;
@@ -344,6 +345,13 @@ td:first-child { text-align:left; }
   <div id="tab-rounds" class="tab"></div>
   <div id="tab-player" class="tab"></div>
   <div id="tab-roulette" class="tab">
+    <!-- 관리자 로그인 -->
+    <div id="admin-auth" style="text-align:right;padding:8px 16px;font-size:13px;">
+      <span id="admin-status" style="color:#999;">🔒 관리자 로그인 필요 (봇 연동)</span>
+      <button id="admin-login-btn" onclick="adminGoogleLogin()" style="margin-left:8px;padding:4px 12px;border:1px solid #ccc;border-radius:4px;cursor:pointer;background:#fff;">Google 로그인</button>
+      <span id="admin-user" style="display:none;color:var(--green);">✅ <span id="admin-email"></span></span>
+      <button id="admin-logout-btn" style="display:none;margin-left:8px;padding:4px 8px;border:1px solid #ccc;border-radius:4px;cursor:pointer;background:#fff;font-size:12px;" onclick="adminLogout()">로그아웃</button>
+    </div>
     <div class="roulette-sub-tabs" id="roulette-sub-nav">
       <button class="r-active" onclick="switchRouletteTab('support',this)">🎴 서포트카드 밴</button>
       <button onclick="switchRouletteTab('character',this)">🏇 캐릭터 밴</button>
@@ -1043,18 +1051,54 @@ function resetTrackInfo() {
   document.getElementById('track-info-text').textContent = '마장정보 생성 버튼을 눌러주세요';
 }
 
-// === 봇 API 연동 ===
-const BOT_API_URL = 'https://hugo-macminiui-mac-mini.tail02c3b1.ts.net:3939';
+// === 관리자 인증 + 봇 API 연동 ===
+const BOT_API_URL = 'https://hugo-macminiui-mac-mini.tail02c3b1.ts.net:3940';
+const GOOGLE_CLIENT_ID = '665456442869-ua47cbk3n9s0ks0k7ps5l3hs084tpdhk.apps.googleusercontent.com';
+let adminIdToken = null;
+
+function adminGoogleLogin() {
+  const client = google.accounts.oauth2.initTokenClient({
+    client_id: GOOGLE_CLIENT_ID,
+    scope: 'email profile',
+    callback: (resp) => {
+      if (resp.error) { showRNotification('로그인 실패: ' + resp.error); return; }
+      // access_token으로 ID 토큰 얻기 위해 userinfo 호출
+      fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+        headers: { Authorization: `Bearer ${resp.access_token}` }
+      }).then(r => r.json()).then(info => {
+        // access_token을 그대로 사용 — 봇에서 검증
+        adminIdToken = resp.access_token;
+        document.getElementById('admin-status').style.display = 'none';
+        document.getElementById('admin-login-btn').style.display = 'none';
+        document.getElementById('admin-user').style.display = 'inline';
+        document.getElementById('admin-email').textContent = info.email;
+        document.getElementById('admin-logout-btn').style.display = 'inline';
+        showRNotification(`✅ ${info.email} 로그인 완료!`);
+      });
+    }
+  });
+  client.requestAccessToken();
+}
+
+function adminLogout() {
+  adminIdToken = null;
+  document.getElementById('admin-status').style.display = 'inline';
+  document.getElementById('admin-login-btn').style.display = 'inline';
+  document.getElementById('admin-user').style.display = 'none';
+  document.getElementById('admin-logout-btn').style.display = 'none';
+  showRNotification('로그아웃 완료');
+}
 
 function syncToBot(data) {
+  if (!adminIdToken) return; // 로그인 안 되어 있으면 조용히 스킵
   fetch(`${BOT_API_URL}/api/round`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${adminIdToken}` },
     body: JSON.stringify(data)
   }).then(r => r.json()).then(d => {
     if (d.ok) showRNotification('🤖 봇 연동 완료!');
     else showRNotification('⚠️ 봇 연동 실패: ' + d.error);
-  }).catch(() => showRNotification('⚠️ 봇 서버 연결 실패 (로컬 전용)'));
+  }).catch(() => {}); // 서버 연결 실패시 조용히 무시
 }
 
 function copyTrackContent() {

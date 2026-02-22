@@ -33,6 +33,18 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 body { background:var(--bg); color:var(--text); font-family:'Segoe UI',Tahoma,sans-serif; min-height:100vh; }
 a { color:var(--accent); text-decoration:none; cursor:pointer; }
+.top-url-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(135deg, var(--green-pale), var(--orange-pale));
+  border-bottom: 1px solid var(--border);
+  padding: 0.45rem 0.8rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text2);
+}
+.top-url-bar a { font-weight: 700; }
 a:hover { color:var(--orange); }
 
 .header {
@@ -391,6 +403,7 @@ td:first-child { text-align:left; }
 </style>
 </head>
 <body>
+<div class="top-url-bar">접속 URL: <a href="https://uma.hugokim.kr" target="_blank" rel="noopener">https://uma.hugokim.kr</a></div>
 
 <div class="header">
   <h1>🥕 로그라이크 명예의 전당</h1>

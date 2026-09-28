@@ -53,9 +53,9 @@
             "start": 0,
             "end": 500
           },
-          "spurtStart": null,
+          "spurtStart": 800,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10101.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10001/10101.png",
           "slopes": []
         },
         {
@@ -112,9 +112,9 @@
             "start": 0,
             "end": 625
           },
-          "spurtStart": null,
+          "spurtStart": 1000,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10102.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10001/10102.png",
           "slopes": []
         },
         {
@@ -181,9 +181,9 @@
             "start": 0,
             "end": 750
           },
-          "spurtStart": null,
+          "spurtStart": 1200,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10103.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10001/10103.png",
           "slopes": []
         },
         {
@@ -250,9 +250,9 @@
             "start": 0,
             "end": 833
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10104.png",
+          "spurtStart": 1333,
+          "statBonus": "파워",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10001/10104.png",
           "slopes": []
         },
         {
@@ -334,9 +334,9 @@
             "start": 0,
             "end": 1083
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10105.png",
+          "spurtStart": 1733,
+          "statBonus": "스태미너",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10001/10105.png",
           "slopes": []
         },
         {
@@ -388,9 +388,9 @@
             "start": 0,
             "end": 417
           },
-          "spurtStart": null,
+          "spurtStart": 667,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10106.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10001/10106.png",
           "slopes": []
         },
         {
@@ -457,9 +457,9 @@
             "start": 0,
             "end": 708
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10107.png",
+          "spurtStart": 1133,
+          "statBonus": "스피드",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10001/10107.png",
           "slopes": []
         },
         {
@@ -541,9 +541,9 @@
             "start": 0,
             "end": 1000
           },
-          "spurtStart": null,
+          "spurtStart": 1600,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10001/10108.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10001/10108.png",
           "slopes": []
         }
       ]
@@ -601,9 +601,9 @@
             "start": 0,
             "end": 417
           },
-          "spurtStart": null,
+          "spurtStart": 667,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10201.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10002/10201.png",
           "slopes": [
             {
               "start": 0,
@@ -662,9 +662,9 @@
             "start": 0,
             "end": 500
           },
-          "spurtStart": null,
+          "spurtStart": 800,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10202.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10002/10202.png",
           "slopes": [
             {
               "start": 0,
@@ -738,9 +738,9 @@
             "start": 0,
             "end": 750
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10203.png",
+          "spurtStart": 1200,
+          "statBonus": "파워",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10002/10203.png",
           "slopes": [
             {
               "start": 220,
@@ -820,9 +820,9 @@
             "start": 0,
             "end": 833
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10204.png",
+          "spurtStart": 1333,
+          "statBonus": "스피드",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10002/10204.png",
           "slopes": [
             {
               "start": 420,
@@ -917,9 +917,9 @@
             "start": 0,
             "end": 1083
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10205.png",
+          "spurtStart": 1733,
+          "statBonus": "스태미너",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10002/10205.png",
           "slopes": [
             {
               "start": 0,
@@ -990,9 +990,9 @@
             "start": 0,
             "end": 417
           },
-          "spurtStart": null,
+          "spurtStart": 667,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10206.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10002/10206.png",
           "slopes": []
         },
         {
@@ -1059,9 +1059,9 @@
             "start": 0,
             "end": 708
           },
-          "spurtStart": null,
+          "spurtStart": 1133,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10207.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10002/10207.png",
           "slopes": [
             {
               "start": 275,
@@ -1156,9 +1156,9 @@
             "start": 0,
             "end": 1000
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10002/10208.png",
+          "spurtStart": 1600,
+          "statBonus": "스태미너",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10002/10208.png",
           "slopes": []
         }
       ]
@@ -1200,9 +1200,9 @@
             "start": 0,
             "end": 417
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10301.png",
+          "spurtStart": 667,
+          "statBonus": "파워",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10003/10301.png",
           "slopes": [
             {
               "start": 0,
@@ -1221,6 +1221,7 @@
         {
           "distance": 1200,
           "surface": "잔디",
+          "position": "안쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -1267,14 +1268,15 @@
             "start": 0,
             "end": 500
           },
-          "spurtStart": null,
+          "spurtStart": 800,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10302.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10003/10302.png",
           "slopes": []
         },
         {
           "distance": 1400,
           "surface": "잔디",
+          "position": "안쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -1321,14 +1323,15 @@
             "start": 0,
             "end": 583
           },
-          "spurtStart": null,
+          "spurtStart": 933,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10303.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10003/10303.png",
           "slopes": []
         },
         {
           "distance": 1600,
           "surface": "잔디",
+          "position": "바깥쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -1375,9 +1378,9 @@
             "start": 0,
             "end": 667
           },
-          "spurtStart": null,
+          "spurtStart": 1067,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10304.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10003/10304.png",
           "slopes": [
             {
               "start": 250,
@@ -1396,6 +1399,7 @@
         {
           "distance": 1800,
           "surface": "잔디",
+          "position": "바깥쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -1442,9 +1446,9 @@
             "start": 0,
             "end": 750
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10305.png",
+          "spurtStart": 1200,
+          "statBonus": "파워",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10003/10305.png",
           "slopes": [
             {
               "start": 450,
@@ -1463,6 +1467,7 @@
         {
           "distance": 2000,
           "surface": "잔디",
+          "position": "안쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -1524,14 +1529,15 @@
             "start": 0,
             "end": 833
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10306.png",
+          "spurtStart": 1333,
+          "statBonus": "스태미너, 파워",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10003/10306.png",
           "slopes": []
         },
         {
           "distance": 2000,
           "surface": "잔디",
+          "position": "바깥쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -1578,14 +1584,28 @@
             "start": 0,
             "end": 833
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10307.png",
-          "slopes": []
+          "spurtStart": 1333,
+          "statBonus": "스태미너, 파워",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10003/10307.png",
+          "slopes": [
+            {
+              "start": 650,
+              "length": 350,
+              "end": 1000,
+              "type": "uphill"
+            },
+            {
+              "start": 1000,
+              "length": 300,
+              "end": 1300,
+              "type": "downhill"
+            }
+          ]
         },
         {
           "distance": 2200,
           "surface": "잔디",
+          "position": "안쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -1647,14 +1667,15 @@
             "start": 0,
             "end": 917
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10308.png",
+          "spurtStart": 1467,
+          "statBonus": "스피드",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10003/10308.png",
           "slopes": []
         },
         {
           "distance": 2400,
           "surface": "잔디",
+          "position": "안쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -1716,9 +1737,9 @@
             "start": 0,
             "end": 1000
           },
-          "spurtStart": null,
+          "spurtStart": 1600,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10309.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10003/10309.png",
           "slopes": []
         },
         {
@@ -1770,9 +1791,9 @@
             "start": 0,
             "end": 500
           },
-          "spurtStart": null,
+          "spurtStart": 800,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10310.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10003/10310.png",
           "slopes": []
         },
         {
@@ -1839,9 +1860,9 @@
             "start": 0,
             "end": 750
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10311.png",
+          "spurtStart": 1200,
+          "statBonus": "지능",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10003/10311.png",
           "slopes": []
         },
         {
@@ -1923,9 +1944,9 @@
             "start": 0,
             "end": 1042
           },
-          "spurtStart": null,
+          "spurtStart": 1667,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10003/10312.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10003/10312.png",
           "slopes": []
         }
       ]
@@ -1983,9 +2004,9 @@
             "start": 0,
             "end": 500
           },
-          "spurtStart": null,
+          "spurtStart": 800,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10401.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10004/10401.png",
           "slopes": [
             {
               "start": 180,
@@ -2059,9 +2080,9 @@
             "start": 0,
             "end": 750
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10402.png",
+          "spurtStart": 1200,
+          "statBonus": "스태미너",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10004/10402.png",
           "slopes": [
             {
               "start": 780,
@@ -2135,9 +2156,9 @@
             "start": 0,
             "end": 833
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10403.png",
+          "spurtStart": 1333,
+          "statBonus": "스태미너",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10004/10403.png",
           "slopes": [
             {
               "start": 980,
@@ -2226,9 +2247,9 @@
             "start": 0,
             "end": 1083
           },
-          "spurtStart": null,
+          "spurtStart": 1733,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10404.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10004/10404.png",
           "slopes": [
             {
               "start": 0,
@@ -2293,9 +2314,9 @@
             "start": 0,
             "end": 479
           },
-          "spurtStart": null,
+          "spurtStart": 767,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10405.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10004/10405.png",
           "slopes": []
         },
         {
@@ -2362,9 +2383,9 @@
             "start": 0,
             "end": 708
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10406.png",
+          "spurtStart": 1133,
+          "statBonus": "파워",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10004/10406.png",
           "slopes": [
             {
               "start": 285,
@@ -2453,9 +2474,9 @@
             "start": 0,
             "end": 1000
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10004/10407.png",
+          "spurtStart": 1600,
+          "statBonus": "스태미너",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10004/10407.png",
           "slopes": []
         }
       ]
@@ -2467,6 +2488,7 @@
         {
           "distance": 1200,
           "surface": "잔디",
+          "position": "바깥쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -2508,9 +2530,9 @@
             "start": 0,
             "end": 500
           },
-          "spurtStart": null,
+          "spurtStart": 800,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10501.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10005/10501.png",
           "slopes": [
             {
               "start": 0,
@@ -2529,6 +2551,7 @@
         {
           "distance": 1600,
           "surface": "잔디",
+          "position": "바깥쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -2575,9 +2598,9 @@
             "start": 0,
             "end": 667
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10502.png",
+          "spurtStart": 1067,
+          "statBonus": "파워",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10005/10502.png",
           "slopes": [
             {
               "start": 300,
@@ -2596,6 +2619,7 @@
         {
           "distance": 1800,
           "surface": "잔디",
+          "position": "안쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -2657,9 +2681,9 @@
             "start": 0,
             "end": 750
           },
-          "spurtStart": null,
+          "spurtStart": 1200,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10503.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10005/10503.png",
           "slopes": [
             {
               "start": 1,
@@ -2690,6 +2714,7 @@
         {
           "distance": 2000,
           "surface": "잔디",
+          "position": "안쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -2751,9 +2776,9 @@
             "start": 0,
             "end": 833
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10504.png",
+          "spurtStart": 1333,
+          "statBonus": "스피드",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10005/10504.png",
           "slopes": [
             {
               "start": 125,
@@ -2784,6 +2809,7 @@
         {
           "distance": 2200,
           "surface": "잔디",
+          "position": "바깥쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -2840,9 +2866,9 @@
             "start": 0,
             "end": 917
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10505.png",
+          "spurtStart": 1467,
+          "statBonus": "스태미너, 근성",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10005/10505.png",
           "slopes": [
             {
               "start": 153,
@@ -2873,6 +2899,7 @@
         {
           "distance": 2500,
           "surface": "잔디",
+          "position": "안쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -2944,9 +2971,9 @@
             "start": 0,
             "end": 1042
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10506.png",
+          "spurtStart": 1667,
+          "statBonus": "스태미너, 근성",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10005/10506.png",
           "slopes": [
             {
               "start": 621,
@@ -2977,6 +3004,7 @@
         {
           "distance": 3600,
           "surface": "잔디",
+          "position": "안쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -3068,9 +3096,9 @@
             "start": 0,
             "end": 1500
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10507.png",
+          "spurtStart": 2400,
+          "statBonus": "스태미너",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10005/10507.png",
           "slopes": [
             {
               "start": 40,
@@ -3165,9 +3193,9 @@
             "start": 0,
             "end": 500
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10508.png",
+          "spurtStart": 800,
+          "statBonus": "파워",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10005/10508.png",
           "slopes": [
             {
               "start": 175,
@@ -3247,9 +3275,9 @@
             "start": 0,
             "end": 750
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10509.png",
+          "spurtStart": 1200,
+          "statBonus": "파워",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10005/10509.png",
           "slopes": [
             {
               "start": 100,
@@ -3356,9 +3384,9 @@
             "start": 0,
             "end": 1000
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10510.png",
+          "spurtStart": 1600,
+          "statBonus": "스태미너",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10005/10510.png",
           "slopes": []
         },
         {
@@ -3440,9 +3468,9 @@
             "start": 0,
             "end": 1042
           },
-          "spurtStart": null,
+          "spurtStart": 1667,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10005/10511.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10005/10511.png",
           "slopes": []
         }
       ]
@@ -3500,9 +3528,9 @@
             "start": 0,
             "end": 583
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10601.png",
+          "spurtStart": 933,
+          "statBonus": "스태미너, 파워",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10006/10601.png",
           "slopes": [
             {
               "start": 125,
@@ -3573,9 +3601,9 @@
             "start": 0,
             "end": 667
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10602.png",
+          "spurtStart": 1067,
+          "statBonus": "스태미너, 근성",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10006/10602.png",
           "slopes": [
             {
               "start": 325,
@@ -3651,9 +3679,9 @@
             "start": 0,
             "end": 750
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10603.png",
+          "spurtStart": 1200,
+          "statBonus": "스피드",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10006/10603.png",
           "slopes": [
             {
               "start": 525,
@@ -3729,9 +3757,9 @@
             "start": 0,
             "end": 833
           },
-          "spurtStart": null,
+          "spurtStart": 1333,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10604.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10006/10604.png",
           "slopes": [
             {
               "start": 725,
@@ -3817,9 +3845,9 @@
             "start": 0,
             "end": 958
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10605.png",
+          "spurtStart": 1533,
+          "statBonus": "파워",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10006/10605.png",
           "slopes": [
             {
               "start": 1025,
@@ -3905,9 +3933,9 @@
             "start": 0,
             "end": 1000
           },
-          "spurtStart": null,
+          "spurtStart": 1600,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10606.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10006/10606.png",
           "slopes": [
             {
               "start": 0,
@@ -3999,9 +4027,9 @@
             "start": 0,
             "end": 1042
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10607.png",
+          "spurtStart": 1667,
+          "statBonus": "스태미너",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10006/10607.png",
           "slopes": [
             {
               "start": 0,
@@ -4108,9 +4136,9 @@
             "start": 0,
             "end": 1417
           },
-          "spurtStart": null,
+          "spurtStart": 2267,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10608.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10006/10608.png",
           "slopes": [
             {
               "start": 67,
@@ -4199,9 +4227,9 @@
             "start": 0,
             "end": 542
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10609.png",
+          "spurtStart": 867,
+          "statBonus": "스피드",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10006/10609.png",
           "slopes": [
             {
               "start": 275,
@@ -4266,9 +4294,9 @@
             "start": 0,
             "end": 583
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10610.png",
+          "spurtStart": 933,
+          "statBonus": "스태미너",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10006/10610.png",
           "slopes": [
             {
               "start": 375,
@@ -4333,9 +4361,9 @@
             "start": 0,
             "end": 667
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10611.png",
+          "spurtStart": 1067,
+          "statBonus": "스피드, 스태미너",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10006/10611.png",
           "slopes": [
             {
               "start": 575,
@@ -4415,9 +4443,9 @@
             "start": 0,
             "end": 875
           },
-          "spurtStart": null,
+          "spurtStart": 1400,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10612.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10006/10612.png",
           "slopes": [
             {
               "start": 1075,
@@ -4497,9 +4525,9 @@
             "start": 0,
             "end": 1000
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10006/10613.png",
+          "spurtStart": 1600,
+          "statBonus": "스태미너",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10006/10613.png",
           "slopes": []
         }
       ]
@@ -4557,9 +4585,9 @@
             "start": 0,
             "end": 500
           },
-          "spurtStart": null,
+          "spurtStart": 800,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10701.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10007/10701.png",
           "slopes": [
             {
               "start": 100,
@@ -4624,9 +4652,9 @@
             "start": 0,
             "end": 583
           },
-          "spurtStart": null,
+          "spurtStart": 933,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10702.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10007/10702.png",
           "slopes": [
             {
               "start": 300,
@@ -4696,9 +4724,9 @@
             "start": 0,
             "end": 667
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10703.png",
+          "spurtStart": 1067,
+          "statBonus": "스피드",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10007/10703.png",
           "slopes": [
             {
               "start": 500,
@@ -4778,9 +4806,9 @@
             "start": 0,
             "end": 833
           },
-          "spurtStart": null,
+          "spurtStart": 1333,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10704.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10007/10704.png",
           "slopes": [
             {
               "start": 0,
@@ -4866,9 +4894,9 @@
             "start": 0,
             "end": 917
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10705.png",
+          "spurtStart": 1467,
+          "statBonus": "스태미너",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10007/10705.png",
           "slopes": [
             {
               "start": 0,
@@ -4945,9 +4973,9 @@
             "start": 0,
             "end": 500
           },
-          "spurtStart": null,
+          "spurtStart": 800,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10706.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10007/10706.png",
           "slopes": []
         },
         {
@@ -4999,9 +5027,9 @@
             "start": 0,
             "end": 583
           },
-          "spurtStart": null,
+          "spurtStart": 933,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10707.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10007/10707.png",
           "slopes": [
             {
               "start": 425,
@@ -5081,9 +5109,9 @@
             "start": 0,
             "end": 750
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10708.png",
+          "spurtStart": 1200,
+          "statBonus": "스태미너",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10007/10708.png",
           "slopes": [
             {
               "start": 0,
@@ -5169,9 +5197,9 @@
             "start": 0,
             "end": 792
           },
-          "spurtStart": null,
+          "spurtStart": 1267,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10007/10709.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10007/10709.png",
           "slopes": []
         }
       ]
@@ -5183,6 +5211,7 @@
         {
           "distance": 1200,
           "surface": "잔디",
+          "position": "안쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -5229,9 +5258,9 @@
             "start": 0,
             "end": 500
           },
-          "spurtStart": null,
+          "spurtStart": 800,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10801.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10008/10801.png",
           "slopes": [
             {
               "start": 120,
@@ -5250,6 +5279,7 @@
         {
           "distance": 1400,
           "surface": "잔디",
+          "position": "안쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -5296,9 +5326,9 @@
             "start": 0,
             "end": 583
           },
-          "spurtStart": null,
+          "spurtStart": 933,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10802.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10008/10802.png",
           "slopes": [
             {
               "start": 320,
@@ -5317,6 +5347,7 @@
         {
           "distance": 1400,
           "surface": "잔디",
+          "position": "바깥쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -5363,20 +5394,26 @@
             "start": 0,
             "end": 583
           },
-          "spurtStart": null,
+          "spurtStart": 933,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10803.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10008/10803.png",
           "slopes": [
             {
-              "start": 320,
-              "length": 175,
-              "end": 495,
+              "start": 250,
+              "length": 100,
+              "end": 350,
               "type": "uphill"
             },
             {
-              "start": 620,
+              "start": 350,
+              "length": 225,
+              "end": 575,
+              "type": "uphill"
+            },
+            {
+              "start": 575,
               "length": 150,
-              "end": 770,
+              "end": 725,
               "type": "downhill"
             }
           ]
@@ -5384,6 +5421,7 @@
         {
           "distance": 1600,
           "surface": "잔디",
+          "position": "안쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -5430,9 +5468,9 @@
             "start": 0,
             "end": 667
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10804.png",
+          "spurtStart": 1067,
+          "statBonus": "스피드",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10008/10804.png",
           "slopes": [
             {
               "start": 520,
@@ -5451,6 +5489,7 @@
         {
           "distance": 1600,
           "surface": "잔디",
+          "position": "바깥쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -5497,20 +5536,26 @@
             "start": 0,
             "end": 667
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10805.png",
+          "spurtStart": 1067,
+          "statBonus": "스피드",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10008/10805.png",
           "slopes": [
             {
-              "start": 520,
-              "length": 175,
-              "end": 695,
+              "start": 450,
+              "length": 100,
+              "end": 550,
               "type": "uphill"
             },
             {
-              "start": 820,
+              "start": 550,
+              "length": 225,
+              "end": 775,
+              "type": "uphill"
+            },
+            {
+              "start": 775,
               "length": 150,
-              "end": 970,
+              "end": 925,
               "type": "downhill"
             }
           ]
@@ -5518,6 +5563,7 @@
         {
           "distance": 1800,
           "surface": "잔디",
+          "position": "바깥쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -5564,9 +5610,9 @@
             "start": 0,
             "end": 750
           },
-          "spurtStart": null,
+          "spurtStart": 1200,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10806.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10008/10806.png",
           "slopes": [
             {
               "start": 650,
@@ -5591,6 +5637,7 @@
         {
           "distance": 2000,
           "surface": "잔디",
+          "position": "안쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -5652,9 +5699,9 @@
             "start": 0,
             "end": 833
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10807.png",
+          "spurtStart": 1333,
+          "statBonus": "파워",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10008/10807.png",
           "slopes": [
             {
               "start": 970,
@@ -5673,6 +5720,7 @@
         {
           "distance": 2200,
           "surface": "잔디",
+          "position": "바깥쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -5734,9 +5782,9 @@
             "start": 0,
             "end": 917
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10808.png",
+          "spurtStart": 1467,
+          "statBonus": "스피드",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10008/10808.png",
           "slopes": [
             {
               "start": 1050,
@@ -5761,6 +5809,7 @@
         {
           "distance": 2400,
           "surface": "잔디",
+          "position": "바깥쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -5822,9 +5871,9 @@
             "start": 0,
             "end": 1000
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10809.png",
+          "spurtStart": 1600,
+          "statBonus": "파워",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10008/10809.png",
           "slopes": [
             {
               "start": 1250,
@@ -5849,6 +5898,7 @@
         {
           "distance": 3000,
           "surface": "잔디",
+          "position": "바깥쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -5925,9 +5975,9 @@
             "start": 0,
             "end": 1250
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10810.png",
+          "spurtStart": 2000,
+          "statBonus": "파워, 지능",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10008/10810.png",
           "slopes": [
             {
               "start": 11,
@@ -5970,6 +6020,7 @@
         {
           "distance": 3200,
           "surface": "잔디",
+          "position": "바깥쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -6046,9 +6097,9 @@
             "start": 0,
             "end": 1333
           },
-          "spurtStart": null,
+          "spurtStart": 2133,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10811.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10008/10811.png",
           "slopes": [
             {
               "start": 208,
@@ -6137,9 +6188,9 @@
             "start": 0,
             "end": 500
           },
-          "spurtStart": null,
+          "spurtStart": 800,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10812.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10008/10812.png",
           "slopes": [
             {
               "start": 175,
@@ -6204,9 +6255,9 @@
             "start": 0,
             "end": 583
           },
-          "spurtStart": null,
+          "spurtStart": 933,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10813.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10008/10813.png",
           "slopes": [
             {
               "start": 375,
@@ -6286,9 +6337,9 @@
             "start": 0,
             "end": 750
           },
-          "spurtStart": null,
+          "spurtStart": 1200,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10814.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10008/10814.png",
           "slopes": [
             {
               "start": 775,
@@ -6368,9 +6419,9 @@
             "start": 0,
             "end": 792
           },
-          "spurtStart": null,
+          "spurtStart": 1267,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10008/10815.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10008/10815.png",
           "slopes": [
             {
               "start": 875,
@@ -6395,6 +6446,7 @@
         {
           "distance": 1200,
           "surface": "잔디",
+          "position": "안쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -6441,9 +6493,9 @@
             "start": 0,
             "end": 500
           },
-          "spurtStart": null,
+          "spurtStart": 800,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10901.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10009/10901.png",
           "slopes": [
             {
               "start": 400,
@@ -6462,6 +6514,7 @@
         {
           "distance": 1400,
           "surface": "잔디",
+          "position": "안쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -6508,9 +6561,9 @@
             "start": 0,
             "end": 583
           },
-          "spurtStart": null,
+          "spurtStart": 933,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10902.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10009/10902.png",
           "slopes": [
             {
               "start": 600,
@@ -6529,6 +6582,7 @@
         {
           "distance": 1600,
           "surface": "잔디",
+          "position": "바깥쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -6575,9 +6629,9 @@
             "start": 0,
             "end": 667
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10903.png",
+          "spurtStart": 1067,
+          "statBonus": "파워",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10009/10903.png",
           "slopes": [
             {
               "start": 950,
@@ -6596,6 +6650,7 @@
         {
           "distance": 1800,
           "surface": "잔디",
+          "position": "바깥쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -6642,9 +6697,9 @@
             "start": 0,
             "end": 750
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10904.png",
+          "spurtStart": 1200,
+          "statBonus": "파워",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10009/10904.png",
           "slopes": [
             {
               "start": 1150,
@@ -6663,6 +6718,7 @@
         {
           "distance": 2000,
           "surface": "잔디",
+          "position": "안쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -6724,20 +6780,20 @@
             "start": 0,
             "end": 833
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10905.png",
+          "spurtStart": 1333,
+          "statBonus": "근성",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10009/10905.png",
           "slopes": [
             {
               "start": 0,
-              "length": 90,
-              "end": 90,
+              "length": 140,
+              "end": 140,
               "type": "downhill"
             },
             {
-              "start": 95,
+              "start": 145,
               "length": 125,
-              "end": 220,
+              "end": 270,
               "type": "uphill"
             },
             {
@@ -6757,6 +6813,7 @@
         {
           "distance": 2200,
           "surface": "잔디",
+          "position": "안쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -6818,9 +6875,9 @@
             "start": 0,
             "end": 917
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10906.png",
+          "spurtStart": 1467,
+          "statBonus": "스피드",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10009/10906.png",
           "slopes": [
             {
               "start": 0,
@@ -6851,6 +6908,7 @@
         {
           "distance": 2400,
           "surface": "잔디",
+          "position": "바깥쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -6907,20 +6965,20 @@
             "start": 0,
             "end": 1000
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10907.png",
+          "spurtStart": 1600,
+          "statBonus": "파워",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10009/10907.png",
           "slopes": [
             {
               "start": 0,
-              "length": 115,
-              "end": 115,
+              "length": 132,
+              "end": 132,
               "type": "downhill"
             },
             {
-              "start": 170,
+              "start": 187,
               "length": 120,
-              "end": 290,
+              "end": 307,
               "type": "uphill"
             },
             {
@@ -6940,6 +6998,7 @@
         {
           "distance": 2600,
           "surface": "잔디",
+          "position": "바깥쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -7001,9 +7060,9 @@
             "start": 0,
             "end": 1083
           },
-          "spurtStart": null,
+          "spurtStart": 1733,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10908.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10009/10908.png",
           "slopes": [
             {
               "start": 0,
@@ -7034,6 +7093,7 @@
         {
           "distance": 3000,
           "surface": "잔디",
+          "position": "안쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -7110,14 +7170,14 @@
             "start": 0,
             "end": 1250
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10909.png",
+          "spurtStart": 2000,
+          "statBonus": "파워",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10009/10909.png",
           "slopes": [
             {
-              "start": 495,
+              "start": 498,
               "length": 595,
-              "end": 1090,
+              "end": 1093,
               "type": "downhill"
             },
             {
@@ -7189,23 +7249,10 @@
             "start": 0,
             "end": 500
           },
-          "spurtStart": null,
+          "spurtStart": 800,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10910.png",
-          "slopes": [
-            {
-              "start": 200,
-              "length": 800,
-              "end": 1000,
-              "type": "downhill"
-            },
-            {
-              "start": 1000,
-              "length": 125,
-              "end": 1125,
-              "type": "uphill"
-            }
-          ]
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10009/10910.png",
+          "slopes": []
         },
         {
           "distance": 1400,
@@ -7256,16 +7303,10 @@
             "start": 0,
             "end": 583
           },
-          "spurtStart": null,
+          "spurtStart": 933,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10911.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10009/10911.png",
           "slopes": [
-            {
-              "start": 400,
-              "length": 800,
-              "end": 1200,
-              "type": "downhill"
-            },
             {
               "start": 1200,
               "length": 125,
@@ -7338,26 +7379,20 @@
             "start": 0,
             "end": 750
           },
-          "spurtStart": null,
+          "spurtStart": 1200,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10912.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10009/10912.png",
           "slopes": [
             {
-              "start": 75,
+              "start": 105,
               "length": 125,
-              "end": 200,
+              "end": 230,
               "type": "uphill"
             },
             {
-              "start": 800,
-              "length": 800,
-              "end": 1600,
-              "type": "downhill"
-            },
-            {
-              "start": 1600,
+              "start": 1599,
               "length": 125,
-              "end": 1725,
+              "end": 1724,
               "type": "uphill"
             }
           ]
@@ -7426,27 +7461,15 @@
             "start": 0,
             "end": 833
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10913.png",
+          "spurtStart": 1333,
+          "statBonus": "스태미너, 파워",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10009/10913.png",
           "slopes": [
-            {
-              "start": 0,
-              "length": 275,
-              "end": 275,
-              "type": "downhill"
-            },
             {
               "start": 275,
               "length": 125,
               "end": 400,
               "type": "uphill"
-            },
-            {
-              "start": 1000,
-              "length": 800,
-              "end": 1800,
-              "type": "downhill"
             },
             {
               "start": 1800,
@@ -7459,6 +7482,7 @@
         {
           "distance": 3200,
           "surface": "잔디",
+          "position": "바깥쪽→안쪽",
           "phases": {
             "early": {
               "start": 0,
@@ -7535,9 +7559,9 @@
             "start": 0,
             "end": 1333
           },
-          "spurtStart": null,
+          "spurtStart": 2133,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10009/10914.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10009/10914.png",
           "slopes": [
             {
               "start": 870,
@@ -7620,9 +7644,9 @@
             "start": 0,
             "end": 500
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11001.png",
+          "spurtStart": 800,
+          "statBonus": "스피드",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10010/11001.png",
           "slopes": [
             {
               "start": 0,
@@ -7696,9 +7720,9 @@
             "start": 0,
             "end": 750
           },
-          "spurtStart": null,
+          "spurtStart": 1200,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11002.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10010/11002.png",
           "slopes": [
             {
               "start": 280,
@@ -7772,9 +7796,9 @@
             "start": 0,
             "end": 833
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11003.png",
+          "spurtStart": 1333,
+          "statBonus": "파워",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10010/11003.png",
           "slopes": [
             {
               "start": 480,
@@ -7863,9 +7887,9 @@
             "start": 0,
             "end": 1083
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11004.png",
+          "spurtStart": 1733,
+          "statBonus": "스태미너",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10010/11004.png",
           "slopes": [
             {
               "start": 1100,
@@ -7924,9 +7948,9 @@
             "start": 0,
             "end": 417
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11005.png",
+          "spurtStart": 667,
+          "statBonus": "스피드",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10010/11005.png",
           "slopes": []
         },
         {
@@ -7993,9 +8017,9 @@
             "start": 0,
             "end": 708
           },
-          "spurtStart": null,
+          "spurtStart": 1133,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11006.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10010/11006.png",
           "slopes": [
             {
               "start": 370,
@@ -8084,9 +8108,9 @@
             "start": 0,
             "end": 1000
           },
-          "spurtStart": null,
+          "spurtStart": 1600,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10010/11007.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10010/11007.png",
           "slopes": []
         }
       ]
@@ -8144,9 +8168,9 @@
             "start": 0,
             "end": 500
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10101/11101.png",
+          "spurtStart": 800,
+          "statBonus": "근성, 지능",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10101/11101.png",
           "slopes": []
         },
         {
@@ -8199,6 +8223,11 @@
               "end": 301
             },
             {
+              "number": 2,
+              "start": 600,
+              "end": 1100.23
+            },
+            {
               "number": 3,
               "start": 1414,
               "end": 1800
@@ -8208,9 +8237,9 @@
             "start": 0,
             "end": 750
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10101/11102.png",
+          "spurtStart": 1200,
+          "statBonus": "파워",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10101/11102.png",
           "slopes": []
         },
         {
@@ -8277,9 +8306,9 @@
             "start": 0,
             "end": 833
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10101/11103.png",
+          "spurtStart": 1333,
+          "statBonus": "스태미너",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10101/11103.png",
           "slopes": []
         }
       ]
@@ -8352,9 +8381,9 @@
             "start": 0,
             "end": 583
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10103/11301.png",
+          "spurtStart": 933,
+          "statBonus": "지능",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10103/11301.png",
           "slopes": []
         },
         {
@@ -8421,9 +8450,9 @@
             "start": 0,
             "end": 667
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10103/11302.png",
+          "spurtStart": 1067,
+          "statBonus": "지능",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10103/11302.png",
           "slopes": []
         },
         {
@@ -8505,9 +8534,9 @@
             "start": 0,
             "end": 875
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10103/11303.png",
+          "spurtStart": 1400,
+          "statBonus": "스태미너, 지능",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10103/11303.png",
           "slopes": []
         }
       ]
@@ -8565,9 +8594,9 @@
             "start": 0,
             "end": 417
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10104/11401.png",
+          "spurtStart": 667,
+          "statBonus": "스피드",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10104/11401.png",
           "slopes": []
         },
         {
@@ -8634,9 +8663,9 @@
             "start": 0,
             "end": 667
           },
-          "spurtStart": null,
+          "spurtStart": 1067,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10104/11402.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10104/11402.png",
           "slopes": []
         },
         {
@@ -8703,9 +8732,9 @@
             "start": 0,
             "end": 750
           },
-          "spurtStart": null,
+          "spurtStart": 1200,
           "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10104/11403.png",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10104/11403.png",
           "slopes": []
         },
         {
@@ -8787,9 +8816,9 @@
             "start": 0,
             "end": 1000
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10104/11404.png",
+          "spurtStart": 1600,
+          "statBonus": "스태미너",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10104/11404.png",
           "slopes": []
         }
       ]
@@ -8847,9 +8876,9 @@
             "start": 0,
             "end": 500
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10105/11501.png",
+          "spurtStart": 800,
+          "statBonus": "스태미너",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10105/11501.png",
           "slopes": [
             {
               "start": 100,
@@ -8920,9 +8949,9 @@
             "start": 0,
             "end": 667
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10105/11502.png",
+          "spurtStart": 1067,
+          "statBonus": "스태미너, 지능",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10105/11502.png",
           "slopes": [
             {
               "start": 500,
@@ -9008,9 +9037,9 @@
             "start": 0,
             "end": 750
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10105/11503.png",
+          "spurtStart": 1200,
+          "statBonus": "스태미너, 지능",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10105/11503.png",
           "slopes": [
             {
               "start": 0,
@@ -9096,9 +9125,9 @@
             "start": 0,
             "end": 833
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10105/11504.png",
+          "spurtStart": 1333,
+          "statBonus": "스태미너",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10105/11504.png",
           "slopes": [
             {
               "start": 175,
@@ -9186,9 +9215,9 @@
             "start": 0,
             "end": 1000
           },
-          "spurtStart": null,
-          "statBonus": "없음",
-          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_gff/full/ko/10201/11203.png",
+          "spurtStart": 1600,
+          "statBonus": "스태미너, 파워",
+          "imageUrl": "https://media.gametora.com/umamusume/racetrack/history/pre_santa_anita/full/ko/10201/11203.png",
           "slopes": [
             {
               "start": 400,
@@ -9213,6 +9242,7 @@
       ]
     }
   ],
-  "crawledAt": "2026-02-11T07:59:08.582Z",
+  "source": "gametora:history/pre_santa_anita/racetracks",
+  "crawledAt": "2026-09-28T08:57:07.000Z",
   "errors": []
 }

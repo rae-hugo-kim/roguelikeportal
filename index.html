@@ -1388,6 +1388,13 @@ function syncToBot(data) {
   }).catch(() => {}); // 서버 연결 실패시 조용히 무시
 }
 
+// 봇 파서(add-round.js)가 읽는 코스 줄 형식: "<경기장> <잔디|더트> <거리>m [안쪽|바깥쪽] <계절> <날씨> <마장상태> <컨디션>"
+// 경기장 이름 뒤 "경마장"을 붙이면 파서가 "경마장"을 경기장으로 읽으므로 뺀다.
+function formatCourseLine(t) {
+  const venue = t.trackName.replace(/\s*경마장$/, '');
+  return `${venue} ${t.trackType} ${t.distance}${t.position ? ' ' + t.position : ''} ${t.season} ${t.weather} ${t.trackCondition} ${t.horseCondition}`;
+}
+
 // === 현재 회차 결과 발송 ===
 function formatCurrentPublishMessage() {
   const round = document.getElementById('current-publish-round').value;
@@ -1402,10 +1409,7 @@ function formatCurrentPublishMessage() {
   if (courseInput) {
     msg += `${courseInput}\n\n`;
   } else if (currentTrackInfo) {
-    const t = currentTrackInfo;
-    msg += `${t.trackName} ${t.trackType} ${t.distance}`;
-    if (t.position) msg += ` ${t.position}`;
-    msg += ` ${t.season} ${t.weather} ${t.trackCondition} ${t.horseCondition}\n\n`;
+    msg += `${formatCourseLine(currentTrackInfo)}\n\n`;
   }
   
   // 캐릭터 밴: 입력칸 우선, 없으면 룰렛 데이터
@@ -1646,14 +1650,12 @@ function loadSkillsForTrack(trackInfo) {
 function copyTrackContent() {
   if (!currentTrackInfo) { showRNotification('먼저 마장정보를 생성해주세요!'); return; }
   const t = currentTrackInfo;
-  let txt = `${t.trackType} ${t.trackName} ${t.distance}`;
-  if (t.position) txt += ` ${t.position}`;
-  txt += ` | ${t.season} ${t.weather} | 마장:${t.trackCondition} 컨디션:${t.horseCondition}`;
+  const txt = formatCourseLine(t);
   navigator.clipboard.writeText(txt).then(() => showRNotification('마장 정보가 복사되었습니다!'));
   // 경기장 정보 탭 연동
   navigateToTrackInfo(t);
   // 봇 연동
-  syncToBot({ course: `${t.trackType} ${t.trackName} ${t.distance}${t.position ? ' ' + t.position : ''} | ${t.season} ${t.weather} ${t.trackCondition} ${t.horseCondition}` });
+  syncToBot({ course: txt });
   // 유효스킬 자동 로드 + 탭 전환
   loadSkillsForTrack(currentTrackInfo);
   // 스킬 탭 드롭다운도 세팅
@@ -2115,11 +2117,7 @@ function syncRouletteToForm() {
   if (!courseEl) return;
   // 마장: 빈칸이면 룰렛 데이터로 채움
   if (!courseEl.value && currentTrackInfo) {
-    const t = currentTrackInfo;
-    let c = `${t.trackName} ${t.trackType} ${t.distance}`;
-    if (t.position) c += ` ${t.position}`;
-    c += ` ${t.season} ${t.weather} ${t.trackCondition} ${t.horseCondition}`;
-    courseEl.value = c;
+    courseEl.value = formatCourseLine(currentTrackInfo);
   }
   // 캐릭터밴
   if (!charEl.value) {

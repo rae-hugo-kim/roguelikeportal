@@ -3,7 +3,7 @@
 
 명령:
   supports    index.html `const supportCards` 에 신규 SSR 서포트 카드 추가
-  characters  index.html `const characters` 에 신규 육성마 추가
+  characters  index.html `const characters` 에 신규 육성마를 추가하고 character-labels.json 공식 명칭을 갱신합니다.
   tracks      racetrack-data.json 을 한섭 경기장 스냅샷으로 재생성하고, 룰렛 trackData 와의 차이를 보고
 
 supports / characters 공통
@@ -277,6 +277,20 @@ def sync_pool(args, kind_cls):
         print('경고: --images-dir 없이 반영했습니다. 신규 이미지는 따로 올려야 합니다.', file=sys.stderr)
 
     write_const(args.index, src, m, pool)
+    if kind_cls is Characters:
+        registered_ids = {entry['id'] for entry in kind.entries(pool)}
+        labels = {
+            str(card['card_id']): {
+                'name': kind.char_name(card),
+                'title': card.get('title_ko') or card.get('title_jp') or '',
+                'source': f"{BASE}/ko/umamusume/characters/{card['url_name']}",
+            }
+            for card in cards if card['card_id'] in registered_ids
+        }
+        labels_path = os.path.join(os.path.dirname(os.path.abspath(args.index)), 'character-labels.json')
+        with open(labels_path, 'w', encoding='utf-8') as f:
+            json.dump(labels, f, ensure_ascii=False, indent=2)
+        print(f'{labels_path} 공식 명칭 {len(labels)}개를 갱신했습니다.')
     print(f'{args.index} 반영 완료')
 
 

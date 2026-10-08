@@ -42,6 +42,20 @@ test('ambiguous normalized names do not choose the first image', () => {
   assert.equal(matchChampionCharacter({ uma: '골드쉽' }, duplicate, labels), null);
 });
 
+test('a base name resolves only when the registry holds exactly one costume for it', () => {
+  const bracketRegistry = [
+    ...registry,
+    { id: 111501, name: '오르페브르 [총람]', file: '오르페브르-111501' },
+    { id: 111301, name: '후사이치 판도라 [Assorted Cuteness♡]', file: '후사이치판도라-111301' },
+    { id: 111302, name: "후사이치 판도라 [Snatchin' Hearts ♡]", file: '후사이치판도라-111302' },
+  ];
+  const bracketLabels = { ...labels, 111501: { name: '오르페브르', title: '[총람]' } };
+  assert.equal(matchChampionCharacter({ uma: '오르페브르' }, bracketRegistry, bracketLabels).id, 111501);
+  assert.equal(matchChampionCharacter({ uma: '오르페브르' }, bracketRegistry, {}).id, 111501);
+  assert.equal(matchChampionCharacter({ uma: '후사이치판도라' }, bracketRegistry, bracketLabels), null);
+  assert.equal(matchChampionCharacter({ uma: '오르페' }, bracketRegistry, bracketLabels), null);
+});
+
 test('the latest completed round wins regardless of array order or rank order', () => {
   const records = [
     { round: 10, finalsUma: [{ rank: 2, player: 'runner-up' }, { rank: 1, player: 'winner' }] },

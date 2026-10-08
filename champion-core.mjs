@@ -10,17 +10,21 @@ export function selectLatestChampion(records) {
 }
 
 // 의상을 제거한 부분 일치는 하지 않습니다. 명시한 ID가 없더라도 이름으로 다른 의상을 고르지 않습니다.
+// 다만 기록이 기본 이름뿐이고 그 이름의 의상이 등록부에 하나뿐이면 다른 선택지가 없으므로 그 의상으로 확정합니다.
 export function matchChampionCharacter(winner, registry, labels = {}) {
   if (winner.card_id != null) return registry.find(c => c.id === Number(winner.card_id)) || null;
   const normalize = name => String(name || '').normalize('NFKC').replace(/\s/g, '').toLowerCase();
   const wanted = normalize(winner.uma);
   if (!wanted) return null;
-  const matches = registry.filter(c => {
+  const exact = registry.filter(c => {
     if (normalize(c.name) === wanted) return true;
     const label = labels[c.id];
     return label?.title && normalize(`${label.name} ${label.title}`) === wanted;
   });
-  return matches.length === 1 ? matches[0] : null;
+  if (exact.length) return exact.length === 1 ? exact[0] : null;
+  const baseName = c => normalize(labels[c.id]?.name || c.name.replace(/\s*\[.*\]$/, ''));
+  const sameBase = registry.filter(c => baseName(c) === wanted);
+  return sameBase.length === 1 ? sameBase[0] : null;
 }
 
 function rgbToHsl(r, g, b) {

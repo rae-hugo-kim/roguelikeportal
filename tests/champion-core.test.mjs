@@ -56,6 +56,25 @@ test('a base name resolves only when the registry holds exactly one costume for 
   assert.equal(matchChampionCharacter({ uma: '오르페' }, bracketRegistry, bracketLabels), null);
 });
 
+test('costumes released after the round are not candidates, so a base name stays unique over time', () => {
+  const dated = [
+    { id: 113201, name: '러브즈 온리 유 [9927 Wishes]', added: '2026-09-09' },
+    { id: 113202, name: '러브즈 온리 유 [Love-Linked Aster]', added: '2027-06-30' },
+  ];
+  const datedLabels = { 113201: { name: '러브즈 온리 유', title: '[9927 Wishes]' }, 113202: { name: '러브즈 온리 유', title: '[Love-Linked Aster]' } };
+  assert.equal(matchChampionCharacter({ uma: '러브즈온리유' }, dated, datedLabels), null);
+  assert.equal(matchChampionCharacter({ uma: '러브즈온리유' }, dated, datedLabels, '2026-10-04').id, 113201);
+  assert.equal(matchChampionCharacter({ uma: '러브즈온리유' }, dated, datedLabels, '2027-06-29T14:59:00Z').id, 113201);
+  assert.equal(matchChampionCharacter({ uma: '러브즈온리유' }, dated, datedLabels, '2027-06-29T15:00:00Z'), null);
+  assert.equal(matchChampionCharacter({ uma: '러브즈온리유' }, dated, datedLabels, '2027-07-01'), null);
+  assert.equal(matchChampionCharacter({ uma: '러브즈온리유' }, dated, datedLabels, '2026-09-08'), null);
+  assert.equal(matchChampionCharacter({ uma: '러브즈 온리 유 [Love-Linked Aster]' }, dated, datedLabels, '2026-10-04').id, 113202);
+  assert.equal(matchChampionCharacter({ card_id: 113202, uma: '러브즈온리유' }, dated, datedLabels, '2026-10-04').id, 113202);
+  // 초기 등록분은 added 가 등록일이라 회차보다 늦을 수 있다. 그래도 후보가 하나뿐이면 확정한다.
+  const bootstrap = [{ id: 111501, name: '오르페브르 [총람]', added: '2026-02-10' }];
+  assert.equal(matchChampionCharacter({ uma: '오르페브르' }, bootstrap, { 111501: { name: '오르페브르', title: '[총람]' } }, '2025-07-13').id, 111501);
+});
+
 test('the latest completed round wins regardless of array order or rank order', () => {
   const records = [
     { round: 10, finalsUma: [{ rank: 2, player: 'runner-up' }, { rank: 1, player: 'winner' }] },

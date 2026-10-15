@@ -23,7 +23,7 @@ function showPortraitFailure(request) {
   hero.dataset.paletteState = 'image-error';
 }
 
-async function renderChampionCharacter(winner) {
+async function renderChampionCharacter(winner, timestamp) {
   const request = ++portraitRequest;
   resetPortraitPalette();
   hero.dataset.paletteState = 'loading';
@@ -36,7 +36,7 @@ async function renderChampionCharacter(winner) {
   setChampionText('winner-title', '');
   const [core, labels] = await Promise.all([championCoreReady, characterLabelsReady]);
   if (request !== portraitRequest) return;
-  const character = core.matchChampionCharacter(winner, characters, labels);
+  const character = core.matchChampionCharacter(winner, characters, labels, timestamp);
   if (!character) {
     hero.dataset.paletteState = 'unmatched';
     portraitStatus.textContent = '이 기록의 의상 이미지를 아직 확인하지 못했어요.';
@@ -115,7 +115,7 @@ async function initializeChampion() {
   }
   document.getElementById('champion-record').href = `#round-${round.round}`;
   document.getElementById('champion-player').href = `#player/${encodeURIComponent(winner.player)}`;
-  await renderChampionCharacter(winner);
+  await renderChampionCharacter(winner, timestamp);
 }
 
 for (const card of document.querySelectorAll('#tab-rounds .round-card')) {

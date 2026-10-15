@@ -9,9 +9,19 @@ export function selectLatestChampion(records) {
   return selected;
 }
 
+// 회차 시각을 한국 날짜(YYYY-MM-DD)로 바꿉니다. 날짜만 있는 기록은 그대로 씁니다.
+function roundDateKst(timestamp) {
+  if (!timestamp) return null;
+  if (/^\d{4}-\d{2}-\d{2}$/.test(timestamp)) return timestamp;
+  const time = Date.parse(timestamp);
+  return Number.isNaN(time) ? null : new Date(time + 9 * 3600 * 1000).toISOString().slice(0, 10);
+}
+
 // 의상을 제거한 부분 일치는 하지 않습니다. 명시한 ID가 없더라도 이름으로 다른 의상을 고르지 않습니다.
 // 다만 기록이 기본 이름뿐이고 그 이름의 의상이 등록부에 하나뿐이면 다른 선택지가 없으므로 그 의상으로 확정합니다.
-export function matchChampionCharacter(winner, registry, labels = {}) {
+// 이때 회차 시각이 있으면 그 시점에 한섭에 출시되지 않은 의상(`added`가 더 늦은 항목)은 후보에서 제외합니다.
+// 초기 등록분은 `added`가 실제 출시일이 아니라 등록일(2026-02-10)이므로, 제외하면 후보가 하나도 남지 않을 때는 제외하지 않습니다.
+export function matchChampionCharacter(winner, registry, labels = {}, timestamp) {
   if (winner.card_id != null) return registry.find(c => c.id === Number(winner.card_id)) || null;
   const normalize = name => String(name || '').normalize('NFKC').replace(/\s/g, '').toLowerCase();
   const wanted = normalize(winner.uma);
@@ -24,7 +34,10 @@ export function matchChampionCharacter(winner, registry, labels = {}) {
   if (exact.length) return exact.length === 1 ? exact[0] : null;
   const baseName = c => normalize(labels[c.id]?.name || c.name.replace(/\s*\[.*\]$/, ''));
   const sameBase = registry.filter(c => baseName(c) === wanted);
-  return sameBase.length === 1 ? sameBase[0] : null;
+  const date = roundDateKst(timestamp);
+  const released = date ? sameBase.filter(c => !c.added || c.added <= date) : [];
+  const candidates = released.length ? released : sameBase;
+  return candidates.length === 1 ? candidates[0] : null;
 }
 
 function rgbToHsl(r, g, b) {
